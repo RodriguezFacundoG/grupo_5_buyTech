@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuyTech - Shop Cart</title>
+    <!-- poner ruta archivo CSS-->
+    <!-- CSS -->
+    <link href="../public/css/" rel="stylesheet" type="type/css">
+    <!-- ICONOS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"rel="stylesheet"/>
+
+</head>
+<body>
+    <header>
+        <nav class="left-nav">
+            <!--BURGER MENU-->
+            <div class="burger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+
+        <!--LOGO (está hecho link que redirige al index)-->
+        <div>
+            <a href="index.html">
+                <img src="../public/imagenes/LogoBuyTech.png">
+            </a>
+        </div>
+
+        <nav class="right-nav">
+            <div class="user-ico">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="cart-ico">
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+        </nav>
+
+    </header>
+    
+    <main>
+        <!-- CUENTAS DE LO QUE EL CARRITO TIENE-->
+
+        <section class="general-shopped"> 
+            <div class="sub-ship-total">
+                <p>Subtotal</p>
+                <p>Shipping</p>
+                <p>Total Price</p>
+            </div>
+            <div class="money-calculator">
+                <p>XXX</p>
+                <p>XXX</p>
+                <p>XXX</p>
+            </div>
+
+        <!-- BOTONES CHECK-OUT Y CONTINUE-SHOPPING-->
+            <div class="checkout-continue-buttons">
+                <div class="Checkout">
+                    <button>Check-out</button>
+                </div>
+                <div class="continue-shopping">
+                    <button>Continue Shopping</button>
+                </div>
+            </div>
+
+        </section>
+
+
+
+        <!-- LISTADO DE ARTICULOS-->
+        <!-- DUPLICAR EL <article> POR CADA ARTICULO AGRAGADO-->
+        <section class="shopped-article">
+            <article>
+                <div>
+                    <img src="articleX.jpg" alt="aricleX.jpg">    <!--OJO! cargar la imagen del producto-->
+                </div>
+                <div class="shopped-data">
+                    <p class="article-description" >Item:</p>
+                    <p class="article-quantity" >Cantidad:</p>
+                    <p class="article-price" >Precio:</p>
+                </div>
+                <div class="remove-button">
+                    <i class="fas fa-trash-alt"></i>
+                </div>
+            </article>
+        </section>
+    
+    </main>
+
+
+</body>
+</html>
