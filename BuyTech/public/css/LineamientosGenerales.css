@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  padding: 0%;
+}
+main {
+  font-family: Roboto, serif;
+  color: #0158aa;
+
+  box-sizing: border-box;
+  margin: 0;
+}
+.titulo {
+  font-size: 18px;
+}
+.texto-parrafo {
+  font-size: 12px;
+}
+.descripcion {
+  font-size: 10px;
+}
+.boton-azul {
+  background: #0158aa;
+  border: 1px solid #0158aa;
+  border-radius: 15px; /* 0.93rem */
+}
+.boton-blanco {
+}
+
+/* TABLET */
+@media (min-width: 481px) and (max-width: 768px) {
+  .titulo {
+    font-size: 24px;
+  }
+}
+.texto-parrafo {
+  font-size: 16px;
+}
+.descripcion {
+  font-size: 14px;
+}
+
+.boton-azul {
+  background: #0158aa;
+  border: 1px solid #0158aa;
+  border-radius: 20px; /* 1.25rem */
+}
+
+.boton-blanco {
+}
+/* DESKTOP */
+@media (min-width: 769px) and (max-width: 1279px) {
+}
+.texto-parrafo {
+  font-size: 16px;
+}
+.descripcion {
+  font-size: 14px;
+}
+.boton-azul {
+  background: #0158aa;
+  border: 1px solid #0158aa;
+  border-radius: 20px; /* 1.25rem */
+}
+.boton-blanco {
+}
