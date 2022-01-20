@@ -10,25 +10,30 @@ header {
 }
 
 .contenedor {
-    display: flex;
-    width: 80%;
-    height:auto;  
+  display: flex;
+  width: 95%;
+  height: auto;
 }
 
+/*ICONOS*/
+.fa,
+.fas {
+  font-size: 4.5vw;
+  font-weight: 900;
+}
 
 /* MENU HAMBURGUESA*/
-
 .left-nav {
-    display: flex;
-    width: 20%;
-    justify-self: center;
-    align-items: center;
-    color: white;
+  display: flex;
+  width: 20%;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
-  
-  /* LOGO */
-  
-  div.LOGO-up-nav {
+
+/* LOGO */
+
+div.LOGO-up-nav {
   display: flex;
   width: 60%;
   height: auto;
@@ -36,39 +41,74 @@ header {
   align-items: center;
 }
 
-.LOGO-up-img {
-    display: block;
-    width: 80%;
-    height: auto;
-
+.a-LOGO {
+  display: flex;
+  justify-content: center;
 }
-
+.LOGO-up-img {
+  display: block;
+  width: 80%;
+  height: auto;
+}
 
 /* CAR USER */
 
 .right-nav {
-    display: flex;
-    justify-content: center;
-    width: 20%;
-    justify-self: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 20%;
+  justify-self: center;
+  align-items: center;
 }
 
 .user-ico {
-    display: flex;
-    color: white;
-    margin-left: 2px;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    
+  display: flex;
+  color: white;
+  margin-left: 2px;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
 }
 
-.icono_indiv {
-    justify-content: flex-start;
-
+.icono-indiv-user {
+  justify-content: flex-start;
+  position: relative;
+  right: 5px;
+}
+.icono-indiv-user-cart {
+  justify-content: flex-start;
 }
 
 .cart-ico {
-    display: flex;
+  display: flex;
+}
+
+/* MEDIA QUERIES*/
+/* MEDIA QUERIES*/
+/* MEDIA QUERIES*/
+/* MEDIA QUERIES*/
+/* MEDIA QUERIES*/
+
+/* TABLET */
+@media (min-width: 481px) and (max-width: 768px) {
+  /*ICONOS*/
+  .fa,.fas {
+    font-size: 3.5vw;
+    font-weight: 900;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 769px) {
+  /*ICONOS*/
+  .fa,
+  .fas {
+    font-size: 2vw;
+    font-weight: 900;
+  }
+  /*MENU-HAMBURGUESA*/
+  .left-nav {
+    position: relative;
+    right: 6vw;
+  }
 }
