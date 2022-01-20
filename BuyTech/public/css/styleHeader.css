@@ -17,7 +17,9 @@ header {
 
 /*ICONOS*/
 .fa,
-.fas {
+.fas,
+.fa-user,
+.fa-shopping-cart {
   font-size: 4.5vw;
   font-weight: 900;
 }
@@ -92,7 +94,10 @@ div.LOGO-up-nav {
 /* TABLET */
 @media (min-width: 481px) and (max-width: 768px) {
   /*ICONOS*/
-  .fa,.fas {
+  .fa,
+  .fas,
+  .fa-user,
+  .fa-shopping-cart {
     font-size: 3.5vw;
     font-weight: 900;
   }
@@ -102,7 +107,9 @@ div.LOGO-up-nav {
 @media (min-width: 769px) {
   /*ICONOS*/
   .fa,
-  .fas {
+  .fas,
+  .fa-user,
+  .fa-shopping-cart {
     font-size: 2vw;
     font-weight: 900;
   }
