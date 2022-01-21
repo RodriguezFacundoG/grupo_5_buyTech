@@ -1,4 +1,5 @@
 header {
+  font-family: 'Roboto', sans-serif;
   display: flex;
   position: fixed;
   top: 0%;
@@ -110,7 +111,7 @@ div.LOGO-up-nav {
   .fas,
   .fa-user,
   .fa-shopping-cart {
-    font-size: 2vw;
+    font-size: 1.5vw;
     font-weight: 900;
   }
   /*MENU-HAMBURGUESA*/
@@ -118,4 +119,7 @@ div.LOGO-up-nav {
     position: relative;
     right: 6vw;
   }
+}
+.LOGO-up-img {
+  width: 90%;
 }

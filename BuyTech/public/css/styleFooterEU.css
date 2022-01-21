@@ -1,4 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+
 footer {
+  font-family: "Roboto", sans-serif;
   display: flex;
   position: fixed;
   flex-wrap: wrap;
@@ -28,9 +32,10 @@ div .LOGO-down-nav {
   align-items: center;
 }
 
-.a-LOGO {
+.LOGO-down-img {
   display: flex;
   justify-content: center;
+  width: 90%;
 }
 
 /* REDES */
@@ -44,7 +49,15 @@ div .LOGO-down-nav {
 .logo-face,
 .logo-insta {
   display: block;
-  width: 3em;
+  width: 2em;
+}
+.logo-twitter {
+  position: relative;
+  right: 15px;
+}
+.logo-insta {
+  position: relative;
+  left: 15px;
 }
 
 /*COPYRIGHT*/
@@ -55,7 +68,11 @@ div .LOGO-down-nav {
   align-items: center;
 }
 .COPYRIGHT p {
-  font-size: 0.8vw;
+  font-family: "Roboto bold";
+  position: absolute;
+  right: 1.5vw;
+  bottom: 23px;
+  font-size: 0.6vw;
 }
 
 /* MEDIA QUERIES*/
