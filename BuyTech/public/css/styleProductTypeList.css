@@ -1,0 +1,55 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+	 font-family: 'Raleway', sans-serif;
+	 background: #fff;
+	 margin: 0;
+}
+
+
+header {
+	background: #0158aa;
+	position: fixed;
+	width: 100vw;
+	height: auto;
+	padding: 15px;
+	z-index: 1;
+	justify-content: space-between;
+	display: flex;
+	top:0;
+	color: white;
+}
+
+.burger-menu {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.header-right {
+	width: 10vw;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header img {
+	width: 50%;
+}
+
+/*MENU HAMBURGUESA */
+
+nav ul {
+	display: none;
+} 
+
+main {
+	position: relative;
+	top: 106px;
+}
+
+main .title {
+	text-align: center;
+}
