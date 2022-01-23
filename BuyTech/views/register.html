@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+
+    <!-- Linkear el CSS -->
+    <link href="/css/user.css" rel="stylesheet" type="text/css">
+    <!-- Linkear Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- Linkear íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <nav class="contenedor">
+            <nav class="left-nav">
+                <!--BURGER MENU-->
+                <div class="burger-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+    
+            <!--LOGO (está hecho link para que redirija al index)-->
+            <div class="LOGO-up-nav"> 
+                <a class="a-LOGO" href="index.html">
+                    <img class="LOGO-up-img" src="/imagenes/LogoBuyTech.png" alt="LOGO">
+                </a>
+            </div>
+    
+            <nav class="right-nav">
+                <div class="user-ico">
+                    <div class="icono-indiv-user"><i class="fas fa-user"></i></div>
+                    <div class="icono-indiv-cart"><i class="fas fa-shopping-cart"></i></div>
+                </div>
+            </nav>
+        </nav>
+
+    </header>
+
+    <main>
+        <h3 class="register-title">
+            Creá tu ID de Usuario
+        </h3>
+    
+        <form action="/" method="GET" class="form-complete">
+            <div class="form-box">
+                <label for="userMail"></label>
+                <input type="mail" placeholder="example@mail.com" id="userMail" name="userMail" required minlength="7">
+            </div>
+    
+            <div class="form-box">
+                <label for="userPassword"></label>
+                <input type="password" placeholder="Contraseña" id="userPassword" name="userPassword" required minlength="8">
+            </div>
+
+            <div class="form-box">
+                <label for="userRepeatPassword"></label>
+                <input type="password" placeholder="Repetir Contraseña" id="userRepeatPassword" name="userRepeatPassword" required minlength="8">
+            </div>
+    
+            <div class="form-button">
+                <button type="submit">Registarse</button>
+            </div>
+
+            <div class="no-user">
+                <a href="/">Volver</a>
+            </div>
+    
+        </form>
+
+    </main>
+    
+</body>
+</html>
