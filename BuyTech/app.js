@@ -22,3 +22,12 @@ app.get('/header', (req, res) => res.sendFile(path.resolve(__dirname, 'views', '
 app.get('/footer', (req, res) => res.sendFile(path.resolve(__dirname, 'views', 'footer.html')))
 app.get('/footerEU', (req, res) => res.sendFile(path.resolve(__dirname, 'views', 'footerEU.html')))
 
+<<<<<<< HEAD
+=======
+
+
+
+/*EUGENIO*/
+/*algo*/
+/*mas algo*/
+>>>>>>> 14b78d815a1ccf3178cd331e10daa57e5eb36646
