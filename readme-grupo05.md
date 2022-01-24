@@ -14,7 +14,11 @@ o	New Balance (https://www.newbalance.com.ar/) 🡪por el diseño de la pági
 
 Para el diseño se definió un Logo con su correspondiente Isologo en positivo y negativo.
  
+<<<<<<< HEAD
 La tipografía del logo se realizó con la fuente Montserrat. Se recomienda la utilización de la fuente Barlow en la plataforma.
+=======
+La tipografía del logo se realizó con la fuente Montserrat. Se recomienda la utilización de la fuente Barlow en la web.
+>>>>>>> 380fc42a4bca927a42aec36897b857f7c016e759
 
 La paleta de colores definida será la siguiente.
  
