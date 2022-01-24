@@ -1,12 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0%;
 }
 main {
   font-family: Roboto, serif;
   color: #0158aa;
-
   box-sizing: border-box;
   margin: 0;
 }
