@@ -22,3 +22,8 @@ app.get('/header', (req, res) => res.sendFile(path.resolve(__dirname, 'views', '
 app.get('/footer', (req, res) => res.sendFile(path.resolve(__dirname, 'views', 'footer.html')))
 app.get('/footerEU', (req, res) => res.sendFile(path.resolve(__dirname, 'views', 'footerEU.html')))
 
+
+
+
+/*Facu*/
+/*Nueva linea en la 29*/
