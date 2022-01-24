@@ -1,8 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300&display=swap');
 
 header {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Barlow', sans-serif;
   display: flex;
   position: fixed;
   top: 0%;
