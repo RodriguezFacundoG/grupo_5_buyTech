@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300&display=swap');
 
 header {
+<<<<<<< HEAD
+  font-family: "Roboto", sans-serif;
+=======
   font-family: 'Barlow', sans-serif;
+>>>>>>> 380fc42a4bca927a42aec36897b857f7c016e759
   display: flex;
   position: fixed;
   top: 0%;
@@ -10,6 +14,7 @@ header {
   height: 12%;
   justify-content: space-around;
   align-items: center;
+  z-index: 2;
 }
 
 .contenedor {
