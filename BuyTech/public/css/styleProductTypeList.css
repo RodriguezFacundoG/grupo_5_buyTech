@@ -8,7 +8,6 @@ body {
 	 margin: 0;
 }
 
-
 header {
 	background: #0158aa;
 	position: sticky;
@@ -50,8 +49,8 @@ header img {
 	width: 55%;
 }
 
-/*MENU HAMBURGUESA */
 
+/*MENU HAMBURGUESA */
 nav ul {
 	display: none;
 } 
@@ -142,8 +141,8 @@ main h1 {
 }
 
 
-/* FOOTER */
 
+/* FOOTER */
 footer {
     width: auto;
     height: auto;
@@ -219,8 +218,8 @@ footer {
       }
   }
 
-  /* Imagenes logo redes */
 
+/* Imagenes logo redes */
   .footer-site-info-insta.instagram {   
     background-image: url(/imagenes/LogoInstagram.png);
   }
