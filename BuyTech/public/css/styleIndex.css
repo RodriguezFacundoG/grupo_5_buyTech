@@ -1,0 +1,27 @@
+
+
+
+footer {
+    background-color: 0158AA;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    bottom: 0;
+}
+
+.footer__logo {
+    width: 25%;
+}
+
+.footer__border-left {
+    width: 15%;
+    border: #000000 10px solid;
+    list-style: none;
+}
+
+.footer__extra {
+    width: 25%;
+    align-self: stretch;
+}
