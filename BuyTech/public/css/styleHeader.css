@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
 
 header {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   display: flex;
   position: fixed;
   top: 0%;
@@ -11,6 +11,7 @@ header {
   height: 12%;
   justify-content: space-around;
   align-items: center;
+  z-index: 2;
 }
 
 .contenedor {
