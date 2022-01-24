@@ -24,7 +24,3 @@ app.get('/footerEU', (req, res) => res.sendFile(path.resolve(__dirname, 'views',
 
 
 
-
-/*EUGENIO*/
-/*algo*/
-/*mas algo*/
