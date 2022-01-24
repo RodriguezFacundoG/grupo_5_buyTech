@@ -5,15 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BuyTech - Shop Cart</title>
-    <!-- poner ruta archivo CSS-->
     <!-- CSS -->
-    <link href="../public/css/" rel="stylesheet" type="type/css">
+    <link href="/css/LineamientosGenerales.css" rel="stylesheet" type="text/CSS">
+    <link href="/css/styleHeader.css" rel="stylesheet" type="text/CSS">
+    <link href="/css/styleProductCart.css" rel="stylesheet" type="text/CSS">
+    <link href="/css/styleFooterEU.css" rel="stylesheet" type="text/CSS">
     <!-- ICONOS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" type="text/css">
+ </head>
 
-</head>
-<body>
+ <body>
     <header>
+        <nav class="contenedor">
         <nav class="left-nav">
             <!--BURGER MENU-->
             <div class="burger-menu">
@@ -23,19 +26,18 @@
 
         <!--LOGO (está hecho link para que redirija al index)-->
         <div class="LOGO-up-nav"> 
-            <a href="index.html">
-                <img src="../public/imagenes/LogoBuyTech.png" alt="LOGO">
+            <a class="a-LOGO" href="index.html">
+                <img class="LOGO-up-img" src="/imagenes/LogoBuyTech.png" alt="LOGO">
             </a>
         </div>
 
         <nav class="right-nav">
             <div class="user-ico">
-                <i class="fas fa-user"></i>
-            </div>
-            <div class="cart-ico">
-                <i class="fas fa-shopping-cart"></i>
+                <div class="icono-indiv-user"><i class="fas fa-user"></i></div>
+                <div class="icono-indiv-cart"><i class="fas fa-shopping-cart"></i></div>
             </div>
         </nav>
+    </nav>
 
     </header>
     
@@ -44,23 +46,23 @@
 
         <section class="general-shopped"> 
             <div class="sub-ship-total">
-                <p>Subtotal</p>
-                <p>Shipping</p>
-                <p>Total Price</p>
+                <p>Subtotal</p><br>
+                <p>Shipping</p><br>
+                <p>Total Price</p><br>
             </div>
             <div class="money-calculator">
-                <p>XXX</p>
-                <p>XXX</p>
-                <p>XXX</p>
+                <p>XXX</p><br>
+                <p>XXX</p><br>
+                <p>XXX</p><br>
             </div>
 
         <!-- BOTONES CHECK-OUT Y CONTINUE-SHOPPING-->
             <div class="checkout-continue-buttons">
                 <div class="Checkout">
-                    <button>Check-out</button>
+                    <button class="checkout-button">Check-out</button>
                 </div>
                 <div class="continue-shopping">
-                    <button>Continue Shopping</button>
+                    <button class="continue-button">Continue Shopping</button>
                 </div>
             </div>
 
@@ -87,23 +89,22 @@
         </section>
     
     </main>
-
-    ><footer>
-        <div class="LOGO-down-nav">
-            <a href="index.html">
-                <img src="../public/imagenes/LogoBuyTech.png" alt="LOGO">
-            </a>
-        </div>
-        
-        <div class="REDES">
-            <img src="/grupo_5_buyTech/BuyTech/imagenes/LogoTwiter.png">
-            <img src="/grupo_5_buyTech/BuyTech/imagenes/LogoFaceBook.png">
-            <img src="/grupo_5_buyTech/BuyTech/imagenes/LogoInstagram.png">
-        </div>
+    <footer>
+        <div class="contenedor-bottom">
+            <div class="LOGO-down-nav">
+                <a class="a-LOGO" href="index.html">
+                    <img class="LOGO-down-img" src="/imagenes/LogoBuyTech.png" alt="LOGO">
+                </a>
+            </div>
+            <div class="REDES">
+                <img class="logo-twitter" src="/imagenes/LogoTwiter.png">
+                <img class="logo-face" src="/imagenes/LogoFaceBook.png">
+                <img class="logo-insta" src="/imagenes/LogoInstagram.png">
+            </div>
             
-
-        <div class="COPYRIGHT">
-            <p>TODOS LOS DERECHOS RESERVADOS BUTECH.COM.AR - 2022</p>
+            <div class="COPYRIGHT">
+                <p>TODOS LOS DERECHOS RESERVADOS BUYTECH.COM.AR - 2022</p>
+            </div>
         </div>
     </footer>
 
