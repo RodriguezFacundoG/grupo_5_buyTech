@@ -24,6 +24,20 @@ body{
 #carrouselImg{
     float: left;
 }
+ #btn-prev {
+  width: 171px;
+  height: 79px;
+  border-radius: 15px;
+  font-size: 32px;
+  margin: 10px;
+ }
+ #btn-next {
+   
+    border-radius: 15px;
+    font-size: 32px;
+    margin: 5px;
+    
+   }
 #slider section{
     justify-content: center;
     margin: 21px;   

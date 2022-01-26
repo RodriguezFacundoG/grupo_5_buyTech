@@ -6,14 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BuyTech - Product Details</title>
-    <!-- <link href="../public/css/" rel="stylesheet" type="type/css"> -->
+    <link href="/css/styleFooterEU.css" rel="stylesheet" type="text/CSS">
+    <link href="/css/styleHeader.css" rel="stylesheet" type="text/CSS">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" type="text/css">
     <!-- donde se llama a main.css -->
 <<<<<<< HEAD
     <link rel="stylesheet" href="/BuyTech/public/css/styleProductDetails.css">
 =======
-    <link rel="stylesheet" href="/css/productDetails.css">
+    <link rel="stylesheet" href="/css/styleProductDetails.css">
 >>>>>>> a6436f0aad3731c944828be23c4c9ceffe7d946d
-    <!-- Linkear Google Font -->
+    <!-- Fuentes de Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300&display=swap" rel="stylesheet">
@@ -24,13 +26,36 @@
 
 <body>
     <header>
-
+        <nav class="contenedor">
+            <nav class="left-nav">
+                <!--Menú hamburguesa-->
+                <div class="burger-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+    
+            <!--LOGO (está hecho link para que redirija al index)-->
+            <div class="LOGO-up-nav"> 
+                <a class="a-LOGO" href="index.html">
+                    <img class="LOGO-up-img" src="/imagenes/LogoBuyTech.png" alt="LOGO">
+                </a>
+            </div>
+    
+            <nav class="right-nav">
+                <div class="user-ico">
+                    <div class="icono-indiv-user"><i class="fas fa-user"></i></div>
+                    <div class="icono-indiv-cart"><i class="fas fa-shopping-cart"></i></div>
+                </div>
+            </nav>
+        </nav>
     </header>
     <main>
+         <!-- <Contiene las demás cajas dentro"> -->
         <section id="details">
             <div id="img">
                 <img src="https://picsum.photos/618/333" alt="Product Img">
             </div>
+            <!-- <Contiene las imagenes que deberian moverse al presionar los botones de avanzar y retroceder"> -->
             <div id="carrouselImg">
                 <div id="slider">
                     <section><img src="https://picsum.photos/107/86" alt="Product Img"></section>
@@ -52,7 +77,22 @@
         </section>
     </main>
     <footer>
-
+        <div class="contenedor-bottom">
+            <div class="LOGO-down-nav">
+                <a class="a-LOGO" href="index.html">
+                    <img class="LOGO-down-img" src="/imagenes/LogoBuyTech.png" alt="LOGO">
+                </a>
+            </div>
+            <div class="REDES">
+                <img class="logo-twitter" src="/imagenes/LogoTwiter.png">
+                <img class="logo-face" src="/imagenes/LogoFaceBook.png">
+                <img class="logo-insta" src="/imagenes/LogoInstagram.png">
+            </div>
+            
+            <div class="COPYRIGHT">
+                <p>TODOS LOS DERECHOS RESERVADOS BUYTECH.COM.AR - 2022</p>
+            </div>
+        </div>
     </footer>
 </body>
 
