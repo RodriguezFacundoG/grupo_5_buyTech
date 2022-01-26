@@ -3,27 +3,52 @@ body{
     box-sizing: border-box;
 }
 
-header nav {
-    background-color: #0158AA;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100vw;
-}
-.logo {
-    width: 43%;
-}
-.buger-menu {
-    width: 20%;
-}
-.about-me{
-    width: 20%;
+header {
+	background: #0158aa;
+	position: sticky;
+	width: 100vw;
+	height: 18vw;
+	padding: 15px;
+	z-index: 1;
+	justify-content: space-between;
+	display: flex;
+	top:0;
+	color: white;
 }
 
+.burger-menu {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
+.burger-menu i {
+	font-size: 20px;
+}
+.header-right {
+	width: 11vw;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
 
-header section.slider {
+.header-right i {
+	font-size: 15px;
+}
+
+.fas-fa-user {
+	margin-left: 2px;
+}
+
+header img {
+	width: 55%;
+}
+
+/*MENU HAMBURGUESA */
+nav ul {
+	display: none;
+} 
+section.slider {
     background-color: #EDEEF0;
     display: flex;
     justify-content: space-between;
@@ -31,6 +56,8 @@ header section.slider {
     width: 100vw;
     padding: 16px 0px;
 }
+
+
 .slider img {
     width: 80%;
     margin-bottom: 16px;
@@ -51,10 +78,115 @@ header section.slider {
 }
 
 .slider article {
-    display: flex;
+    /* display: flex;
     align-items: center;
     justify-content: space-around;
+    flex-wrap: wrap; */
+}
+
+
+
+
+main {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+main section {
+    /* width: 100vw; */
+}
+
+/* seccion 1 */
+.latest {
+
+}
+
+.tarjeta-latest {
+    background-color: #EDEEF0;
+    width: 70%;
+    border-radius: 10px;
+    text-align: center;
+    margin: auto;
+}
+.tarjeta-latest img {
+	width: 85%;
+	height: auto;
+	margin-top: 15px;
+	border-radius: 5px;
+	
+}
+.latest p {
+    padding: 10px;
+    font-size: 22px;
+    margin-top: 0;
+    font-weight: 800;
+}
+
+/* Seccion 2 */
+.top-sales{
+    display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
+}
+.top-sales h3 {
+    width: 100vw;
+}
+.tarjeta-top-sales {
+    background-color: #EDEEF0;
+	width: 45%;
+	border-radius: 10px;
+	text-align: center;
+	margin: auto;
+	margin-top: 15px;
+}
+
+.tarjeta-top-sales img {
+    width: 85%;
+	height: auto;
+	margin-top: 15px;
+	border-radius: 5px;
+	
+}
+
+.tarjeta-top-sales p {
+    margin-bottom: 5px;
+	font-size: 13px;
+	margin-top: 5px;
+}
+
+.special-discounts {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.special-discounts h3 {
+    width: 100vw;
+}
+.tarjeta-special-discounts {
+    background-color: #EDEEF0;
+	width: 45%;
+	border-radius: 10px;
+	text-align: center;
+	margin: auto;
+	margin-top: 15px;
+}
+
+.tarjeta-special-discounts {
+    width:
+}
+
+.tarjeta-top-sales img {
+    width: 85%;
+	height: auto;
+	margin-top: 15px;
+	border-radius: 5px;
+	
+}
+
+.tarjeta-top-sales p {
+    margin-bottom: 5px;
+	font-size: 13px;
+	margin-top: 5px;
 }
 
 

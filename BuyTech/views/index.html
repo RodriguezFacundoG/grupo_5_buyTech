@@ -15,20 +15,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300&display=swap" rel="stylesheet">
 
 </head>
-<body>
-    
+<body>    
     <header>
-        <nav>
-            <div class="burger-menu">
-                <i class="fas fa-bars" ></i>
-            </div>
-            <img class="logo" src="./imagenes/LogoBuyTech.png" alt="logotipo_buytech">
-            <div class="about-me">
-                <i class="fas fa-user">user</i>
-                <i class="fas fa-shopping-cart">cart</i>
-            </div>            
-        </nav>
-        <!-- <h2>The tecnology's vault (SLOGAN)</h2> -->
+
+        <!-- Menu hamburguesa -->
+                <div class="burger-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <nav>	
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Ofertas</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </nav>
+        
+        <!-- Header right -->
+                <img class="logo" src="/imagenes/LogoBuyTech.png" alt="Logo BuyTech">
+                <div class="header-right">
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-user"></i>
+                </div>
+    </header> 
+
+    
+    <main>
         <section class="slider">
             <article class="slider__toleft">
                 <button class="fas fa-chevron-left">
@@ -54,30 +66,42 @@
             </article>
             
         </section>
-    </header>
+       <section class="latest">
+           <h3>The latest</h3>
+           <article class="tarjeta-latest">
+               <img src="/imagenes/productos/img-samsung-galaxy-s10.jpg" alt="img producto">
+               <p>Product Name</p>                
+           </article>
+       </section>
 
-    <section class="NewArrivals"></section>
-    <main>
-        <section>
-            <h3>The latest</h3>
-            <article class="main__article-thelatest">
-                <img src="" alt="">
-                <p>Product Name</p>            
-            </article>
-        </section>
+       <section class="top-sales">
+           <h3>Top Sales</h3>
+           <article class="tarjeta-top-sales">
+               <img src="/imagenes/productos/img-samsung-galaxy-s10.jpg" alt="img producto">
+               <p>Product Name</p>                
+           </article>
+           <article class="tarjeta-top-sales">
+            <img src="/imagenes/productos/img-samsung-galaxy-s10.jpg" alt="img producto">
+            <p>Product Name</p>                
+        </article>       
+
+       </section>
+
+       <!-- <section class="special-discounts">
+           <h3>Special Discounts</h3>
+           <article class="tarjeta-special-discounts">
+               <img src="/imagenes/productos/img-samsung-galaxy-s10.jpg" alt="img producto">
+               <p>Product Name</p>                
+           </article>
+           <article class="tarjeta-special-discounts">
+            <img src="/imagenes/productos/img-samsung-galaxy-s10.jpg" alt="img producto">
+            <p>Product Name</p>                
+        </article>
+       </section>          -->
+
+        
     
-        <section>
-            <h3>Special Discounts</h3>
-            <article class="main__special-discounts">
-                <img src="" alt="">
-                <p>Product Name</p>            
-            </article>
-    
-            <article class="main__special-discounts">
-                <img src="" alt="">
-                <p>Product Name</p>            
-            </article>
-        </section>
+        
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum quasi rerum ducimus vero mollitia ab magni numquam molestias eum adipisci amet ut, consequuntur eius consectetur sint soluta expedita itaque. Quas.</p>
 
     </main>   
@@ -96,6 +120,7 @@
                 <li>link 3</li>
             </ul>
         </article>
+        
 
         <article class="footer__contact footer__border-left">
             <h4>Contact</h4>
