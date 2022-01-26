@@ -16,13 +16,10 @@ app.get('/register', (req, res) => res.sendFile(path.resolve(__dirname, 'views',
 app.get('/login', (req, res) => res.sendFile(path.resolve(__dirname, 'views', 'login.html')))
 
 
-/* testeo de HEADERS*/ 
+/* testeo de HEADER*/ 
 app.get('/header', (req, res) => res.sendFile(path.resolve(__dirname, 'views', 'header.html')))
+
 /* testeo de FOOTERS*/ 
 app.get('/footer', (req, res) => res.sendFile(path.resolve(__dirname, 'views', 'footer.html')))
 app.get('/footerEU', (req, res) => res.sendFile(path.resolve(__dirname, 'views', 'footerEU.html')))
 
-
-/*EUGENIO*/
-/*algo*/
-/*mas algo*/
