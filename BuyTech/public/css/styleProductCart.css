@@ -92,7 +92,7 @@ section > div > p {
 .p-data {
   display: block;
   margin: 0px;
-  font-size: 1.4em;
+  font-size: 0.9em;
 }
 .remove-button {
   width: 40%;
@@ -101,10 +101,10 @@ section > div > p {
   justify-content: center;
   align-items: center;
 }
-.fa-trash-alt {
+.fa-trash-alt:before {
   display: block;
   width: 100%;
-  font-size: 1.2vw;
+  font-size: 0.7em;
   text-align: center;
 }
 /*separador*/
@@ -112,6 +112,7 @@ section > div > p {
   display: none;
 }
 .money-calculator-desktop {
+
   display: none;
 }
 
@@ -162,7 +163,7 @@ section > div > p {
     font-size: 2rem;
   }
 
-  }
+ 
   .checkout-button,
   .continue-button {
     position: relative;
@@ -188,8 +189,7 @@ section > div > p {
     top: 23.5vh;
   }
   .p-data {
-    font-size: 1.4 rem;
+    font-size: 1.4em;
   }
  
-
 }
