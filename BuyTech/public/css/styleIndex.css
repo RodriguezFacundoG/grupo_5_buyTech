@@ -2,8 +2,72 @@ body{
     font-family: 'Barlow', sans-serif;
     box-sizing: border-box;
 }
+
+header nav {
+    background-color: #0158AA;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100vw;
+}
+.logo {
+    width: 43%;
+}
+.buger-menu {
+    width: 20%;
+}
+.about-me{
+    width: 20%;
+}
+
+
+
+header section.slider {
+    background-color: #EDEEF0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    padding: 16px 0px;
+}
+.slider img {
+    width: 80%;
+    margin-bottom: 16px;
+}
+.slider p{
+    margin: 0px;
+    text-align: center;
+}
+
+.slider__toleft,
+.slider__toright {
+    width: 10%;
+}
+
+.slider button {    
+    font-size: 20px;
+    border: none;
+}
+
+.slider article {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+
+
+
+
+
+
+
+
 footer {
-    background-color: 0158AA;
+    background-color: #0158AA;
     color: white;
     display: flex;
     width: 100vw;
