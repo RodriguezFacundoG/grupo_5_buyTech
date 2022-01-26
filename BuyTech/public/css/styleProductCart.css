@@ -57,7 +57,7 @@ section > div > p {
 .shopped-article {
   width: 80vw;
   margin: auto;
-  margin-top: 2vh;
+  margin-top: 4vh;
   margin-bottom: 2vh;
 }
 .article-1 {
@@ -92,7 +92,7 @@ section > div > p {
 .p-data {
   display: block;
   margin: 0px;
-  font-size: 14px;
+  font-size: 0.9em;
 }
 .remove-button {
   width: 40%;
@@ -101,16 +101,18 @@ section > div > p {
   justify-content: center;
   align-items: center;
 }
-.fa-trash-alt {
+.fa-trash-alt:before {
   display: block;
-  text-align: center;
   width: 100%;
+  font-size: 0.7em;
+  text-align: center;
 }
 /*separador*/
 .separador-desktop {
   display: none;
 }
-.money-calculator-desktop{
+.money-calculator-desktop {
+
   display: none;
 }
 
@@ -133,7 +135,6 @@ section > div > p {
     padding-bottom: 50%;
     margin-top: 8vh;
     box-shadow: 9px 0px 21px 0px rgba(0, 0, 0, 0.75);
-
   }
   .separador-desktop {
     display: block;
@@ -143,39 +144,52 @@ section > div > p {
     height: 70vh;
     background-color: blue;
   }
+   /*ARTICULO*/
   .article-1 {
-    width: 60%;
-    margin-left: 5vw;
+    width: 50%;
+    margin-left: 10vw;
+    margin-top: 4vh;
+  }
+  .sub-ship-total{
+    display: block;
+    position: fixed;
+    top: 22vh;
+    right: -1vw;
+    text-align: justify;
+    font-size: 2rem;
 
   }
-.sub-ship-total,
-.money-calculator-desktop{
-  font-size: 2rem;
-}
+    .money-calculator-desktop {
+    font-size: 2rem;
+  }
+
+ 
   .checkout-button,
   .continue-button {
     position: relative;
-    top: 4vh;
+    top: 40vh;
     width: 9vw;
     height: 6vh;
+    font-size: 1.1rem;
   }
-  .continue-button{
+  .continue-button {
     background-color: white;
-    color: #0158aa;;
+    color: #0158aa;
+    border: solid black 1px;
+    margin-top: 1vh;
   }
 
   .money-calculator {
     display: none;
-    
   }
-  .money-calculator-desktop{
+  .money-calculator-desktop {
     display: block;
     position: fixed;
     right: 12vw;
-    top: 22.7vh
-    
+    top: 23.5vh;
   }
-  .p-data{
-    font-size: 1.4  rem;
+  .p-data {
+    font-size: 1.4em;
   }
+ 
 }
