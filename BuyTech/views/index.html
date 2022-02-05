@@ -15,31 +15,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300&display=swap" rel="stylesheet">
 
 </head>
-<body>    
-    <header>
-
-        <!-- Menu hamburguesa -->
-                <div class="burger-menu">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <nav>	
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Servicios</a></li>
-                        <li><a href="#">Ofertas</a></li>
-                        <li><a href="#">Contacto</a></li>
-                    </ul>
-                </nav>
-        
-        <!-- Header right -->
-                <img class="logo" src="/imagenes/LogoBuyTech.png" alt="Logo BuyTech">
-                <div class="header-right">
-                    <i class="fas fa-shopping-cart"></i>
-                    <i class="fas fa-user"></i>
-                </div>
-    </header> 
-
+<body>
     
+    <header>
+        <nav class="contenedor">
+        <nav class="left-nav">
+            <!--BURGER MENU-->
+            <div class="burger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+
+        <!--LOGO (está hecho link para que redirija al index)-->
+        <div class="LOGO-up-nav"> 
+            <a class="a-LOGO" href="index.html">
+                <img class="LOGO-up-img" src="/imagenes/LogoBuyTech.png" alt="LOGO">
+            </a>
+        </div>
+
+        <nav class="right-nav">
+            <div class="user-ico">
+                <div class="icono-indiv-user"><i class="fas fa-user"></i></div>
+                <div class="icono-indiv-cart"><i class="fas fa-shopping-cart"></i></div>
+            </div>
+        </nav>
+    </nav>
+
+    </header>
+
+    <section class="NewArrivals"></section>
     <main>
         <section class="slider">
             <article class="slider__toleft">
@@ -66,42 +70,27 @@
             </article>
             
         </section>
-       <section class="latest">
-           <h3>The latest</h3>
-           <article class="tarjeta-latest">
-               <img src="/imagenes/productos/img-samsung-galaxy-s10.jpg" alt="img producto">
-               <p>Product Name</p>                
-           </article>
-       </section>
 
-       <section class="top-sales">
-           <h3>Top Sales</h3>
-           <article class="tarjeta-top-sales">
-               <img src="/imagenes/productos/img-samsung-galaxy-s10.jpg" alt="img producto">
-               <p>Product Name</p>                
-           </article>
-           <article class="tarjeta-top-sales">
-            <img src="/imagenes/productos/img-samsung-galaxy-s10.jpg" alt="img producto">
-            <p>Product Name</p>                
-        </article>       
-
-       </section>
-
-       <!-- <section class="special-discounts">
-           <h3>Special Discounts</h3>
-           <article class="tarjeta-special-discounts">
-               <img src="/imagenes/productos/img-samsung-galaxy-s10.jpg" alt="img producto">
-               <p>Product Name</p>                
-           </article>
-           <article class="tarjeta-special-discounts">
-            <img src="/imagenes/productos/img-samsung-galaxy-s10.jpg" alt="img producto">
-            <p>Product Name</p>                
-        </article>
-       </section>          -->
-
-        
+        <section>
+            <h3>The latest</h3>
+            <article class="main__article-thelatest">
+                <img src="" alt="">
+                <p>Product Name</p>            
+            </article>
+        </section>
     
-        
+        <section>
+            <h3>Special Discounts</h3>
+            <article class="main__special-discounts">
+                <img src="" alt="">
+                <p>Product Name</p>            
+            </article>
+    
+            <article class="main__special-discounts">
+                <img src="" alt="">
+                <p>Product Name</p>            
+            </article>
+        </section>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum quasi rerum ducimus vero mollitia ab magni numquam molestias eum adipisci amet ut, consequuntur eius consectetur sint soluta expedita itaque. Quas.</p>
 
     </main>   
@@ -120,7 +109,6 @@
                 <li>link 3</li>
             </ul>
         </article>
-        
 
         <article class="footer__contact footer__border-left">
             <h4>Contact</h4>
