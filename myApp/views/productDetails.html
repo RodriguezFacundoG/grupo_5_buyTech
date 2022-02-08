@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuyTech - Product Details</title>
+    <link href="/css/styleFooterEU.css" rel="stylesheet" type="text/CSS">
+    <link href="/css/styleHeader.css" rel="stylesheet" type="text/CSS">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- donde se llama a main.css -->
+    <link rel="stylesheet" href="/BuyTech/public/css/styleProductDetails.css">
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300&display=swap" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+    <header>
+        <nav class="contenedor">
+            <nav class="left-nav">
+                <!--BURGER MENU-->
+                <div class="burger-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+    
+            <!--LOGO (está hecho link para que redirija al index)-->
+            <div class="LOGO-up-nav"> 
+                <a class="a-LOGO" href="index.html">
+                    <img class="LOGO-up-img" src="/images/LogoBuyTech.png" alt="LOGO">
+                </a>
+            </div>
+    
+            <nav class="right-nav">
+                <div class="user-ico">
+                    <div class="icono-indiv-user"><i class="fas fa-user"></i></div>
+                    <div class="icono-indiv-cart"><i class="fas fa-shopping-cart"></i></div>
+                </div>
+            </nav>
+        </nav>
+    </header>
+
+    <main>
+        <div class="product-content">
+            <div class="product-image">
+                <img class="image" src="/imagenes/JBL_FLIP6.png" alt="No image">
+            </div>
+            <div class="main-info">
+                <h3 class="product-name">JBL Flip 6</h3>
+                <p class="product-description">Portable Waterproof Speaker</p>
+                <p class="product-price">$25.800</p>
+                <p class="product-color">Red</p>
+            </div>
+            <div class="product-properties">
+                <ul class="list-properties">
+                    <li><i class="far fa-check-circle"></i><p>Sound output: 20 Watt</p></li>
+                    <li><i class="far fa-check-circle"></i><p>Size: Small (4-8 in)</p></li>
+                    <li><i class="far fa-check-circle"></i><p>Music playing time: 12hrs</p></li>
+                </ul>
+            </div>
+            <!--ADD TO CART for Desktop resolution-->
+            <div class="product-add-to-cart">
+                <div class="button-container">
+                    <button type="submit">
+                        <p><i class="fas fa-shopping-cart"></i>Add to cart</p>
+                    </button>
+                </div>
+                <div class="product-quantity">
+                    <input class="input-quatity" type="number" placeholder="1" id="quantity" name="quantity">
+                    <div class="spinner">
+                        <p class="add-quatity"><i class="fas fa-plus"></i></p>
+                        <p class="sub-quatity"><i class="fas fa-minus"></i></p>
+                    </div>
+                </div>
+            </div>
+            <!--ADD TO CART for Mobile resolution-->
+            <div class="bottom-bar">
+                <div class="product-add-to-cart">
+                    <div class="button-container">
+                        <button type="submit">
+                            <p>Add to cart</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="contenedor-bottom">
+            <div class="LOGO-down-nav">
+                <a class="a-LOGO" href="index.html">
+                    <img class="LOGO-down-img" src="/imagenes/LogoBuyTech.png" alt="LOGO">
+                </a>
+            </div>
+            <div class="REDES">
+                <img class="logo-twitter" src="/imagenes/LogoTwiter.png">
+                <img class="logo-face" src="/imagenes/LogoFaceBook.png">
+                <img class="logo-insta" src="/imagenes/LogoInstagram.png">
+            </div>
+            
+            <div class="COPYRIGHT">
+                <p>TODOS LOS DERECHOS RESERVADOS BUYTECH.COM.AR - 2022</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
