@@ -26,46 +26,73 @@
    <%- include('./partials/header.ejs') %>
 
     <main>
-        <div class="product-content">
+        <div class="product-container">
             <div class="product-image">
                 <img class="image" src="/images/JBL_FLIP6.png" alt="No image">
             </div>
-            <div class="main-info">
+            <div class="product-image-rows">
+                <div class="one-image-rows">
+                    <a href="/">
+                        <img src="/images/productos/JBL_FLIP6_1.png" alt="no-image" class="small-image">
+                    </a>
+                </div>
+                <div class="one-image-rows">
+                    <a href="/">
+                        <img src="/images/productos/JBL_FLIP6_2.png" alt="no-image" class="small-image">
+                    </a>
+                </div>
+                <div class="one-image-rows">
+                    <a href="/">
+                        <img src="/images/productos/JBL_FLIP6_3.png" alt="no-image" class="small-image">
+                    </a>
+                </div>
+                <div class="one-image-rows">
+                    <a href="/">
+                        <img src="/images/productos/JBL_FLIP6_4.png" alt="no-image" class="small-image">
+                    </a>
+                </div>
+            </div>
+            <div class="product-info-name">
                 <h3 class="product-name">JBL Flip 6</h3>
+            </div>
+            <div class="product-info-description">
                 <p class="product-description">Portable Waterproof Speaker</p>
+            </div>
+            <div class="product-info-price">
                 <p class="product-price">$25.800</p>
-                <p class="product-color">Red</p>
             </div>
             <div class="product-properties">
                 <ul class="list-properties">
+                    <li><i class="far fa-check-circle"></i><p>Color: Blue</p></li>
                     <li><i class="far fa-check-circle"></i><p>Sound output: 20 Watt</p></li>
                     <li><i class="far fa-check-circle"></i><p>Size: Small (4-8 in)</p></li>
                     <li><i class="far fa-check-circle"></i><p>Music playing time: 12hrs</p></li>
                 </ul>
             </div>
-            <!--ADD TO CART for Desktop resolution-->
-            <div class="product-add-to-cart">
-                <div class="button-container">
-                    <button type="submit">
-                        <p><i class="fas fa-shopping-cart"></i>Add to cart</p>
-                    </button>
+            <div class="product-quantity">
+                <div class="quantity-text">
+                    <p>Quantity</p>
                 </div>
-                <div class="product-quantity">
-                    <input class="input-quatity" type="number" placeholder="1" id="quantity" name="quantity">
-                    <div class="spinner">
-                        <p class="add-quatity"><i class="fas fa-plus"></i></p>
-                        <p class="sub-quatity"><i class="fas fa-minus"></i></p>
-                    </div>
+                <div class="quantity-number">
+                    <select name="selected-quantity" id="selected-quantity">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
                 </div>
             </div>
-            <!--ADD TO CART for Mobile resolution-->
-            <div class="bottom-bar">
-                <div class="product-add-to-cart">
-                    <div class="button-container">
-                        <button type="submit">
-                            <p>Add to cart</p>
-                        </button>
-                    </div>
+            <div class="add-to-cart">
+                <div class="button-container">
+                    <button type="submit">
+                        <p>Add to cart</p>
+                    </button>
                 </div>
             </div>
         </div>
