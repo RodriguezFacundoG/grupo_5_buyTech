@@ -1,25 +1,32 @@
-<header>
-    <nav class="contenedor">
-        <nav class="left-nav">
-            <!--BURGER MENU-->
-            <div class="burger-menu">
-                <i class="fas fa-bars"></i>
-            </div>
-        </nav>
+<header class="header">
 
-        <!-- LOGO (está hecho link para que redirija al index)-->
-        <div class="LOGO-up-nav"> 
-            <a class="a-LOGO" href="index.html">
-                <img class="LOGO-up-img" src="/images/LogoBuyTech.png" alt="LOGO">
-            </a>
+    <!-- Burger menu -->
+    <nav class="header__burger-menu">
+        <i class="fas fa-bars"></i>
+    </nav>
+    
+    <!-- Imagen -->
+    <div class="header__img-container">
+        <a href="/"><img src="/images/LogoBuyTech.png" alt="LOGO" class="header__img"></a>
+    </div>
+
+    <!--Barrra de busqueda  -->
+    <nav class="header__searchbar">        
+        <div class="header__searchbar--background">
+            <input type="text" placeholder="Introduce un término de búsqueda">
+            <i class="fas fa-search"></i>            
         </div>
-
-        <nav class="right-nav">
-            <div class="user-ico">
-                <div class="icono-indiv-user"><i class="fas fa-user"></i></div>
-                <div class="icono-indiv-cart"><i class="fas fa-shopping-cart"></i></div>
-            </div>
-        </nav>
     </nav>
 
+    <!-- Nav de user y cart -->
+    <nav class="header__about-me">            
+        <a href="/login">
+            <span class="nav-personal__text">User</span>
+            <i class="fas fa-user"></i>
+        </a>
+        <a href="/productCart">
+            <span class="nav-personal__text">Cart</span>    
+            <i class="fas fa-shopping-cart"></i>
+        </a>
+    </nav>    
 </header>
