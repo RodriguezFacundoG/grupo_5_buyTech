@@ -24,35 +24,36 @@
     <%- include('./partials/header.ejs') %>
 
     <main>
-        <h3 class="register-title">
-            Creá tu ID de Usuario
-        </h3>
-    
-        <form action="/" method="GET" class="form-complete">
+        <div class="register-container">
+            <div class="register-title">
+                <h3 class="register">Creá tu ID de Usuario</h3>
+            </div>
             <div class="form-box">
-                <label for="userMail"></label>
-                <input type="mail" placeholder="example@mail.com" id="userMail" name="userMail" required minlength="7">
+                <form action="/" method="GET" class="form-complete">
+                    <label for="userMail"></label>
+                    <input type="mail" placeholder="example@mail.com" id="userMail" name="userMail">
+                </form>
             </div>
     
             <div class="form-box">
-                <label for="userPassword"></label>
-                <input type="password" placeholder="Contraseña" id="userPassword" name="userPassword" required minlength="8">
+                <form action="/" method="GET" class="form-complete">
+                    <label for="userPassword"></label>
+                    <input type="password" placeholder="Password" id="userPassword" name="userPassword">
+                </form>
             </div>
-
             <div class="form-box">
-                <label for="userRepeatPassword"></label>
-                <input type="password" placeholder="Repetir Contraseña" id="userRepeatPassword" name="userRepeatPassword" required minlength="8">
+                <form action="/" method="GET" class="form-complete">
+                    <label for="userRepeatPassword"></label>
+                    <input type="password" placeholder="Repeat Password" id="userRepeatPassword" name="userRepeatPassword">
+                </form>
             </div>
-    
             <div class="form-button">
-                <button type="submit">Registarse</button>
+                <button type="submit">Next</button>
             </div>
-
             <div class="no-user">
-                <a href="/">Volver</a>
+                <a href="/">Back</a>
             </div>
-    
-        </form>
+        </div>
     </main>
 
  <!-- FOOTER -->
