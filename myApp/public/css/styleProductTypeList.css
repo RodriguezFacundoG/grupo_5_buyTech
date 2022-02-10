@@ -8,7 +8,7 @@ body {
 	 margin: 0;
 }
 
-header {
+/* header {
 	background: #0158aa;
 	position: sticky;
 	width: 100vw;
@@ -51,9 +51,9 @@ header img {
 
 
 /*MENU HAMBURGUESA */
-nav ul {
+/* nav ul {
 	display: none;
-} 
+}   */
 
 main {
 	position: relative;
@@ -276,7 +276,7 @@ main h1 {
 
 /* DESKTOP */
     @media (min-width: 769px) {
-      header {
+      /* header {
         background: #0158aa;
         position: sticky;
         width: 100vw;
@@ -315,13 +315,13 @@ main h1 {
         width: 25%;
         height: 120%;
         margin-right: 10.5%;
-      }
+      } */
       
       
       /*MENU HAMBURGUESA */
-      nav ul {
+      /* nav ul {
         display: none;
-      } 
+      }  */
       
       main {
         position: relative;
