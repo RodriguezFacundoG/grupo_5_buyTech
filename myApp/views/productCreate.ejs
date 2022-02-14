@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product_Create</title>
+
+        <!-- Linkear el CSS -->
+        <link href="/css/styleProductCreate.css" rel="stylesheet" type="text/css">
+        <!-- Linkear Google Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&family=Roboto&display=swap" rel="stylesheet">
+    
+        <!-- Linkear íconos -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+</head>
+<body>
+    <main>
+        <div class="product_create_container">
+            <div class="create_title_main">
+                <h1 class="form_title">Create/Edit a Product</h1>
+            </div>
+            <div class="create_requests">
+                <form class="create_form" action="#" method="POST"></form>
+                    <div class="create_title_required">
+                        <p class="form_required">Required *</p>
+                    </div>
+                    <div class="form_product_name">
+                        <label for="create_form_product_name">Product Name *</label>
+                        <input class="form_text" type="text" name="product_name" id="create_form_product_name" maxlength="35">
+                    </div>
+                    <div class="form_product_description">
+                            <label for="create_form_product_description">Description *</label>
+                            <input class="form_text" type="text" name="product_description" id="create_form_product_description" maxlength="65">
+                    </div>
+                    <div class="form_product_image">
+                            <label for="create_form_product_image">Image *</label>
+                            <input class="form_attachement" type="file" name="product_image" id="create_form_product_image" accept="image/png, image/jpeg">
+                    </div>
+                    <div class="form_product_category">
+                            <label for="create_form_product_category">Category *</label>
+                            <select class="form_select" name="product_category" id="create_form_product_category">
+                                <option value disabled selected hidden>Select:</option>
+                                <option value="audio">Audio</option>
+                                <option value="computer">Computer</option>
+                                <option value="smartphone">Smartphone</option>
+                                <option value="tablet">Tablet</option>
+                                <option value="accesoties">Accesories</option>
+                            </select>
+                    </div>
+                    <div class="form_product_color">
+                        <label for="create_form_product_color">Color</label>
+                        <input class="form_text" type="text" name="product_color" id="create_form_product_color" maxlength="15">
+                    </div>
+                    <div class="form_product_weight">
+                        <label for="create_form_product_weight">Weight *</label>
+                        <input class="form_number" type="number" name="product_weight" id="create_form_product_weight" maxlength="3">
+                    </div>
+                    <div class="form_product_size">
+                        <label for="create_form_product_size">Size *</label>
+                        <input class="form_text" type="text" name="product_size" id="create_form_product_size" maxlength="35">
+                    </div>
+                    <div class="form_product_price">
+                        <label for="create_form_product_price">Price *</label>
+                        <input class="form_number" type="number" name="product_price" id="create_form_product_price" maxlength="7">
+                    </div>
+                    <div class="form-button">
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
