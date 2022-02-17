@@ -1,18 +1,16 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var productCart = require('./routes/productCart');
-var productCreate = require('./routes/productCreate');
-var productDetails = require('./routes/productDetails');
-var productTypeList = require('./routes/productTypeList');
-var login = require('./routes/login');
-var register = require('./routes/register');
+//ROUTERs
+const indexRouter = require('./routes/indexRouter');
+const productsRouter=require('./routes/productsRouter');
+const productsCartRouter = require('./routes/productsCartRouter');
+// const usersRouter = require('./routes/usersRouter');
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -24,13 +22,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//a Router
 app.use('/', indexRouter);
-app.use('/productCart', productCart);
-app.use('/productCreate', productCreate);
-app.use('/productDetails', productDetails);
-app.use('/productTypeList', productTypeList);
-app.use('/login', login);
-app.use('/register', register);
+app.use('/productTypeList', productsRouter);
+app.use('/productDetails', productsRouter);
+app.use('/productCart', productsCartRouter);
+app.use('/productCreate', productsRouter);
+// app.use('/productEdit', productsRouter); OJO! HAY QUE HACERLO
+//app.use('/login', usersRouter);
+//app.use('/register', usersRouter);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
