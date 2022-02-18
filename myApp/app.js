@@ -27,8 +27,8 @@ app.use('/', indexRouter);
 app.use('/productTypeList', productsRouter);
 app.use('/productDetails', productsRouter);
 app.use('/productCart', productsCartRouter);
-app.use('/productCreate', productsRouter);
-// app.use('/productEdit', productsRouter); OJO! HAY QUE HACERLO
+//app.use('/productCreate', productsRouter);
+// app.use('/productEdit', productsRouter);
 //app.use('/login', usersRouter);
 //app.use('/register', usersRouter);
 
