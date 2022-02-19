@@ -4,7 +4,7 @@ const fs = require ('fs');
  
 
 //datos
-const productData = require ('../data/productsData')
+const productData = require ('../data/productsData');
 
 
 const productsController= {
@@ -18,15 +18,14 @@ details: (req,res)=>{
 create: (req,res)=>{
     res.render('productCreate')
 },
-store: (req,res)=>{
-},
 edit: (req,res)=>{
+    res.render('productEdit')
 },
-upgrade: (req,res)=>{
+cart: (req,res)=>{
+    res.render('productCart')
 },
-delete: (req,res)=>{
-},
-}
+
+};
 
 
-module.exports= productsController
+module.exports= productsController;
