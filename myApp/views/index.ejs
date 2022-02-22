@@ -29,25 +29,25 @@
                 <a href="/product/1">
                     <img src="/images/productos/Types/cels.jpg" alt="Cels">
                 </a>
-                <p>Product Type 01</p>
+                <p>Celulares</p>
             </article>
             <article class="slider__category">
                 <a href="/product/2">
                     <img src="/images/productos/Types/tablets.jpeg" alt="Tablets">
                 </a>
-                <p>Product Type 02</p>
+                <p>Tablets</p>
             </article>
             <article class="slider__category">
                 <a href="/product/3">
                     <img src="/images/productos/Types/laptops2.webp" alt="Laptops">
                 </a>    
-                <p>Product Type 03</p>
+                <p>Laptops</p>
             </article>
             <article class="slider__category"> 
                 <a href="/product/4">
                     <img src="/images/productos/Types/accesories.jpeg" alt="Accesories">
                 </a>
-                <p>Product Type 04</p>
+                <p>Accesories</p>
             </article>
             <article class="slider__toright">
                 <button class="fas fa-chevron-right">
@@ -55,44 +55,41 @@
         </section>
 
         <div class="container">
-
-            <section class="the-latest main-sections">
-                <h3 class="main-sections__title">The latest</h3>
-    
-                <article class="product the-latest__product">
-                    <img src="/images/productos/img-samsung-galaxy-s10.jpg" alt="" class="product__img">
-                    <p class="product__name">Product Name</p>            
-                </article>
-            </section>
+                <section class="the-latest main-sections">
+                    <h3 class="main-sections__title">The latest</h3>
+                    <% productData.forEach(product =>  {  %>
+                        <% if (product.latest == true) { %>
+                            <article class="product the-latest__product">
+                                <img src="/images/productos/<%= product.img %>" alt="" class="product__img">
+                                <p class="product__name"><%= product.name %> </p>            
+                            </article>
+                        <%}%>
+                    <%})%>
+                </section>
+            
+                <section class="special-discounts main-sections">
+                    <h3 class="main-sections__title">Special Discounts</h3>
+                    <% productData.forEach(product =>  {  %> 
+                        <% if (product.discount == true) { %>   
+                            <article class="product special-discounts__product">
+                                <img src="/images/productos/<%= product.img %>" alt="" class="product__img">
+                                <p class="product__name"><%=product.name %></p>             
+                            </article>
+                        <%}%>
+                    <%})%>
+                </section>
         
-            <section class="special-discounts main-sections">
-                <h3 class="main-sections__title">Special Discounts</h3>
-    
-                <article class="product special-discounts__product">
-                    <img src="/images/productos/img-samsung-galaxy-s10.jpg" alt="" class="product__img">
-                    <p class="product__name">Product Name</p>             
-                </article>
-        
-                <article class="product special-discounts__product">
-                    <img src="/images/productos/img-samsung-galaxy-s10.jpg" alt="" class="product__img">
-                    <p class="product__name">Product Name</p>              
-                </article>
-            </section>
-    
-            <section class="top-sales main-sections">
-                <h3 class="main-sections__title">Top Sales</h3>
-    
-                <article class="product top-sales__product">
-                    <img src="/images/productos/img-samsung-galaxy-s10.jpg" alt="" class="product__img">
-                    <p class="product__name">Product Name</p>  
-                </article>
-        
-                <article class="product top-sales__product">
-                    <img src="/images/productos/img-samsung-galaxy-s10.jpg" alt="" class="product__img">
-                    <p class="product__name">Product Name</p>             
-                </article>
-            </section>
-
+                <section class="top-sales main-sections">
+                    <h3 class="main-sections__title">Top Sales</h3>
+                    <% productData.forEach(product =>  {  %>     
+                        <% if (product.top == true) { %>      
+                            <article class="product top-sales__product">
+                                <img src="/images/productos/<%= product.img %>" alt="" class="product__img">
+                                <p class="product__name"><%=product.name %></p>  
+                            </article>
+                        <%}%>
+                    <%})%>
+                </section>
         </div>
         
     </main>   
