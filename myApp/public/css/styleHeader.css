@@ -52,6 +52,11 @@
   display: none;
 }
 
+a{
+  text-decoration: none;
+  color: white
+}
+
 @media (min-width: 769px) {
 
   .header__burger-menu {
