@@ -4,7 +4,7 @@ const fs = require ('fs');
  
 
 //datos
-const productData = require ('../data/products/productsData');
+const productData = require ('../data/products/productsData.json');
 
 const userController= {
 
