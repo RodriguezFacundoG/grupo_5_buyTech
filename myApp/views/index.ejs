@@ -57,7 +57,7 @@
         <div class="container">
                 <section class="the-latest main-sections">
                     <h3 class="main-sections__title">The latest</h3>
-                    <% productData.forEach(product =>  {  %>
+                    <% productsData.forEach(product =>  {  %>
                         <% if (product.latest == true) { %>
                             <article class="product the-latest__product">
                                 <img src="/images/productos/<%= product.img %>" alt="" class="product__img">
@@ -69,7 +69,7 @@
             
                 <section class="special-discounts main-sections">
                     <h3 class="main-sections__title">Special Discounts</h3>
-                    <% productData.forEach(product =>  {  %> 
+                    <% productsData.forEach(product =>  {  %> 
                         <% if (product.discount == true) { %>   
                             <article class="product special-discounts__product">
                                 <img src="/images/productos/<%= product.img %>" alt="" class="product__img">
@@ -81,7 +81,7 @@
         
                 <section class="top-sales main-sections">
                     <h3 class="main-sections__title">Top Sales</h3>
-                    <% productData.forEach(product =>  {  %>     
+                    <% productsData.forEach(product =>  {  %>     
                         <% if (product.top == true) { %>      
                             <article class="product top-sales__product">
                                 <img src="/images/productos/<%= product.img %>" alt="" class="product__img">
