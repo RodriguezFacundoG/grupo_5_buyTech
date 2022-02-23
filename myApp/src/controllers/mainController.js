@@ -1,4 +1,4 @@
-const productsData = require ('../data/productsData');
+const productsData = require ('../data/products/productsData');
 
 
 const mainController= {
