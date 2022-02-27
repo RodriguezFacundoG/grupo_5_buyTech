@@ -22,3 +22,6 @@ La paleta de colores definida será la siguiente.
 #0158AA
 #EDEEF0
 #FFFFFF
+
+Se crea un espacio de trabajo en Trello para el seguimiento y asignación de las actividades. A continuación el link:
+https://trello.com/invite/b/pWHhYvn8/9619983f0fae24f376e9d5e926156f70/dh-proyecto
