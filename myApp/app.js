@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //a Router
 app.use('/', mainRouter);
-app.use('/product', productsRouter);
+app.use('/products', productsRouter);
 app.use('/user', userRouter);
 
 
