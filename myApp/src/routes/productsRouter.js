@@ -16,10 +16,4 @@ router.put('/:id', productsController.update)
 router.delete('/:id', productsController.delete)
 
 
-router.get('/:type',productsController.typeList);
-router.get('/:type/:id',productsController.details);
-router.get('/edit',productsController.edit);
-router.get('/cart',productsController.cart);
-
-
 module.exports = router;
