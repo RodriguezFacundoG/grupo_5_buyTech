@@ -57,11 +57,11 @@
         <div class="container">
                 <section class="the-latest main-sections">
                     <h3 class="main-sections__title">The latest</h3>
-                    <% productsData.forEach(product =>  {  %>
-                        <% if (product.latest == true) { %>
+                    <% products.forEach(element =>  {  %>
+                        <% if (element.latest == true) { %>
                             <article class="product the-latest__product">
-                                <img src="/images/productos/<%= product.img %>" alt="" class="product__img">
-                                <p class="product__name"><%= product.name %> </p>            
+                                <img src="/images/productos/<%= element.img %>" alt="" class="product__img">
+                                <p class="product__name"><%= element.name %> </p>            
                             </article>
                         <%}%>
                     <%})%>
@@ -69,11 +69,11 @@
             
                 <section class="special-discounts main-sections">
                     <h3 class="main-sections__title">Special Discounts</h3>
-                    <% productsData.forEach(product =>  {  %> 
-                        <% if (product.discount == true) { %>   
+                    <% products.forEach(element =>  {  %> 
+                        <% if (element.discount != 0) { %>   
                             <article class="product special-discounts__product">
-                                <img src="/images/productos/<%= product.img %>" alt="" class="product__img">
-                                <p class="product__name"><%=product.name %></p>             
+                                <img src="/images/productos/<%= element.img %>" alt="" class="product__img">
+                                <p class="product__name"><%=element.name %></p>             
                             </article>
                         <%}%>
                     <%})%>
@@ -81,11 +81,11 @@
         
                 <section class="top-sales main-sections">
                     <h3 class="main-sections__title">Top Sales</h3>
-                    <% productsData.forEach(product =>  {  %>     
-                        <% if (product.top == true) { %>      
+                    <% products.forEach(element =>  {  %>     
+                        <% if (element.top == true) { %>      
                             <article class="product top-sales__product">
-                                <img src="/images/productos/<%= product.img %>" alt="" class="product__img">
-                                <p class="product__name"><%=product.name %></p>  
+                                <img src="/images/productos/<%= element.img %>" alt="" class="product__img">
+                                <p class="product__name"><%=element.name %></p>  
                             </article>
                         <%}%>
                     <%})%>
