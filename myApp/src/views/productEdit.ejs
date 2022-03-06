@@ -26,7 +26,7 @@
     <main>
         <div class="product_create_container">
             <div class="create_title_main">
-                <h1 class="form_title">Edit a Product</h1>
+                <h1 class="form_title">Editing product: <%= element.id %></h1>
             </div>
             <div class="create_requests">
                 <form class="create_form" action="/products/<%= element.id %>?__metod=PUT" method="POST"></form>
@@ -35,15 +35,15 @@
                     </div>
                     <div class="form_product_name">
                         <label for="create_form_product_name">Product Name *</label>
-                        <input class="form_text" type="text" name="product_name" id="create_form_product_name" maxlength="35">
+                        <input class="form_text" type="text" name="product_name" value="<%= element.name %>" id="create_form_product_name" maxlength="35">
                     </div>
                     <div class="form_product_description">
                             <label for="create_form_product_description">Description *</label>
-                            <input class="form_text" type="text" name="product_description" id="create_form_product_description" maxlength="65">
+                            <input class="form_text" type="text" name="product_description" value="<%= element.description %>" id="create_form_product_description" maxlength="65">
                     </div>
                     <div class="form_product_image">
                             <label for="create_form_product_image">Image *</label>
-                            <input class="form_attachement" type="file" name="product_image" id="create_form_product_image" accept="image/png, image/jpeg">
+                            <input class="form_attachement" type="file" name="product_image" value="" id="create_form_product_image" accept="image/png, image/jpeg">
                     </div>
                     <div class="form_product_category">
                             <label for="create_form_product_category">Category *</label>
@@ -70,11 +70,11 @@
                     </div>
                     <div class="form_product_price">
                         <label for="create_form_product_price">Price *</label>
-                        <input class="form_number" type="number" name="product_price" id="create_form_product_price" maxlength="7">
+                        <input class="form_number" type="number" name="product_price" value="<%= element.price %>" id="create_form_product_price" maxlength="7">
                     </div>
                     <div class="form_product_discount">
                         <label for="create_form_product_discount">Discount *</label>
-                        <input class="form_number" type="number" name="product_discount" value="0" id="create_form_product_discount" maxlength="7">
+                        <input class="form_number" type="number" name="product_discount" value="<%= element.discount %>" id="create_form_product_discount" maxlength="7">
                     </div>
                     <div class="form-button">
                         <button type="submit">Submit</button>
