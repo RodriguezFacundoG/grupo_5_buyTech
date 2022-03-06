@@ -32,9 +32,11 @@ const productsController = {
     //Guarda la informacion por POST
     store: (req,res) => {
         let newProduct = req.body;
+
+        //Tengo que crear la propiedad id porque en el req.body no está
         newProduct.id = products[products.length - 1].id + 1; //Le sumo 1 al id del ultimo producto del array en nuestra DB
 		
-		products.push(userToCreate)		
+		products.push(newProduct)		
 
 		let productsJSON = JSON.stringify(products)
 		fs.writeFileSync(productsFilePath, productsJSON, 'utf-8') 
@@ -67,7 +69,7 @@ const productsController = {
 		})
 		let productsJSON = JSON.stringify(products)
 		fs.writeFileSync(productsFilePath, productsJSON, 'utf-8')
-		res.redirect('/products/' + req.params.id)
+		res.redirect('/products')
         
     },
 
@@ -80,7 +82,7 @@ const productsController = {
 		
 		let newProductsJSON = JSON.stringify(newProducts)
 		fs.writeFileSync(productsFilePath, newProductsJSON, 'utf-8')
-		res.redirect('/products/')
+		res.redirect('/products')
     }
 };
 
