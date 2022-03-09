@@ -5,6 +5,7 @@ const mainController = require('../controllers/mainController')
 
 
 router.get('/', mainController.home);
+router.get('/types/:id', mainController.types);
 
 
 module.exports= router;

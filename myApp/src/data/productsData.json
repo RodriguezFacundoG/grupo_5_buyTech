@@ -42,5 +42,37 @@
     "topSales": false,
     "discount": 10,
     "latest": true
+  },
+  {
+    "id": 5,
+    "name": "Knoquia Out 2.4",
+    "description": "Es lo que es",
+    "img": "img-samsung-galaxy-s10.jpg",
+    "price": 130000,
+    "category": "celulares",
+    "topSales": true,
+    "discount": 50,
+    "latest": true    
+  },{
+    "id": 6,
+    "name": "MotorHola V6",
+    "description": "Hello Bike!",
+    "img": "img-samsung-galaxy-s10.jpg",
+    "price": 140000,
+    "category": "celulares",
+    "topSales": true,
+    "discount": 50,
+    "latest": true    
+  },
+  {
+    "id": 7,
+    "name": "eManzana 298",
+    "description": "El mejor de los mejores",
+    "img": "img-samsung-galaxy-s10.jpg",
+    "price": 220000,
+    "category": "celulares",
+    "topSales": true,
+    "discount": 50,
+    "latest": true    
   }
 ]

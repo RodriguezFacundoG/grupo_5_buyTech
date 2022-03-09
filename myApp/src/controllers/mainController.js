@@ -9,6 +9,13 @@ const mainController= {
 home: (req,res)=>{
     res.render('index', {products: products})
     },
+types: (req,res)=>{
+    let categoryId = req.params.id;
+    /*switch (categoryId){
+        case 1:  
+    } */
+    res.render('productTypeList', {products, categoryId})
+    },
 };
 
 
