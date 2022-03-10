@@ -8,7 +8,8 @@
     "category": "celulares",
     "topSales": true,
     "discount": 50,
-    "latest": true    
+    "latest": true,
+    "tags": "cel cells cellphones smartphone"    
   },
   {
     "id": 2,
@@ -19,7 +20,8 @@
     "category": "tablets",
     "topSales": true,
     "discount": 0,
-    "latest": false
+    "latest": false,
+    "tags": "tablet ipad pad touch smart"  
   },
   {
     "id": 3,
@@ -30,7 +32,8 @@
     "category": "laptops",
     "topSales": false,
     "discount": 35,
-    "latest": false
+    "latest": false,
+    "tags": "lap notebook laptop"  
   },
   {
     "id": 4,
@@ -41,7 +44,8 @@
     "category": "Accesories",
     "topSales": false,
     "discount": 10,
-    "latest": true
+    "latest": true,
+    "tags": "accesories accesorios acc "  
   },
   {
     "id": 5,
@@ -52,7 +56,8 @@
     "category": "celulares",
     "topSales": true,
     "discount": 50,
-    "latest": true    
+    "latest": true,
+    "tags": "cel cells cellphones smartphone"      
   },{
     "id": 6,
     "name": "MotorHola V6",
@@ -62,7 +67,8 @@
     "category": "celulares",
     "topSales": true,
     "discount": 50,
-    "latest": true    
+    "latest": true,
+    "tags": "cel cells cellphones smartphone"     
   },
   {
     "id": 7,
@@ -73,6 +79,7 @@
     "category": "celulares",
     "topSales": true,
     "discount": 50,
-    "latest": true    
+    "latest": true,
+    "tags": "cel cells cellphones smartphone"      
   }
 ]
