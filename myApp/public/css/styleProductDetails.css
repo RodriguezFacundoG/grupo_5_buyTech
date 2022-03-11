@@ -13,6 +13,8 @@ body {
 }
 
 main{
+    position: relative;
+    top: 130px;
     margin: 20px auto;
     width: 90vw;
     padding: 10px;
