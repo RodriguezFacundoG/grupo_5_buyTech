@@ -1,4 +1,3 @@
-const express = require('express');
 const path = require ('path');
 const fs = require ('fs');
  
@@ -16,6 +15,7 @@ const userController= {
     },
     productCart: (req,res)=>{
         //hacer un IF para que si el usuario está registrado o no, vaya a un lado especifico
+        //hacer IF con sesion de usuario o redirigir a Register
         res.render('productCart')
     }
 };
