@@ -28,15 +28,11 @@
             <div class="sign-in-title">
                 <p class="sign-in">Sign In</p>
             </div>
-                    <form action="/" method="POST" class="form-complete">
+                    <form action="/user/login" method="POST" class="form-complete">
+                        
                             <div class="form-box">
                                 <label for="user_full_name"></label>
                                 <input type="text" placeholder="Full Name" id="user_full_name" name="user_full_name">
-                            </div>
-
-                            <div class="form-box">
-                                <label for="user_mail"></label>
-                                <input type="mail" placeholder="example@mail.com" id="user_mail" name="user_mail">
                             </div>
 
                             <div class="form-box">
@@ -50,11 +46,13 @@
                             </div>
 
                             <div class="no-pass">
-                                <a href="/user/register">Forgot Password</a>
+                                <a href="/user/register">Not registered?</a>
                             </div>
                             
                             <div class="form-button">
                                 <button type="submit">Log In</button>
+                            </div>
+
                         </form>
                     </div>
                 <div class="no-user">

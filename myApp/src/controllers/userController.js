@@ -9,7 +9,7 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const userController= {
     login: (req,res)=>{
         res.render('login')
-        },
+    },
     register: (req,res)=>{
         res.render('register')
     },
