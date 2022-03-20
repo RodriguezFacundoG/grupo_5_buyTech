@@ -13,6 +13,9 @@ const userController= {
     register: (req,res)=>{
         res.render('register')
     },
+    register1: (req,res)=>{
+        res.send(req.file)
+    },
     productCart: (req,res)=>{
         //hacer un IF para que si el usuario está registrado o no, vaya a un lado especifico
         //hacer IF con sesion de usuario o redirigir a Register

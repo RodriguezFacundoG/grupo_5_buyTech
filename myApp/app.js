@@ -1,9 +1,9 @@
-const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
-const cookieParser = require('cookie-parser');
+const createError = require('http-errors');
 const logger = require('morgan');
 const methodOverride = require('method-override')
+const cookieParser = require('cookie-parser');
 
 //ROUTERs
 const mainRouter = require('./src/routes/mainRouter');
