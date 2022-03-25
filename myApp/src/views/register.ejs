@@ -28,40 +28,43 @@
             <div class="register-title">
                 <h3 class="register">Creá tu ID de Usuario</h3>
             </div>
-            <form action="/user/register" method="POST" class="form-complete" enctype="multipart/form-data">
-                        
-                <div class="form-box">
-                    <label for="user_full_name"></label>
-                    <input type="text" placeholder="Full Name" id="user_full_name" name="user_full_name">
-                </div>
+            <form action="/user/register" method="POST" class="form-complete" enctype="multipart/form-data">     
+                    <div class="form-box">
+                        <label for="user_full_name"></label>
+                        <input type="text" placeholder="Full Name" id="user_full_name" name="user_full_name"
+                        <% if (errors.user_full_name){  %> 
+                            value="<%= errors.user_full_name.msg %>"
+                        <%}%>
+                        >
+                    </div>
 
-                <div class="form-box">
-                    <label for="user_mail"></label>
-                    <input type="mail" placeholder="example@mail.com" id="user_mail" name="user_mail">
-                </div>
+                    <div class="form-box">
+                        <label for="user_mail"></label>
+                        <input type="mail" placeholder="example@mail.com" id="user_mail" name="user_mail">
+                    </div>
 
-                <div class="form-box">
-                    <label for="user_password"></label>
-                    <input type="password" placeholder="Password" id="user_password" name="user_password">
-                </div>
+                    <div class="form-box">
+                        <label for="user_password"></label>
+                        <input type="password" placeholder="Password" id="user_password" name="user_password">
+                    </div>
 
-                <div class="form-box">
-                    <label for="user_password_verification"></label>
-                    <input type="password" placeholder="Password Again" id="user_password_verification" name="user_password_verification">
-                </div>
+                    <div class="form-box">
+                        <label for="user_password_verification"></label>
+                        <input type="password" placeholder="Password Again" id="user_password_verification" name="user_password_verification">
+                    </div>
 
-                <div class="form-box">
-                    <label for="user_photo"></label>
-                    <input type="file" accept=".jpg" placeholder="Foto Jpg" id="user_photo" name="user_photo">
-                </div>
+                    <div class="form-box">
+                        <label for="user_photo"></label>
+                        <input type="file" accept=".jpg" placeholder="Foto Jpg" id="user_photo" name="user_photo">
+                    </div>
 
-                <div class="no-pass">
-                    <a href="/user/login">Already User?</a>
-                </div>
-                
-                <div class="form-button">
-                    <button type="submit">Log In</button>
-                </div>
+                    <div class="no-pass">
+                        <a href="/user/login">Already User?</a>
+                    </div>
+                    
+                    <div class="form-button">
+                        <button type="submit">Log In</button>
+                    </div>
 
             </form>
             <div class="no-user">

@@ -1,5 +1,6 @@
 const path = require ('path');
 const fs = require ('fs');
+const {validationResult} = require('express-validator');
  
 //datos
 const productsFilePath = path.join(__dirname, '../data/productsData.json');
@@ -11,10 +12,17 @@ const userController= {
         res.render('login')
     },
     register: (req,res)=>{
-        res.render('register')
+        return res.render('register');
     },
     register1: (req,res)=>{
-        res.send(req.file)
+        let errors = validationResult(req);
+        if(errors.isEmpty()){
+            return res. send('Registro exitoso');
+            //return res.render('register')
+        }else{
+           return res.render('register', {errors: errors.mapped(), old: req.body})
+        }
+       
     },
     productCart: (req,res)=>{
         //hacer un IF para que si el usuario está registrado o no, vaya a un lado especifico
