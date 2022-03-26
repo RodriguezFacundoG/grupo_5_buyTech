@@ -17,7 +17,7 @@ const userController= {
     register1: (req,res)=>{
         let errors = validationResult(req);
         if(errors.isEmpty()){
-            return res. send('Registro exitoso');
+            return res.send('Registro exitoso');
             //return res.render('register')
         }else{
            return res.render('register', {errors: errors.mapped(), old: req.body})

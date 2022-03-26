@@ -34,13 +34,21 @@
                         <input type="text" placeholder="Full Name" id="user_full_name" name="user_full_name"
                         <% if (errors.user_full_name){  %> 
                             value="<%= errors.user_full_name.msg %>"
+                        <%}else if (locals.user_full_name){ %>
+                            value="<%= locals.user_full_name  %>"
+                        <%}else { %>
+                            value=""
                         <%}%>
                         >
                     </div>
 
                     <div class="form-box">
                         <label for="user_mail"></label>
-                        <input type="mail" placeholder="example@mail.com" id="user_mail" name="user_mail">
+                        <input type="mail" placeholder="example@mail.com" id="user_mail" name="user_mail"
+                        <% if (errors.user_mail){  %> 
+                            value="<%= errors.user_mail.msg %>"
+                        <%}%>
+                        >
                     </div>
 
                     <div class="form-box">
