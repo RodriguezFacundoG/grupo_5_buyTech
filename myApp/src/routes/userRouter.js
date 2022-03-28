@@ -7,10 +7,10 @@ const verificationRegister = require('../middlewares/verificationRegister');
 router.get('/login', userController.login);
 router.post('/login', userController.login);
 
-router.get('/register', userController.register);
+router.get('/register', userController.registerForm);
 //debido a que Multer agrega campos al req.body:
 // el orden de Multer y Verification debe ser asi: 1ero Multer, 2do Verification.
-router.post('/register',multerUploadUser.single('user_photo'), verificationRegister,  userController.register1);
+router.post('/register',multerUploadUser.single('user_photo'), verificationRegister,  userController.registerUpload);
 
 router.get('/product', userController.productCart);
 

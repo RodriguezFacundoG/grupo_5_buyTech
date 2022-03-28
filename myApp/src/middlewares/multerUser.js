@@ -2,8 +2,7 @@ const multer = require ('multer');
 const path = require ('path')
 
 const storage= multer.diskStorage({
-    destination: function(req, file, cb) {
-          
+    destination: function(req, file, cb) {          
         cb(null, path.join('public/images/userAvatars'))  
         //cb(null, path.resolve('public/images/userAvatars'))
         //NOTA: el resolve funciona, pero es muy largo el path que escribe
