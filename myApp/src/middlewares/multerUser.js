@@ -3,8 +3,8 @@ const path = require ('path')
 
 const storage= multer.diskStorage({
     destination: (req,file,cb)=>{
-          //cb(null, path.join('public/images/userAvatars'))  
-          cb(null, path.join('./../public/images/userAvatars'))  
+          cb(null, path.join('public/images/userAvatars'))  
+          //FACU cb(null, path.join('./../public/images/userAvatars'))  
         //cb(null, path.resolve('public/images/userAvatars'))
         //NOTA: el resolve funciona, pero es muy largo el path que escribe
     },

@@ -11,18 +11,20 @@ const userController= {
     login: (req,res)=>{
         res.render('login')
     },
-    register: (req,res)=>{
+    registerForm: (req,res)=>{
         return res.render('register');
     },
-    register1: (req,res)=>{
+    registerUpload: (req,res)=>{
         /* let newUser = req.body;
         newUser.id = users[users.length - 1].id + 1;
         users.push(newUser);
         let usersJSON = JSON.stringify(users);
         fs.writeFileSync(usersFilePath, usersJSON, 'utf-8'); */
         console.log(req.body);
-
+        console.log(req.file);
+        
         let errors = validationResult(req);
+        
         if(!errors.isEmpty()){
             console.log(errors.mapped());
            return res.render('register', {errors: errors.mapped(), old: req.body});
