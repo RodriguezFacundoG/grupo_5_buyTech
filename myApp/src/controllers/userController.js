@@ -19,7 +19,7 @@ const userController= {
         newUser.id = users[users.length - 1].id + 1;
         users.push(newUser);
         let usersJSON = JSON.stringify(users);
-        fs.writeFileSync(usersFilePath, usersJSON, 'utf-8'); */
+        fs.writeFileSync(usersFilePath, usersJSON, 'utf-8'); */        
         console.log(req.body);
 
         let errors = validationResult(req);
