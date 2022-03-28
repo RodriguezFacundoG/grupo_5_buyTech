@@ -15,18 +15,26 @@ const userController= {
         return res.render('register');
     },
     register1: (req,res)=>{
+        /* let newUser = req.body;
+        newUser.id = users[users.length - 1].id + 1;
+        users.push(newUser);
+        let usersJSON = JSON.stringify(users);
+        fs.writeFileSync(usersFilePath, usersJSON, 'utf-8'); */
+        console.log(req.body);
+
         let errors = validationResult(req);
-        if(errors.isEmpty()){
-            return res.send('Registro exitoso');
-            //return res.render('register')
+        if(!errors.isEmpty()){
+            console.log(errors.mapped());
+           return res.render('register', {errors: errors.mapped(), old: req.body});
         }else{
-           return res.render('register', {errors: errors.mapped(), old: req.body})
+            return res.send('Registro exitoso');
         }
        
     },
     productCart: (req,res)=>{
         //hacer un IF para que si el usuario está registrado o no, vaya a un lado especifico
         //hacer IF con sesion de usuario o redirigir a Register
+        //hacer res.redirect a Login
         res.render('productCart')
     }
 };
