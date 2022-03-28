@@ -7,6 +7,7 @@ const productsFilePath = path.join(__dirname, '../data/productsData.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 
+
 const userController= {
     login: (req,res)=>{
         res.render('login')
@@ -20,7 +21,7 @@ const userController= {
         users.push(newUser);
         let usersJSON = JSON.stringify(users);
         fs.writeFileSync(usersFilePath, usersJSON, 'utf-8'); */
-        console.log(req.body);
+        
         console.log(req.file);
         
         let errors = validationResult(req);
