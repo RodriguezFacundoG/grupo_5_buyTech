@@ -69,6 +69,8 @@
                     <p>
                         <% if (locals.errors && errors.user_password_verification){  %> 
                             <%= locals.errors.user_password_verification.msg %> 
+                        <%}else if (locals.passComparitionMsg){%>
+                            <%= locals.passComparitionMsg %>
                         <%}%>
                     </p>
 
