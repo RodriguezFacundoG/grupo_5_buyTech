@@ -23,14 +23,16 @@ const userController = {
         users.push(newUser);
         let usersJSON = JSON.stringify(users);
         fs.writeFileSync(usersFilePath, usersJSON, 'utf-8'); */
-        console.log(req.body);
-        console.log(req.file);
-
+        
         let errors = validationResult(req);
-
         if (!errors.isEmpty()) {
-            console.log(errors.mapped());
+            let userPass = req.body.user_password;
+            let userPassVerification = req.body.user_password_verification;
+            if (userPass !== userPassVerification) {
+                return res.render('register', {errors: errors.mapped(), old: req.body});
+            };  
             return res.render('register', { errors: errors.mapped(), old: req.body });
+
         } else {
             return res.send('Registro exitoso');
         }

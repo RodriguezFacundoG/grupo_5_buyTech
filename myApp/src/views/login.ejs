@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,49 +20,52 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 </head>
+
 <body>
     <!-- HEADER -->
     <%- include('./partials/header.ejs') %>
 
-    <main>
-        <div class="sign-in-container">
-            <div class="sign-in-title">
-                <p class="sign-in">Sign In</p>
-            </div>
-                    <form action="/user/login" method="POST" class="form-complete">
-                        
-                            <div class="form-box">
-                                <label for="user_full_name"></label>
-                                <input type="text" placeholder="Full Name" id="user_full_name" name="user_full_name">
-                            </div>
+        <main>
+            <div class="sign-in-container">
+                <div class="sign-in-title">
+                    <p class="sign-in">Sign In</p>
+                </div>
+                <form action="/user/login" method="POST" class="form-complete">
 
-                            <div class="form-box">
-                                <label for="user_password"></label>
-                                <input type="password" placeholder="Password" id="user_password" name="user_password">
-                            </div>
-
-                            <div class="form-box">
-                                <label for="user_password_verification"></label>
-                                <input type="password" placeholder="Password Again" id="user_password_verification" name="user_password_verification">
-                            </div>
-
-                            <div class="no-pass">
-                                <a href="/user/register">Not registered?</a>
-                            </div>
-                            
-                            <div class="form-button">
-                                <button type="submit">Log In</button>
-                            </div>
-
-                        </form>
+                    <div class="form-box">
+                        <label for="user_full_name"></label>
+                        <input type="text" placeholder="Full Name" id="user_full_name" name="user_full_name">
                     </div>
-                <div class="no-user">
-            <a href="#">Do not have User ID? Register</a>
-            </div>
-        </div>
-    </main>
 
-   <!-- FOOTER -->
-   <%- include('./partials/footer.ejs') %>
+                    <div class="form-box">
+                        <label for="user_password"></label>
+                        <input type="password" placeholder="Password" id="user_password" name="user_password">
+                    </div>
+
+                    <div class="form-box">
+                        <label for="user_password_verification"></label>
+                        <input type="password" placeholder="Password Again" id="user_password_verification"
+                            name="user_password_verification">
+                    </div>
+
+                    <div class="no-pass">
+                        <a href="/user/register">Not registered?</a>
+                    </div>
+
+                    <div class="form-button">
+                        <button type="submit">Log In</button>
+                    </div>
+
+                </form>
+            </div>
+            <div class="no-user">
+                <a href="#">Do not have User ID? Register</a>
+            </div>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <%- include('./partials/footer.ejs') %>
 </body>
+
 </html>

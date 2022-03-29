@@ -55,18 +55,22 @@
                         >
                     </div>
 
+                    <p>
+                        <% if (locals.errors && errors.user_password){  %> 
+                            <%= locals.errors.user_password.msg %>
+                        <%}%>
+                    </p>
+
                     <div class="form-box">
                         <label for="user_password"></label>
-                        <input type="password" placeholder="example@mail.com" id="user_password" name="user_password"
-                        <% if (locals.errors && errors.user_password){  %> 
-                            value="<%= locals.errors.user_password.msg %>" 
-                        <%} else if (locals.old && locals.old.user_password){ %>
-                            value="<%= locals.old.user_password %>"
-                        <%} else { %>
-                            value=""
-                        <%}%>
-                        >
+                        <input type="password" placeholder="Tu password" id="user_password" name="user_password">
                     </div>
+                    
+                    <p>
+                        <% if (locals.errors && errors.user_password_verification){  %> 
+                            <%= locals.errors.user_password_verification.msg %> 
+                        <%}%>
+                    </p>
 
                     <div class="form-box">
                         <label for="user_password_verification"></label>
