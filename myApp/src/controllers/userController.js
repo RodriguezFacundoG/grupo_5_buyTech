@@ -14,6 +14,9 @@ const userController = {
     login: (req, res) => {  
         res.render('login');             
     },
+    loginProcess: (req, res) => {
+        // res.render('user')
+    },
     registerForm: (req, res) => {
         return res.render('register');
     },
