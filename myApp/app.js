@@ -4,6 +4,7 @@ const createError = require('http-errors');
 const logger = require('morgan');
 const methodOverride = require('method-override')
 const cookieParser = require('cookie-parser');
+const session = require('express-session')
 
 //ROUTERs
 const mainRouter = require('./src/routes/mainRouter');
@@ -22,6 +23,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride("__method"))
+app.use(session({secret: "secreto"}));
 
 //a Router
 app.use('/', mainRouter);
