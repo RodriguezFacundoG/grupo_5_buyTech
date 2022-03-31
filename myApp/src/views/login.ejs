@@ -35,6 +35,11 @@
                     <div class="form-box">
                         <label for="email"></label>
                         <input type="text" placeholder="E-mail" id="email" name="email">
+                        <% if(locals.errors && errors.email){ %>
+                            <div class="text-danger">
+                                <%= errors.email.msg %>
+                            </div>
+                        <% } %>
                     </div>
 
                     <div class="form-box">
