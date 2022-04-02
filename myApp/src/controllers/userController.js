@@ -88,6 +88,11 @@ const userController = {
         //hacer IF con sesion de usuario o redirigir a Register
         //hacer res.redirect a Login
         res.render('productCart')
+    },
+    logout: (req, res) => {
+        res.clearCookie("recordarEmail");
+        req.session.destroy();
+        res.redirect('/');
     }
 };
 
