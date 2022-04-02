@@ -16,7 +16,7 @@ if (usersJSON == '') {  //poder agregarle varios objetos (cada uno un usuario)
 
 const userController = {
 
-    login: (req, res) => {
+    loginForm: (req, res) => {
         res.render('login');
     },
     loginProcess: (req, res) => {
