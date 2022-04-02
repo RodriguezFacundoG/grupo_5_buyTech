@@ -8,10 +8,12 @@ const session = require('express-session')
 
 //ROUTERs
 const mainRouter = require('./src/routes/mainRouter');
-const productsRouter=require('./src/routes/productsRouter');
+const productsRouter = require('./src/routes/productsRouter');
 const userRouter = require('./src/routes/userRouter');
 
 const app = express();
+//MIDDLEWAREs
+const userLoggedMiddleware = require('./src/middlewares/userLoggedMiddleware')
 
 // view engine setup
 app.set('views', path.resolve('./src/views'));   
@@ -23,12 +25,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride("__method"))
-app.use(session({secret: "secreto"}));
+app.use(session({
+  secret: "secreto",
+  resave: false,
+  saveUninitialized: false
+}));
 
 //a Router
-app.use('/', mainRouter);
-app.use('/products', productsRouter);
-app.use('/user', userRouter);
+app.use('/', userLoggedMiddleware, mainRouter);
+app.use('/products', userLoggedMiddleware, productsRouter);
+app.use('/user', userLoggedMiddleware, userRouter);
 
 
 // catch 404 and forward to error handler
