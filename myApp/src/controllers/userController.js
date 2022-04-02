@@ -26,8 +26,13 @@ const userController = {
                 let samePassword = bcrypt.compareSync(req.body.password, userToLogin.password)
                 console.log(samePassword)
                 if (!samePassword) { //Cambiar a if(samePassword) al terminar de hacer pruebas
-                    delete userToLogin.password;
-                    req.session.userLogged = userToLogin;
+                    delete userToLogin.password;            //Borro el password antes de guardar el usuario en sesion para mayor seguridad
+                    req.session.userLogged = userToLogin;   //creo la propiedad userLogged en el objeto global req.session
+                    //Cookie
+                    if(req.body.remember_me){
+                        res.cookie('recordarEmail', req.session.userLogged.email, { maxAge: 60000 });
+                    }
+
                     return res.redirect('/');                    
                 }
 
