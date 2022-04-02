@@ -2,7 +2,8 @@ function authMiddleware (req, res, next) {
     if(req.session.userLogged) {
         next();
     } else {
-        res.send("Debes loguearte para entrar a esta URL")
+        console.log("Debes loguearte para entrar a esta URL");
+        res.redirect("/user/login");
     }
     
 }

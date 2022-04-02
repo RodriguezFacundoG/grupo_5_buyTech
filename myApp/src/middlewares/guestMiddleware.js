@@ -2,7 +2,8 @@ function guestMiddleware (req, res, next) {
     if(!req.session.userLogged) {
         next();
     } else {
-        res.send("Esta ruta es solo para invitados")
+        console.log("Esta ruta es solo para invitados");
+        res.redirect("/");
     }
     
 }
