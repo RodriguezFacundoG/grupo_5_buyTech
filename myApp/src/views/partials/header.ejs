@@ -20,9 +20,14 @@
 
     <!-- Nav de user y cart -->
     <nav class="header__about-me">            
-        <a href="/user/login">
-            <span class="nav-personal__text">User</span>
-            <i class="fas fa-user"></i>
+        <a href="/user/login">           
+            <% if(locals.isLogged == false){ %>
+                <span class="nav-personal__text">User</span>
+                <i class="fas fa-user"></i>
+            <% } else { %>
+                <span class="nav-personal__text"><%= locals.userLogged.firstName %></span>
+                <img src="images/userAvatars/<%= locals.userLogged.avatar %>" alt="No carga avatar">
+            <% } %>
         </a>
         <a href="/user/product">
             <span class="nav-personal__text">Cart</span>    
