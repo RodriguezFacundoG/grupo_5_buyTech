@@ -79,6 +79,8 @@ const userController = {
             let passEncripted = bcrypt.hashSync(userPass, 10);            
 
             let newUser = req.body;
+            newUser.user_password_verification = passEncripted;
+            newUser.admin = false;                          //Despues se puede cambiar por otro administrador o el que gerencia el sistema, es para modificar productos
             newUser.id = users[users.length - 1].id + 1;
             users.push(newUser);
             let usersJSON = JSON.stringify(users);
