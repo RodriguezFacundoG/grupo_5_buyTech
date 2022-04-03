@@ -34,17 +34,22 @@
 
                     <div class="form-box">
                         <label for="email"></label>
-                        <input type="text" placeholder="E-mail" id="email" name="email">
+                        <input type="text" placeholder="E-mail" id="email" name="email" value ="<%= locals.old && old.email  ? old.email : null %>">
                         <% if(locals.errors && errors.email){ %>
-                            <div class="text-danger">
+                            <span class="text-danger">
                                 <%= errors.email.msg %>
-                            </div>
+                            </span>
                         <% } %>
                     </div>
 
                     <div class="form-box">
                         <label for="password"></label>
                         <input type="password" placeholder="Password" id="password" name="password">
+                        <% if(locals.errors && errors.password){ %>
+                            <span class="text-danger">
+                                <%= errors.password.msg %>
+                            </span>
+                        <% } %>
                     </div>
                     
                     <div>
