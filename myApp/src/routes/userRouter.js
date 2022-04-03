@@ -3,11 +3,12 @@ const router = express.Router();
 const multerUploadUser = require('../middlewares/multerUser');
 const userController = require('../controllers/userController.js');
 const verificationRegister = require('../middlewares/verificationRegister');
+const validateLogin = require('../middlewares/validateLogin')
 const authMiddleware = require('../middlewares/authMiddleware')
 const guestMiddleware = require('../middlewares/guestMiddleware')
 
 router.get('/login', guestMiddleware, userController.loginForm);
-router.post('/login', userController.loginProcess);
+router.post('/login', validateLogin, userController.loginProcess);
 
 router.get('/register', guestMiddleware, userController.registerForm);
 //debido a que Multer agrega campos al req.body:
