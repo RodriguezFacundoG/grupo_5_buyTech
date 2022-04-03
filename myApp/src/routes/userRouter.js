@@ -17,6 +17,7 @@ router.post('/register', multerUploadUser.single('user_photo'), verificationRegi
 
 router.get('/cart', authMiddleware, userController.productCart);
 
+router.get('/logout', authMiddleware, userController.logout);
 
 module.exports = router;
 
