@@ -76,8 +76,7 @@ const userController = {
 
         } else {
             let userPass = req.body.user_password;
-            let passEncripted = bcrypt.hashSync(req.body.user_password, 10);
-            userPass = passEncripted;
+            let passEncripted = bcrypt.hashSync(userPass, 10);            
 
             let newUser = req.body;
             newUser.id = users[users.length - 1].id + 1;
