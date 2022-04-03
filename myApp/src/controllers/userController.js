@@ -20,7 +20,12 @@ const userController = {
         res.render('login');
     },
     loginProcess: (req, res) => {
-        
+
+        let errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.render('login', {errors: errors.mapped(), old: req.body})
+        }
+
         for (let userToLogin of users) {
             if (req.body.email == userToLogin.email) {
                 let samePassword = bcrypt.compareSync(req.body.password, userToLogin.password)
@@ -29,11 +34,11 @@ const userController = {
                     delete userToLogin.password;            //Borro el password antes de guardar el usuario en sesion para mayor seguridad
                     req.session.userLogged = userToLogin;   //creo la propiedad userLogged en el objeto global req.session
                     //Cookie
-                    if(req.body.remember_me){
+                    if (req.body.remember_me) {
                         res.cookie('recordarEmail', req.session.userLogged.email, { maxAge: 60000 });
                     }
 
-                    return res.redirect('/');                    
+                    return res.redirect('/');
                 }
 
                 return res.render("login", {
