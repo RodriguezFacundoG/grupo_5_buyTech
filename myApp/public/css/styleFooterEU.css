@@ -1,5 +1,7 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300&display=swap');
 
+/*
 footer {
   font-family: 'Barlow', sans-serif;
   display: flex;
@@ -20,8 +22,9 @@ footer {
   justify-content: center;
   align-items: center;
 }
+*/
 
-/* LOGO */
+/* LOGO
 
 div .LOGO-down-nav {
   display: flex;
@@ -36,8 +39,9 @@ div .LOGO-down-nav {
   justify-content: center;
   width: 90%;
 }
+*/
 
-/* REDES */
+/* REDES
 .REDES {
   display: flex;
   width: 70%;
@@ -58,8 +62,9 @@ div .LOGO-down-nav {
   position: relative;
   left: 15px;
 }
+*/
 
-/*COPYRIGHT*/
+/*COPYRIGHT
 .COPYRIGHT {
   display: flex;
   width: 15%;
@@ -73,16 +78,17 @@ div .LOGO-down-nav {
   bottom: 23px;
   font-size: 0.6vw;
 }
-
+*/
 /* MEDIA QUERIES*/
 /* MEDIA QUERIES*/
 /* MEDIA QUERIES*/
 /* MEDIA QUERIES*/
 /* MEDIA QUERIES*/
 
-/* MOBILE */
+/* MOBILE
 @media (max-width: 768px) {
   footer {
     display: none;
   }
 }
+*/
