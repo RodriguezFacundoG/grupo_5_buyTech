@@ -20,3 +20,17 @@ Continuar haciendo:
 o	Dividir todas las actividades al inicio de cada Sprint para asegurar que se cumpla con el entregable.
 Hacer menos:
 Dejar de hacer:
+
+SPRINT 5
+Comenzar a hacer:
+o	Definir fecha de vencimiento para las tareas que son limitantes para el inicio de otras.
+o	Consultas a los profesores para mostrar el avance del proyecto y no esperar hasta el último día.
+o	Cerrar las tareas viejas que siguen pendientes o cancelarlas si ya no son necesarias
+
+Hacer más:
+o	Reuniones de seguimiento con mayor frecuencia para actualizar el status de las tareas en curso.
+o	Seguimiento del contenido teórico par no retrasar el avance del proyecto.
+
+Continuar haciendo:
+o	Dividir todas las actividades al inicio de cada Sprint para asegurar que se cumpla con el entregable.
+o	Dar feedback interno
