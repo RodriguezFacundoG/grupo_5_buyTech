@@ -23,5 +23,34 @@
         "user_password": "1234",
         "user_password_verification": "1234",
         "id": 3
+    },
+    {
+        "user_full_name": "emilia mernes",
+        "user_mail": "facundoasdasd.12313@gmail.com",
+        "user_password": "1234",
+        "user_password_verification": "1234",
+        "id": 4
+    },
+    {
+        "user_full_name": "emilia mernes",
+        "user_mail": "facundoasdasd.12313@gmail.com",
+        "user_password": "1234",
+        "user_password_verification": "1234",
+        "id": 5
+    },
+    {
+        "user_full_name": "asdasda",
+        "user_mail": "facundo.99.asd@gmail.com",
+        "user_password": "123456",
+        "user_password_verification": "123456",
+        "id": 6
+    },
+    {
+        "user_full_name": "juan cruz",
+        "user_mail": "email22@example.com",
+        "user_password": "$2b$10$BLeClG3BMB6k1v/CUEH.0ey.AzJvUUw11AnQIeOaEYZcrmcEcwYPS",
+        "user_password_verification": "1234",
+        "admin": false,
+        "id": 7
     }
 ]

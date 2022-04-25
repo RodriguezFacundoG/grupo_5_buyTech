@@ -3,6 +3,8 @@ const fs = require('fs');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcrypt');
 
+const db = require("../database/models")
+
 //datos
 const usersFilePath = path.join(__dirname, '../data/usersData.json');
 let usersJSON = fs.readFileSync(usersFilePath, 'utf-8');
@@ -63,7 +65,7 @@ const userController = {
     registerForm: (req, res) => {
         return res.render('register');
     },
-    registerUpload: (req, res) => {
+    registerUpload: async (req, res) => {
         let errors = validationResult(req);
         if (!errors.isEmpty()) {
             let userPass = req.body.user_password;
@@ -72,20 +74,22 @@ const userController = {
                 let passComparitionMsg = 'Las contraseñas no coinciden';
                 return res.render('register', { errors: errors.mapped(), old: req.body, passComparitionMsg: passComparitionMsg });
             };
-            return res.render('register', { errors: errors.mapped(), old: req.body });
-
-        } else {
-            let userPass = req.body.user_password;
+            
             let passEncripted = bcrypt.hashSync(userPass, 10);            
-
-            let newUser = req.body;
-            newUser.user_password_verification = passEncripted;
-            newUser.admin = false;                          //Despues se puede cambiar por otro administrador o el que gerencia el sistema, es para modificar productos
-            newUser.id = users[users.length - 1].id + 1;
-            users.push(newUser);
-            let usersJSON = JSON.stringify(users);
-            fs.writeFileSync(usersFilePath, usersJSON, 'utf-8');
-            return res.redirect('/user/login');
+            await db.User.create({
+                ...req.body,
+                password: passEncripted,
+                admin: false,
+            })
+            //Guardar usuario en sesion
+            return res.redirect("/")
+            
+           
+            
+        } else {
+            
+            return res.render('register', { errors: errors.mapped(), old: req.body });
+           
         }
 
     },
@@ -99,6 +103,10 @@ const userController = {
         res.clearCookie("recordarEmail");
         req.session.destroy();
         res.redirect('/');
+    },
+    listUsers: async (req, res) => {
+        const users = await db.User.findAll();
+        return res.send(users)
     }
 };
 
