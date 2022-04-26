@@ -8,34 +8,42 @@ module.exports = (sequelize, DataTypes) => {
       autoIncremental: true,
       primaryKey: true,
     },
-    first_name: {
+    type: {
       type: DataTypes.STRING,      
     },
-    last_name: {
+    name: {
       type: DataTypes.STRING,      
     },
-    email: {
+    description: {
       type: DataTypes.STRING,      
     },
-    password: {
+    weight: {
+      type: DataTypes.TINYINT,
+    },
+    color: {
       type: DataTypes.STRING,
     },
-    admin: {
-      type: DataTypes.TINYINT,
-      defaultValue: false,
+    size: {
+      type: DataTypes.STRING,     
     },
-    avatar: {
+    price: {
+      type: DataTypes.INTEGER,
+    },
+    discount: {
+      type: DataTypes.TINYINT,
+    },
+    picture: {
       type: DataTypes.STRING,
     }
   };
 
   const config = {
-    tableName: 'users',
+    tableName: 'products',
     //Si el nombre de la tabla no coincide con el del modelo
     timestamps: false, //Si no tengo timestamps
   };
 
-  const User = sequelize.define("User", cols, config);
-  return User;
+  const Product = sequelize.define("Product", cols, config);
+  return Product;
 
 };
