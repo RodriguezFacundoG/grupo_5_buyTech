@@ -3,7 +3,8 @@ const fs = require('fs');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcrypt');
 
-const db = require("../database/models")
+const db = require("../database/models/index")
+// Que es lo mismo que hacer require("../database/models") porque Javascript va a buscar siempre el archivo index
 
 //datos
 const usersFilePath = path.join(__dirname, '../data/usersData.json');
