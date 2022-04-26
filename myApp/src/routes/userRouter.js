@@ -13,7 +13,7 @@ router.post('/login', validateLogin, userController.loginProcess);
 router.get('/register', guestMiddleware, userController.registerForm);
 //debido a que Multer agrega campos al req.body:
 // el orden de Multer y Verification debe ser asi: 1ero Multer, 2do Verification.
-router.post('/register', multerUploadUser.single('user_photo'), verificationRegister, userController.registerUpload);
+router.post('/register', multerUploadUser.single('avatar'), verificationRegister, userController.registerUpload);
 
 router.get('/cart', authMiddleware, userController.productCart);
 
