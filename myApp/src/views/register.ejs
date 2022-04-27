@@ -26,16 +26,28 @@
     <main>
         <div class="register-container">
             <div class="register-title">
-                <h3 class="register">Creá tu ID de Usuario</h3>
+                <h3 class="register">Creá tu Usuario</h3>
             </div>
             <form action="/user/register" method="POST" class="form-complete" enctype="multipart/form-data">     
                     <div class="form-box">
-                        <label for="user_full_name"></label>
-                        <input type="text" placeholder="Full Name" id="user_full_name" name="user_full_name"
-                        <% if (locals.errors && errors.user_full_name){  %> 
-                            value="<%= errors.user_full_name.msg %>"
-                            <%} else if (locals.old && locals.old.user_full_name){ %>
-                                value="<%= locals.old.user_full_name %>"
+                        <label for="first_name"></label>
+                        <input type="text" placeholder="First Name" id="first_name" name="first_name"
+                        <% if (locals.errors && errors.first_name){  %> 
+                            value="<%= errors.first_name.msg %>"
+                            <%} else if (locals.old && locals.old.first_name){ %>
+                                value="<%= locals.old.first_name %>"
+                            <%} else { %>
+                                value=""
+                            <%}%>
+                        >
+                    </div>
+                    <div class="form-box">
+                        <label for="last_name"></label>
+                        <input type="text" placeholder="Last Name" id="last_name" name="last_name"
+                        <% if (locals.errors && errors.last_name){  %> 
+                            value="<%= errors.last_name.msg %>"
+                            <%} else if (locals.old && locals.old.last_name){ %>
+                                value="<%= locals.old.last_name %>"
                             <%} else { %>
                                 value=""
                             <%}%>
@@ -43,12 +55,12 @@
                     </div>
 
                     <div class="form-box">
-                        <label for="user_mail"></label>
-                        <input type="mail" placeholder="example@mail.com" id="user_mail" name="user_mail"
-                        <% if (locals.errors && errors.user_mail){  %> 
-                            value="<%= locals.errors.user_mail.msg %>" 
-                        <%} else if (locals.old && locals.old.user_mail){ %>
-                            value="<%= locals.old.user_mail %>"
+                        <label for="email"></label>
+                        <input type="mail" placeholder="email@example.com" id="email" name="email"
+                        <% if (locals.errors && errors.email){  %> 
+                            value="<%= locals.errors.email.msg %>" 
+                        <%} else if (locals.old && locals.old.email){ %>
+                            value="<%= locals.old.email %>"
                         <%} else { %>
                             value=""
                         <%}%>
@@ -56,35 +68,33 @@
                     </div>
 
                     <p>
-                        <% if (locals.errors && errors.user_password){  %> 
-                            <%= locals.errors.user_password.msg %>
+                        <% if (locals.errors && errors.password){  %> 
+                            <%= locals.errors.password.msg %>
                         <%}%>
                     </p>
 
                     <div class="form-box">
-                        <label for="user_password"></label>
-                        <input type="password" placeholder="Tu password" id="user_password" name="user_password">
+                        <label for="password"></label>
+                        <input type="password" placeholder="Password" id="password" name="password">
                     </div>
                     
                     <p>
-                        <% if (locals.errors && errors.user_password_verification){  %> 
-                            <%= locals.errors.user_password_verification.msg %> 
+                        <% if (locals.errors && errors.password_verification){  %> 
+                            <%= locals.errors.password_verification.msg %> 
                         <%}else if (locals.passComparitionMsg){%>
                             <%= locals.passComparitionMsg %>
                         <%}%>
                     </p>
 
                     <div class="form-box">
-                        <label for="user_password_verification"></label>
-                        <input type="password" placeholder="Password Again" id="user_password_verification" name="user_password_verification">
+                        <label for="password_verification"></label>
+                        <input type="password" placeholder="Repeat Password" id="password_verification" name="password_verification">
                     </div>
-
-
 
                     
                     <div class="form-box">
-                        <label for="user_photo"></label>
-                        <input type="file" accept=".jpg" placeholder="Foto Jpg" id="user_photo" name="user_photo">
+                        <label for="avatar"></label>
+                        <input type="file" accept=".jpg" placeholder="Foto Jpg" id="avatar" name="avatar">
                     </div>
 
                     <div class="no-pass">
