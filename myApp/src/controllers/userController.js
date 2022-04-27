@@ -68,31 +68,23 @@ const userController = {
     },
     registerUpload: async (req, res) => {
         let errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            let userPass = req.body.user_password;
-            let userPassVerification = req.body.user_password_verification;
-            if (userPass !== userPassVerification) {
-                let passComparitionMsg = 'Las contraseñas no coinciden';
-                return res.render('register', { errors: errors.mapped(), old: req.body, passComparitionMsg: passComparitionMsg });
-            };
-            
-            let passEncripted = bcrypt.hashSync(userPass, 10);            
-            await db.User.create({
-                ...req.body,
-                password: passEncripted,
-                admin: false,
-            })
-            //Guardar usuario en sesion
-            return res.redirect("/")
-            
-           
-            
-        } else {
-            
-            return res.render('register', { errors: errors.mapped(), old: req.body });
-           
-        }
+        let userPass = req.body.password;
+        let userPassVerification = req.body.password_verification;
+        //Si tiene errores sintácticos o las contraseñas no coinciden:
+        if (!errors.isEmpty() || userPass !== userPassVerification) {                   
+            return res.render('register', { errors: errors.mapped(), old: req.body, passComparitionMsg: 'Las contraseñas no coinciden' });           
+        }   
 
+        let passEncripted = bcrypt.hashSync(userPass, 10);        
+        let newUser = {
+            ...req.body,
+            password: passEncripted,                
+            avatar: req.file != undefined ? req.file.filename : 'user-solid.svg', //Solo agrega esta propíedad en caso de que se cree agregue una imagen, sino pone una por default
+            admin: false,
+        };
+        delete newUser.password_verification;   //Necesito borrar el password que se verifica, porque no está hasheado       
+        await db.User.create(newUser);        
+        return res.redirect("/");        
     },
     productCart: (req, res) => {
         //hacer un IF para que si el usuario está registrado o no, vaya a un lado especifico
