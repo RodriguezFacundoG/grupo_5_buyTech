@@ -7,9 +7,13 @@
 
 body {
     font-family: 'Barlow', sans-serif;
-    font-size: 12px;
     background-color: #EDEEF0;
 }
+
+html{
+    font-size: 16px;
+    text-size-adjust: 100%;
+  }
 
 .product-info-name{
     grid-area: product-info-name;
@@ -66,8 +70,7 @@ body {
     justify-content: center;
     margin: 20px auto;
     max-width: 1561px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 20px;
     background-color: #FFFFFF;
     box-shadow: 0px 0px 5px rgb(100, 100, 100);
     width: 90vw;
@@ -150,37 +153,31 @@ body {
         display: inline;
     }
     .product-container{
-        grid-template-columns: 5% 50% 40%;
+        grid-template-columns: 50% 50%;
         grid-row: auto;
-        grid-column-gap: 30px;
     }
+
     .product-image{
-        grid-column: 2;
+        grid-column: 1;
         grid-row: 1 / 7;
     }
     .product-info-name{
-        grid-column: 3;
+        grid-column: 2;
     }
     .product-info-description{
-        grid-column: 3;
+        grid-column: 2;
     }
     .product-info-price{
-        grid-column: 3;
+        grid-column: 2;
     }
     .product-properties{
-        grid-column: 3;
+        grid-column: 2;
     }
     .product-quantity{
-        grid-column: 3;
+        grid-column: 2;
     }
     .add-to-cart{
-        grid-column: 3;
-    }
-
-    .product-image-rows{
-        display: grid;
-        grid-column: 1;
-        grid-row: 1 / 5;
+        grid-column: 2;
     }
 
     .button-container button{
