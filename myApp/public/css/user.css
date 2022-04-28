@@ -10,6 +10,10 @@ body {
     background-color: #FFFFFF;
 }
 
+html{
+  font-size: 10px;
+  text-size-adjust: 100%;
+}
 
 .sign-in-container{
   height: 100%;
