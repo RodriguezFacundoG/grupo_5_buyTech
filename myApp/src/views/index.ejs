@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/styleIndex.css">
     <link rel="stylesheet" href="/css/styleHeader.css">
-    <link href="/css/LineamientosGenerales.css" rel="stylesheet" type="text/CSS">
-    <link href="/css/styleFooter.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/styleFooter.css" type="text/css">
     <!-- Linkear Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,38 +21,35 @@
     <%- include('./partials/header.ejs') %>
 
     <main>
-        <section class="slider">
-            <article class="slider__toleft">
-                <button class="fas fa-chevron-left">
-            </article>
-            <article class="slider__category">
+        <div class="slider">
+            <div class="slider__category">
                 <a href="/types/celulares">
-                    <img src="/images/productos/Types/cels.jpg" alt="Cels">
+                    <i class="fas fa-mobile-alt"></i>
                 </a>
                 <p>Celulares</p>
-            </article>
-            <article class="slider__category">
+            </div>
+
+            <div class="slider__category">
                 <a href="/types/tablets">
-                    <img src="/images/productos/Types/tablets.jpeg" alt="Tablets">
+                    <i class="fas fa-tablet-alt"></i>
                 </a>
                 <p>Tablets</p>
-            </article>
-            <article class="slider__category">
+            </div>
+
+            <div class="slider__category">
                 <a href="/types/laptops">
-                    <img src="/images/productos/Types/laptops2.webp" alt="Laptops">
+                    <i class="fas fa-laptop"></i>
                 </a>    
                 <p>Laptops</p>
-            </article>
-            <article class="slider__category"> 
+            </div>
+
+            <div class="slider__category"> 
                 <a href="/types/Accesories">
-                    <img src="/images/productos/Types/accesories.jpeg" alt="Accesories">
+                    <i class="fas fa-mouse"></i>
                 </a>
                 <p>Accesories</p>
-            </article>
-            <article class="slider__toright">
-                <button class="fas fa-chevron-right">
-            </article>            
-        </section>
+            </div>
+        </div>
 
         <div class="container">
                 <section class="the-latest main-sections">
