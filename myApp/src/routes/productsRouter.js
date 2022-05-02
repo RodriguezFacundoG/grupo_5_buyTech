@@ -2,7 +2,7 @@ const express= require ('express');
 const router = express.Router();
 
 const productsController = require('../controllers/productsController')
-const multerUploadUser = require('../middlewares/multerProducts');
+const multerUploadProduct = require('../middlewares/multerProducts');
 
 router.get('/', productsController.index)
 
