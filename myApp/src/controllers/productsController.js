@@ -4,6 +4,7 @@ const fs = require("fs");
 //datos
 const productsFilePath = path.join(__dirname, "../data/productsData.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+const db = require("../database/models/index")
 
 const productsController = {
   //Muestra todos los productos
@@ -29,15 +30,24 @@ const productsController = {
 
   //Guarda la informacion por POST
   store: (req, res) => {
-    let newProduct = req.body;
+    let body = req.body;
+    let filename = req.file.filename
+    
+    db.Product.create({
 
-    //Tengo que crear la propiedad id porque en el req.body no está
-    newProduct.id = products[products.length - 1].id + 1; //Le sumo 1 al id del ultimo producto del array en nuestra DB
+      type: body.product_category,
+      name: body.product_name,
+      description: body.product_description,
+      weight: body.product_weight,
+      color: body.product_color,
+      size: body.product_size,
+      price: body.product_price,
+      discount: body.product_discount,
+      picture: filename
 
-    products.push(newProduct);
+    })  .then( () => res.redirect("/products") );
+           
 
-    let productsJSON = JSON.stringify(products);
-    fs.writeFileSync(productsFilePath, productsJSON, "utf-8");
   },
 
   //Muestra form de edición para el producto seleccionado por id
