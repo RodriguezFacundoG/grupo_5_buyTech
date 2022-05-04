@@ -39,7 +39,7 @@
             <div class="slider__category">
                 <a href="/types/laptops">
                     <i class="fas fa-laptop"></i>
-                </a>    
+                </a>                 
                 <p>Laptops</p>
             </div>
 
@@ -52,47 +52,82 @@
         </div>
 
         <div class="container">
-                <section class="the-latest main-sections">
-                    <h3 class="main-sections__title">The latest</h3>
-                    <% products.forEach(element =>  {  %>
-                        <% if (element.latest == true) { %>
-                            <a href="/products/<%=element.id%>">
-                                <article class="product the-latest__product">
-                                    <img src="/images/productos/<%= element.img %>" alt="" class="product__img">
-                                    <p class="product__name"><%= element.name %> </p>            
-                                </article>
-                            </a>
-                        <%}%>
-                    <%})%>
-                </section>
-            
-                <section class="special-discounts main-sections">
-                    <h3 class="main-sections__title">Special Discounts</h3>
-                    <% products.forEach(element =>  {  %> 
-                        <% if (element.discount != 0) { %>   
-                            <a href="/products/<%=element.id%>">
-                                <article class="product special-discounts__product">
-                                    <img src="/images/productos/<%= element.img %>" alt="" class="product__img">
-                                    <p class="product__name"><%=element.name %></p>             
-                                </article>
-                            </a>
-                        <%}%>
-                    <%})%>
-                </section>
+
+            <div class="section_title">
+                <h3 class="section_title_info">The latest. Take a look at what’s new, right now.</h2>
+            </div>
+
+            <div class="advertise_section"> 
+                <div class="advertise_section_image">
+                    <img src="/images/productos/shop_release.jpg" alt="release" class="advertise_image">
+                </div>
+                <div class="advertise_section_name">
+                    <span>Notebook HP Pavilion</span>
+                </div>
+                <div class="advertise_section_button">
+                        <a href="/products/:id">Buy Now</a>
+                </div>
+            </div>            
+
+            <div class="section_title">
+                <h3 class="section_title_info">Top Sales</h3>
+            </div>
+
+            <div class="top_sale_section">
+                    <div class="top_sale_section_products">
+                        <div class="top_sale_section_list">
+                                <!-- <% products.forEach(element =>  {  %>     
+                                    <% if (element.top == true) { %> -->
+                            <div class="top_sale_section_list_item"></div> 
+                                <a href="/productDetails">
+                                    <div class="product">
+                                        <img src="/images/productos/img-samsung-galaxy-s10_1.jpg" alt="" class="product__img">
+                                        <p class="product__name">Samsung Galaxy S10 </p>       
+                                    </div>
+                                </a>
+                            </div>
+                            <!--
+                            <%}%>
+                         <%})%> -->
+    
+                            <div class="top_sale_section_list_item">
+                                <a href="/productDetails">
+                                    <div class="product">
+                                        <img src="/images/productos/img-samsung-galaxy-s10_1.jpg" alt="" class="product__img">
+                                        <p class="product__name">Samsung Galaxy S10 </p>       
+                                    </div>
+                                </a>
+                            </div>
+    
+                            <div class="top_sale_section_list_item">
+                                <a href="/productDetails">
+                                    <div class="product">
+                                        <img src="/images/productos/img-samsung-galaxy-s10_1.jpg" alt="" class="product__img">
+                                        <p class="product__name">Samsung Galaxy S10 </p>      
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="top_sale_section_list_item">
+                                <a href="/productDetails">
+                                    <div class="product">
+                                        <img src="/images/productos/img-samsung-galaxy-s10_1.jpg" alt="" class="product__img">
+                                        <p class="product__name">Samsung Galaxy S10 </p>      
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="top_sale_section_list_item">
+                                <a href="/productDetails">
+                                    <div class="product">
+                                        <img src="/images/productos/img-samsung-galaxy-s10_1.jpg" alt="" class="product__img">
+                                        <p class="product__name">Samsung Galaxy S10 </p>      
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
         
-                <section class="top-sales main-sections">
-                    <h3 class="main-sections__title">Top Sales</h3>
-                    <% products.forEach(element =>  {  %>     
-                        <% if (element.top == true) { %>     
-                            <a href="/products/<%=element.id%>">
-                                <article class="product top-sales__product">
-                                    <img src="/images/productos/<%= element.img %>" alt="" class="product__img">
-                                    <p class="product__name"><%=element.name %></p>  
-                                </article>
-                            </a> 
-                        <%}%>
-                    <%})%>
-                </section>
+            </div>
+                
         </div>
         
     </main>   
