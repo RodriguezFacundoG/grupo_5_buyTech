@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,      
     },
     stock: {
-      type: DataTypes.TINYINT.UNSIGNED,
+      type: DataTypes.INTEGER.UNSIGNED,
     },
     weight: {
       type: DataTypes.TINYINT.UNSIGNED,
