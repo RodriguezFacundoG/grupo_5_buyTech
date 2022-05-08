@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-04-2022 a las 05:00:08
+-- Tiempo de generación: 09-05-2022 a las 00:09:22
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.2
 
@@ -24,12 +24,14 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `categories`
+-- Estructura de tabla para la tabla `carts`
 --
 
-CREATE TABLE `categories` (
-  `id` int(255) NOT NULL,
-  `categories_name` varchar(255) NOT NULL
+CREATE TABLE `carts` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL,
+  `qty` int(10) UNSIGNED NOT NULL,
+  `total_price` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -39,16 +41,29 @@ CREATE TABLE `categories` (
 --
 
 CREATE TABLE `products` (
-  `id` int(255) UNSIGNED NOT NULL,
-  `type` varchar(255) NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `weight` tinyint(255) UNSIGNED NOT NULL,
+  `stock` int(10) UNSIGNED NOT NULL,
+  `weight` tinyint(3) UNSIGNED NOT NULL,
   `color` varchar(255) NOT NULL,
   `size` varchar(255) NOT NULL,
-  `price` int(255) UNSIGNED NOT NULL,
-  `discount` tinyint(255) UNSIGNED NOT NULL,
-  `picture` varchar(255) NOT NULL
+  `price` int(10) UNSIGNED NOT NULL,
+  `discount` tinyint(3) UNSIGNED NOT NULL,
+  `picture` varchar(255) NOT NULL,
+  `product_category_id` bigint(20) UNSIGNED NOT NULL,
+  `cart_id` bigint(20) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `product_categories`
+--
+
+CREATE TABLE `product_categories` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `type` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -58,30 +73,34 @@ CREATE TABLE `products` (
 --
 
 CREATE TABLE `users` (
-  `id` int(255) UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `admin` tinyint(255) UNSIGNED NOT NULL DEFAULT 0,
-  `avatar` varchar(255) NOT NULL
+  `avatar` varchar(255) NOT NULL,
+  `user_category_id` bigint(20) UNSIGNED NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Volcado de datos para la tabla `users`
+-- Estructura de tabla para la tabla `user_categories`
 --
 
-INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `admin`, `avatar`) VALUES
-(1, 'facundo rodriguez', '', '', '1234', 0, 'asdasd');
+CREATE TABLE `user_categories` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `admin` tinyint(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `categories`
+-- Indices de la tabla `carts`
 --
-ALTER TABLE `categories`
+ALTER TABLE `carts`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -91,9 +110,21 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `product_categories`
+--
+ALTER TABLE `product_categories`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `users`
 --
 ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `user_categories`
+--
+ALTER TABLE `user_categories`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -101,16 +132,10 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT de la tabla `categories`
---
-ALTER TABLE `categories`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
