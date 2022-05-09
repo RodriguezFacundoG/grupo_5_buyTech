@@ -50,6 +50,17 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   const Product = sequelize.define("Product", cols, config);
+  Product.associate = (models) => {
+    Product.belongsTo(models.Product_category, {
+      as: 'product_category',
+      foreignKey: 'product_category_id'
+    }),
+    // Un producto pertenece solo a un carrito pq la idea es que se haga 1 carrito por producto
+    Product.belongsTo(models.Cart,{
+      as: "cart",      
+      foreignKey: "cart_id"
+    })
+  };
   return Product;
 
 };
