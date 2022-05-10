@@ -2,9 +2,7 @@ const session = require("express-session");
 const fs = require('fs');
 const path = require('path')
 
-//DATOS
-const usersFilePath = path.join(__dirname, '../data/usersData.json');
-let usersJSON = fs.readFileSync(usersFilePath, 'utf-8');
+const db = require("../database/models")
 
 function userLoggedMiddleware (req, res, next) {
     //res.locals son variables que puedo compartir entre las vistas, indistintamente del controlador if(req.session && req.session.userLogged)
@@ -12,12 +10,14 @@ function userLoggedMiddleware (req, res, next) {
     let emailInCookie = req.cookies.recordarEmail;
     
     if(req.cookies.recordarEmail) {
-        for(userFromCookie in usersJSON){                   //Busco el usuario, en base al email de la cookie
-            if(userFromCookie.email == emailInCookie){
-                req.session.userLogged = userFromCookie;    //si está en cookie, lo guardará en sesion al usuario.           
+        db.User.findOne({           //Busco el usuario, en base al email de la cookie
+            where: {
+                email: emailInCookie,
             }
-        }
-        
+        })
+            .then( userFromCookie => {
+                req.session.userLogged = userFromCookie;    //si está en cookie, lo guardará en sesion al usuario.
+            })        
     }       
     
     if(req.session.userLogged){     
@@ -32,5 +32,4 @@ function userLoggedMiddleware (req, res, next) {
     } 
     next();
 }
-
 module.exports = userLoggedMiddleware;
