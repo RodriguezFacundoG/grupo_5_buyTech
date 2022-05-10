@@ -80,9 +80,7 @@
                     
                     <p>
                         <% if (locals.errors && errors.password_verification){  %> 
-                            <%= locals.errors.password_verification.msg %> 
-                        <%}else if (locals.passComparitionMsg){%>
-                            <%= locals.passComparitionMsg %>
+                            <%= locals.errors.password_verification.msg %>                         
                         <%}%>
                     </p>
 
