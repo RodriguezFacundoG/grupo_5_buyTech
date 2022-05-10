@@ -20,7 +20,7 @@ router.get('/cart', authMiddleware, userController.productCart);
 
 router.get('/logout', authMiddleware, userController.logout);
 
-router.get('/list', userController.listUsers);
+// router.get('/list', userController.listUsers);
 
 module.exports = router;
 

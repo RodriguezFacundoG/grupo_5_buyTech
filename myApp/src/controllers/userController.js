@@ -20,7 +20,7 @@ if (usersJSON == '') {  //poder agregarle varios objetos (cada uno un usuario)
 const userController = {
 
     loginForm: (req, res) => {
-        res.render('login');
+        return res.render('login');
     },
     loginProcess: (req, res) => {
 
@@ -29,11 +29,15 @@ const userController = {
             return res.render('login', {errors: errors.mapped(), old: req.body})
         }
 
-        for (let userToLogin of users) {
-            if (req.body.email == userToLogin.email) {
+        db.User.findOne({
+            where: {
+                email: req.body.email
+            }
+        })
+            .then((userToLogin) => {
                 let samePassword = bcrypt.compareSync(req.body.password, userToLogin.password)
                 console.log(samePassword)
-                if (!samePassword) { //Cambiar a if(samePassword) al terminar de hacer pruebas
+                if (samePassword) { 
                     delete userToLogin.password;            //Borro el password antes de guardar el usuario en sesion para mayor seguridad
                     req.session.userLogged = userToLogin;   //creo la propiedad userLogged en el objeto global req.session
                     //Cookie
@@ -51,56 +55,67 @@ const userController = {
                         }
                     }
                 });
-            }
-        }
-
-        return res.render('login', {
-            errors: {
-                email: {
-                    msg: "Este email no está registrado"
-                }
-            }
-        });
+            })
+            
+            .catch( () => { // Si quiero puedo captar el error como parámetro en el callback del catch        
+                return res.render('login', { 
+                    errors: {
+                        email: {
+                            msg: "Este email no está registrado"
+                        }
+                    }
+                })
+            });          
 
     },
     registerForm: (req, res) => {
         return res.render('register');
     },
     registerUpload: async (req, res) => {
-        let errors = validationResult(req);
+        let errors = validationResult(req);        
         let userPass = req.body.password;
         let userPassVerification = req.body.password_verification;
         //Si tiene errores sintácticos o las contraseñas no coinciden:
-        if (!errors.isEmpty() || userPass !== userPassVerification) {                   
-            return res.render('register', { errors: errors.mapped(), old: req.body, passComparitionMsg: 'Las contraseñas no coinciden' });           
-        }   
-
+        // if (!errors.isEmpty() || userPass !== userPassVerification) {                   
+        //     return res.render('register', { errors: errors.mapped(), old: req.body, passComparitionMsg: 'Las contraseñas no coinciden' });           
+        // }            
+        if ( !errors.isEmpty() ) {            
+            return res.render('register', { errors: errors.mapped(), old: req.body });           
+        }
+        if (userPass !== userPassVerification) {                          
+            return res.render('register', { old: req.body, errors: {
+                                                                        password_verification: {
+                                                                            msg: 'Las contraseñas no coinciden'
+                                                                        }
+                                                                    }
+            });
+        }            
+        
         let passEncripted = bcrypt.hashSync(userPass, 10);        
         let newUser = {
             ...req.body,
             password: passEncripted,                
             avatar: req.file != undefined ? req.file.filename : 'user-solid.svg', //Solo agrega esta propíedad en caso de que se cree agregue una imagen, sino pone una por default
-            admin: false,
+            user_category_id: 0,
         };
         delete newUser.password_verification;   //Necesito borrar el password que se verifica, porque no está hasheado       
         await db.User.create(newUser);        
         return res.redirect("/");        
     },
-    productCart: (req, res) => {
-        //hacer un IF para que si el usuario está registrado o no, vaya a un lado especifico
-        //hacer IF con sesion de usuario o redirigir a Register
-        //hacer res.redirect a Login
-        res.render('productCart')
+    productCart: (req, res) => {           
+        return res.render('productCart')
     },
     logout: (req, res) => {
         res.clearCookie("recordarEmail");
         req.session.destroy();
         res.redirect('/');
-    },
-    listUsers: async (req, res) => {
-        const users = await db.User.findAll();
-        return res.send(users)
     }
+    /*ACA ES EL METODO QUE PUSO JUANPA PARA PROBAR LA CONEXION A LA DB*/ 
+
+    // listUsers: async (req, res) => {
+    //     const users = await db.User.findAll();
+    //     return res.send(users)
+    // }
 };
 
 module.exports = userController;
