@@ -1,40 +1,44 @@
 <header class="header">
-
-    <!-- Burger menu -->
-    <nav class="header__burger-menu">
+<div class="top">
+    <!-- Icon menu -->
+    <div class="icon-menu">
         <i class="fas fa-bars"></i>
-    </nav>
-    
-    <!-- Imagen -->
-    <div class="header__img-container">
-        <a href="/"><img src="/images/LogoBuyTech.png" alt="LOGO" class="header__img"></a>
     </div>
 
-    <!--Barrra de busqueda  -->
-    <nav class="header__searchbar">        
-        <div class="header__searchbar--background">
-            <input type="text" placeholder="Introduce un término de búsqueda">
-            <i class="fas fa-search"></i>            
-        </div>
-    </nav>
+    <!-- Logo -->
+    <div class="logo-container">
+        <a class="logo" href="/">
+            <img src="/images/LogoBuyTech.png" alt="LOGO" class="header__img">
+        </a>
+    </div>
+    
+
+    <!-- Search bar -->
+    <form action="/products/search" method="GET" class="search-bar">
+        <input type="text" name="keywords" placeholder="Search products">
+        <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
 
     <!-- Nav de user y cart -->
-    <nav class="header__about-me">            
+    <div class="icons">
         <a href="/user/login">           
             <% if(locals.isLogged == false){ %>
-                <span class="nav-personal__text">User</span>
                 <i class="fas fa-user"></i>
+                <span class="nav-personal__text">User</span>
+                
             <% } else { %>
-                <span class="nav-personal__text"><%= locals.userLogged.firstName %></span>
                 <img src="images/userAvatars/<%= locals.userLogged.avatar %>" alt="No carga avatar">
+                <span class="nav-personal__text"><%= locals.userLogged.firstName %></span>
             <% } %>
         </a>
-        <a href="/user/cart">
-            <span class="nav-personal__text">Cart</span>    
+
+        <a class="icon-cart" href="/user/cart">  
             <i class="fas fa-shopping-cart"></i>
         </a>
-        <a href="/user/logout">
-            <span class="nav-personal__text">Log out</span>
-        </a>
-    </nav>    
+
+    </div>
+
+       
+</div>
+    
 </header>
