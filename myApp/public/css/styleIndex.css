@@ -26,7 +26,7 @@ main {
     background-color: #FFFFFF;
 }
 
-/* BARRA TIPOS DE PRODUCTOS*/
+/* TYPE OF PRODUCTS BAR*/
 .slider {
     background-color: white;
     display: flex;
@@ -52,22 +52,10 @@ main {
     font-weight: bold;
 }
 
-/* SECTION TITLE */
-.section_title{
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
 
-.section_title_info{
-    color: grey;
-    font-size: 2.2rem;
-    letter-spacing: .06rem;
-    margin-bottom: 15px;
-}
 
 /* ADVERTISE */
 .advertise_section {
-    position: relative;
     display: flex;
     justify-content: center;
     margin-bottom: 50px;
@@ -77,16 +65,7 @@ main {
     width: 100%;
 }
 
-.advertise_section_name{
-    position: absolute;
-    top:10px;
-    left: 20px;
-    font-size: 3rem;
-    color:white;
-    font-weight: bold;
-    text-align: center;
-}
-
+/*
 .advertise_section_button{
     position:absolute;
     bottom: 20px;
@@ -101,7 +80,20 @@ main {
     padding: 10px 15px;
     text-align: center;
     width: 100%;
-    
+}
+*/
+
+/* SECTION TITLE */
+.section_title{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.section_title_info{
+    color: grey;
+    font-size: 2.2rem;
+    letter-spacing: .06rem;
+    margin-bottom: 15px;
 }
 
 /* TOP SALES */
