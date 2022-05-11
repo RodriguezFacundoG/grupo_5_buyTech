@@ -87,13 +87,17 @@ main {
 .section_title{
     margin-top: 20px;
     margin-bottom: 20px;
+    width: 100%;
+    justify-content: center;
 }
 
 .section_title_info{
-    color: grey;
-    font-size: 2.2rem;
+    color: black;
+    font-size: 4rem;
     letter-spacing: .06rem;
+    font-weight: 700;
     margin-bottom: 15px;
+    text-align: center;
 }
 
 /* TOP SALES */
