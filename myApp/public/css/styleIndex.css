@@ -85,6 +85,10 @@ a {
 }
 
 /* SECTION TOP SALES */
+.section_products{
+    width: 100%;
+}
+
 .top_sale_section_products{
     display: grid;
     justify-content: center;
@@ -96,7 +100,6 @@ a {
 .top_sale_section_item_first{
     display: flex;
     padding: 8px;
-
 }
 
 .top_sale_section_item_rest{
@@ -108,7 +111,7 @@ a {
 }
 
 
-.product a{
+.product {
     display: flex;
     flex-direction: column;
     padding: 8px;
@@ -118,6 +121,11 @@ a {
     border: 1px solid rgb(238, 238, 238);
     align-items: center;
     justify-content: center;
+}
+
+.product a{
+    width: auto;
+    height: auto;
 }
 
 .top_sale_section_item_first .product a{
@@ -173,7 +181,7 @@ a {
 
 
 @media (min-width: 769px) {
-    .product{
+    .product {
         transition: box-shadow 275ms;
     }
     .product:hover{
