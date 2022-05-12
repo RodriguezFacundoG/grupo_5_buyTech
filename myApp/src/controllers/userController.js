@@ -6,17 +6,6 @@ const bcrypt = require('bcrypt');
 const db = require("../database/models/index")
 // Que es lo mismo que hacer require("../database/models") porque Javascript va a buscar siempre el archivo index
 
-//datos
-const usersFilePath = path.join(__dirname, '../data/usersData.json');
-let usersJSON = fs.readFileSync(usersFilePath, 'utf-8');
-
-let users;              //Si está vacío, que en la variable users, ponga un array vacío, para despues
-if (usersJSON == '') {  //poder agregarle varios objetos (cada uno un usuario)
-    users = [];
-} else {
-    users = JSON.parse(usersJSON);
-}
-
 const userController = {
 
     loginForm: (req, res) => {
