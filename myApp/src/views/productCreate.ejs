@@ -48,11 +48,10 @@
                     <div class="form_product_category">
                             <label for="create_form_product_category">Category *</label>
                             <select class="form_select" name="product_category" id="create_form_product_category">
-                                <option value disabled selected hidden>Select:</option>                                
-                                <option value="1">Laptops</option>
-                                <option value="2">Smartphones</option>
-                                <option value="3">Tablets</option>
-                                <option value="4">Accesories</option>                               
+                                <option value disabled selected hidden>Select:</option>
+                                <% categories.forEach(category => { %>                               
+                                    <option value="<%-category.id%>"><%=category.name%></option>
+                                <% }) %>
                             </select>
                     </div>
 
