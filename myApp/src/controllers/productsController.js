@@ -22,7 +22,10 @@ const productsController = {
 
   //Muestra form de creacion
   create: (req, res) => {
-    res.render("productCreate");
+    db.Product_category.findAll()
+      .then((categories) => {
+        return res.render("productCreate", {categories});
+      })
   },
 
   //Guarda la informacion por POST
