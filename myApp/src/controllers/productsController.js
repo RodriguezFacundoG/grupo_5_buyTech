@@ -3,7 +3,7 @@ const db = require("../database/models/index")
 
 const productsController = {
   //Muestra todos los productos
-  index: (req, res) => {
+  index: (req, res) => {    
     db.Product.findAll()
       .then( (products) => {
         return res.render("index", { products });
@@ -22,7 +22,7 @@ const productsController = {
 
   //Muestra form de creacion
   create: (req, res) => {
-    res.render("productCreate");
+    return res.render("productCreate");
   },
 
   //Guarda la informacion por POST
@@ -32,16 +32,18 @@ const productsController = {
     
     db.Product.create({
 
-      type: body.product_category,
       name: body.product_name,
       description: body.product_description,
+      stock: body.product_stock,
       weight: body.product_weight,
       color: body.product_color,
       size: body.product_size,
       price: body.product_price,
       discount: body.product_discount,
-      picture: filename
-
+      picture: filename,
+      product_category_id: body.product_category,
+      //Aca me queda por completas con el id del carrito
+      
     })  .then( () => res.redirect("/products") );
            
 
@@ -62,15 +64,17 @@ const productsController = {
 
     db.Product.update({
 
-      type: body.product_category,
       name: body.product_name,
       description: body.product_description,
+      stock: body.product_stock,
       weight: body.product_weight,
       color: body.product_color,
       size: body.product_size,
       price: body.product_price,
       discount: body.product_discount,
       picture: filename,
+      product_category_id: body.product_category,
+      
     }, {
 
       where: { id: req.params.id }
@@ -81,7 +85,7 @@ const productsController = {
   //Elimina el producto seleccionado por id
   delete: (req, res) => {
     db.Product.destroy({where: { id: req.params.id }})
-      .then( ()=> res.redirect("/products"))
+      .then( () => res.redirect("/products"))
   },
 };
 
