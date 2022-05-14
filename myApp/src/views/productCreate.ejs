@@ -50,7 +50,7 @@
                             <select class="form_select" name="product_category" id="create_form_product_category">
                                 <option value disabled selected hidden>Select:</option>
                                 <% categories.forEach(category => { %>                               
-                                    <option value="<%-category.id%>"><%=category.type.charAt(0).toUpperCase() + category.type.slice(1)%></option>
+                                    <option value="<%=category.id%>"><%=category.type.charAt(0).toUpperCase() + category.type.slice(1)%></option>
                                 <% }) %>
                             </select>
                     </div>
