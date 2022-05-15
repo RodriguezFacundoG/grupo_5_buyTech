@@ -6,7 +6,7 @@ const productsController = {
   //Muestra todos los productos segun categoria
   types: (req, res) => {
     let categoryId = req.params.type;
-    db.Product_category.findOne({where: {type: req.params.type}})
+    db.Product_category.findOne({where: {type: categoryId}})
       .then( category => {
         db.Product.findAll({where: {product_category_id: category.id}})
           .then ( products => {
