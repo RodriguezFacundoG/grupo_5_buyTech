@@ -2,12 +2,17 @@ const path = require("path");
 const db = require("../database/models/index")
 
 const productsController = {
-  //Muestra todos los productos
-  index: (req, res) => {    
-    db.Product.findAll()
-      .then( (products) => {
-        return res.render("index", { products });
-      })
+  
+  //Muestra todos los productos segun categoria
+  types: (req, res) => {
+    let categoryId = req.params.type;
+    db.Product_category.findOne({where: {type: req.params.type}})
+      .then( category => {
+        db.Product.findAll({where: {product_category_id: category.id}})
+          .then ( products => {
+            res.render('productTypeList', { products })
+          })
+      })      
   },
 
   //Muestra el detalle de un producto
