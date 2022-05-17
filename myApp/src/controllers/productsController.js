@@ -6,11 +6,6 @@ const productsController = {
   //Muestra todos los productos segun categoria
   types: (req, res) => {
     
-    if(Number(req.params.type)) { // Number(req.params.type) devuelve null cuando no puede convertirlo a string
-      console.log("redireccionando")
-      return res.path("/products/" + req.params.type)
-    }
-      
     let categoryId = req.params.type;
     db.Product_category.findOne({where: {type: categoryId}})
       .then( category => {
@@ -110,7 +105,10 @@ const productsController = {
   //Elimina el producto seleccionado por id
   delete: (req, res) => {
     db.Product.destroy({where: { id: req.params.id }})
-      .then( () => res.redirect("/products"))
+      .then( () => {
+        db.Cart.findAll({where: {id: req.params.id}})
+    })
+      // .then( () => res.redirect("/products"))
   },
 };
 
