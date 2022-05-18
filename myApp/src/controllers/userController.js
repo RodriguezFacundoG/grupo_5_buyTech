@@ -87,10 +87,15 @@ const userController = {
             avatar: req.file != undefined ? req.file.filename : 'user-solid.svg', //Solo agrega esta propíedad en caso de que se cree agregue una imagen, sino pone una por default
             user_category_id: 0,
         };
-        delete newUser.password_verification;   //Necesito borrar el password que se verifica, porque no está hasheado       
+        delete newUser.password_verification;   //Necesito borrar el password que se verifica, porque no está hasheado    
+        try{   
         await db.User.create(newUser);        
         return res.redirect("/");        
-    },
+    }catch(error){
+        console.log(error)
+    }
+
+},
     productCart: (req, res) => {           
         return res.render('productCart')
     },
