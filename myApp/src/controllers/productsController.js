@@ -2,22 +2,28 @@ const path = require("path");
 const db = require("../database/models/index")
 
 const productsController = {
-  //Muestra todos los productos
-  index: (req, res) => {    
-    db.Product.findAll()
-      .then( (products) => {
-        return res.render("index", { products });
-      })
+  
+  //Muestra todos los productos segun categoria
+  types: (req, res) => {
+    
+    let categoryId = req.params.type;
+    db.Product_category.findOne({where: {type: categoryId}})
+      .then( category => {
+        db.Product.findAll({where: {product_category_id: category.id}})
+          .then ( products => {
+            res.render('productTypeList', { products })
+          })
+      })      
   },
 
   //Muestra el detalle de un producto
   detail: (req, res) => {
     let idABuscar = req.params.id;
-
-    db.findByPk(idABuscar)
-      .then( (producto) => {
-        return res.render("productDetails", { element: producto });
-      });     
+   
+    db.Product.findByPk(idABuscar, {include: ["product_category"] })
+      .then( (producto) => {        
+          return res.render("productDetails", { element: producto });
+      })     
   },
 
   //Muestra form de creacion
@@ -55,11 +61,22 @@ const productsController = {
   //Muestra form de edición para el producto seleccionado por id
   edit: (req, res) => {
     let idABuscar = req.params.id;
+    const promise1 = db.Product_category.findAll();
+    const promise2 = db.Product.findByPk(idABuscar, {include: ["product_category"] })
+    Promise.all([promise1, promise2]) 
+      .then( ([categories, product]) => {       
+        return res.render("productEdit", {element: product, categories: categories})
+        // return res.send({categories, product}) 
+      })
+    // let categories = await db.Product_category.findAll();
+    // let producto = await db.Product.findByPk(idABuscar, {include: ["product_category"] })  
 
-    db.findByPk(idABuscar)
-      .then( (producto) => {
-        return res.render("productEdit", { element: producto });
-      });    
+    // return res.render("productEdit", {element: producto, categories: categories})
+    // db.Product.findByPk(idABuscar, {include: ["product_category"] })
+    //   .then( (producto) => {        
+    //       // return res.send( producto );
+    //       return res.render("productEdit", { element: producto });
+    //   })           
   },
 
   //Actualiza la informacion del producto a traves de PUT
@@ -88,7 +105,10 @@ const productsController = {
   //Elimina el producto seleccionado por id
   delete: (req, res) => {
     db.Product.destroy({where: { id: req.params.id }})
-      .then( () => res.redirect("/products"))
+      .then( () => {
+        db.Cart.findAll({where: {id: req.params.id}})
+    })
+      // .then( () => res.redirect("/products"))
   },
 };
 

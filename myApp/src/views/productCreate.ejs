@@ -39,7 +39,7 @@
                     </div>
                     <div class="form_product_description">
                             <label for="create_form_product_description">Description *</label>
-                            <input class="form_text" type="text" name="product_description" id="create_form_product_description" maxlength="65">
+                            <input class="form_text" type="text" name="product_description" id="create_form_product_description">
                     </div>
                     <div class="form_product_image">
                             <label for="create_form_product_image">Image *</label>
@@ -50,7 +50,7 @@
                             <select class="form_select" name="product_category" id="create_form_product_category">
                                 <option value disabled selected hidden>Select:</option>
                                 <% categories.forEach(category => { %>                               
-                                    <option value="<%-category.id%>"><%=category.name%></option>
+                                    <option value="<%=category.id%>"><%=category.type.charAt(0).toUpperCase() + category.type.slice(1)%></option>
                                 <% }) %>
                             </select>
                     </div>

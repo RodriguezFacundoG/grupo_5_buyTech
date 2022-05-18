@@ -1,445 +1,213 @@
 *{
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  text-size-adjust: 100%;
 }
 
-body {
+body{
   font-family: 'Barlow', sans-serif;
-	 background: #fff;
-	 margin: 0;
 }
 
-/* header {
-	background: #0158aa;
-	position: sticky;
-	width: 100vw;
-	height: 18vw;
-	padding: 15px;
-	z-index: 1;
-	justify-content: space-between;
-	display: flex;
-	top:0;
-	color: white;
+html{
+  font-size: 10px;
+  text-size-adjust: 100%;
 }
-
-.burger-menu {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.burger-menu i {
-	font-size: 20px;
-}
-.header-right {
-	width: 11vw;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.header-right i {
-	font-size: 15px;
-}
-
-.fas-fa-user {
-	margin-left: 2px;
-}
-
-header img {
-	width: 55%;
-}
-
-
-/*MENU HAMBURGUESA */
-/* nav ul {
-	display: none;
-}   */
 
 main {
-	position: relative;
+  width: 100vw;
+  padding-bottom: 20px;
+  padding-top: 60px;
+  background-color: rgb(241, 241, 241);
 }
 
-main h1 {
-	text-align: center;
-	font-size: 30px;
-	margin-bottom: 0;
-}
-
-.contenedor-tarjetas {
-	display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: stretch;
-	margin: 10px;
-	margin-bottom: 15px;
-}
-
-.tarjeta {
-	background-color: #EDEEF0;
-	width: 45%;
-	border-radius: 10px;
-	text-align: center;
-	margin: auto;
-	margin-top: 15px;
-}
-
-.tarjeta img {
-	width: 85%;
-	height: auto;
-	margin-top: 15px;
-	border-radius: 5px;
-	
-}
-
-.tarjeta p {
-	margin-bottom: 5px;
-	font-size: 13px;
-	margin-top: 5px;
-}
-
-.tarjeta h2 {
-	font-weight: bold;
-	margin-top: 2px;
-	margin-bottom: 0px;
-	font-size: 17px;
-}
-
-.tarjeta .txt-cuotas {
-	font-size: 12px;
-	color: #5b51e9;
-	margin-top: -5px;
-	font-size: 11px;
-	margin-bottom: 10px;
-}
-
-.tarjeta .buttons {
-	padding-bottom: 20px;
-	margin-top: 0px;
-}
-
-.buttons .buy {
-	background-color: #0158aa;
-	color: white;
-	border-radius: 25px;
-	border-color: #0158aa;
-	width: 42%;
-	height: auto;
-	font-weight: bold;
-	font-size: 15px;
-}
-
-.buttons .details {
-	background-color: #fff ;
-	color: #0158aa;
-	border-radius: 25px;
-	border-color: #0158aa ;
-	width: 42%;
-	height: auto;
-	font-weight: bold;
-	font-weight: bold;
-	font-size: 15px;
+a {
+  text-decoration: none;
+  height: auto;
 }
 
 
-/* FOOTER */
-  footer {
-      width: auto;
-      height: auto;
-      text-align: center;
+/* PRODUCT ROUTE */
+.product_route_list {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 16px;
+}
+
+.product_route_list li {
+  color: rgb(74, 74, 74);
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: -0.46px;
+  white-space: nowrap;
+  min-height: 2.4rem;
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+}
+
+.product_route_list_icon {
+  color:rgb(204, 204, 204);
+  margin-left: 8px;
+  margin-right: 8px;
+  width: 5px;
+}
+
+
+/* PRODUCT LIST */
+
+.product_section {
+  background-color: white;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.product {
+  display: grid;
+  grid-template-columns: 30% 60%;
+  gap: 16px;
+  padding: 12px;
+  border: 1px solid rgb(238, 238, 238);
+}
+
+.product_img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product img{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.product_section_name{
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.product__name{
+  font-size: 1.4rem;
+  color: black;
+  letter-spacing: .06rem;
+  text-align: center;
+}
+
+.product_section_price {
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.product_price{
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: black;
+  text-align: center;
+}
+
+.product_section_discount{
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.product_old_price{
+  font-size: 1.8rem;
+  color: rgb(136, 136, 136);
+  text-decoration: line-through;
+  margin-right: 3px; 
+}
+
+.product_discount{
+  font-size: 1.5rem;
+  border-radius: 2px;
+  padding: 2px 3px;
+  background-color: #0158AA;
+  color: rgb(255, 255, 255);
+  margin-left: 3px;
+}
+
+.buttons {
+  display: inline-flex;
+  gap:12px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.button-product {
+  text-align: center;
+  background-color: #4b5666;
+  border: 1px solid #4b5666;
+  color: #fff;
+  font-size: 1.2rem;
+  letter-spacing: .24rem;
+  line-height: normal;
+  text-transform: uppercase;
+  padding: 10px;
+  width: 100%;
+}
+
+
+@media (min-width: 769px) {
+  .product_section{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: rgb(241, 241, 241);
   }
-  .footer-site-info {
-      margin-top: 5.55555556vw;
-      padding: 2.43055556vw 0;
-      font-size: 0.66666667rem;
-      line-height: 2;
-      text-transform: uppercase;
-      background: #0158AA;
-      color: #fff;
-    }
 
-  .footer-site-info {
-        margin: 0px 0;
-        padding: 0 0px;
-      }
+  .product {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    margin: 5px;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 8%) 0px 2px 4px 0px;
+    align-items: center;
+    justify-content: center;
+    transition: box-shadow 275ms;
+  }
+  .product:hover{
+    box-shadow: rgb(0 0 0 / 10%) 4px 4px 6px 2px;
+  }
 
-  .footer-site-info-insta {
-        display: inline-block;
-        font-size: 0;
-        width: 1.73611111vw;
-        height: 1.73611111vw;
-        margin: 1.04166667vw;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-      .footer-site-info-face {
-          display: inline-block;
-          font-size: 0;
-          width: 1.73611111vw;
-          height: 1.73611111vw;
-          margin: 1.04166667vw;
-          background-size: contain;
-          background-repeat: no-repeat;
-          background-position: center;
-        }
-    .footer-site-info-twit{
-      display: inline-block;
-      font-size: 0;
-      width: 1.73611111vw;
-      height: 1.73611111vw;
-      margin: 1.04166667vw;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
+  .product img{
+    max-width: 100%;
+    max-height: 60%;
+  }
 
-      .imagen-logo-buy {
-          width: 45%;
-          margin-top: 1%;
-      }
-      .footer-site-info-insta {
-          width: 25px;
-          height: 25px;
-          margin: 15px;
-        }
-      .footer-site-info-face{
-        width: 25px;
-        height: 25px;
-        margin: 15px;
-      }
-      .footer-site-info-twit {
-          width: 25px;
-          height: 25px;
-          margin: 15px;
-        }
+  .product_section_name{
+    display: flex;
+  }
+
+  .product_section_price {
+    display: flex;
+  }
+
+  .product_section_discount{
+    display: flex;
+  }
+
+  .buttons{
+    margin: 10px 0;
+  }
+
+  .button-container{
+    margin:0 10px;
+  }
+
+}
 
 
-/* Imagenes logo redes */
-    .footer-site-info-insta.instagram {   
-      background-image: url(/imagenes/LogoInstagram.png);
-    }
-    .footer-site-info-face.facebook {
-      background-image: url(/imagenes/LogoFaceBook.png);
-    }
-    .footer-site-info-twit.twitter {
-        background-image: url(/imagenes/LogoTwiter.png);
-    } 
-    .iamgen-logo-buy {
-        background-image: url(/imagenes/LogoBuyTech.png);
-    }
-
-    .facebook.button {
-      color: #ff337f;
-      background: #fff;
-      border: 1px solid;
-    }
-    .instagram.button {
-        color: #ff337f;
-        background: #fff;
-        border: 1px solid;
-      }
-    .twitter.button {
-      color: #ff337f;
-      background: #fff;
-      border: 1px solid;
-    }  
-    
-    .facebook-logo {
-      display: inline-block;
-      content: url(/imagenes/LogoFaceBook.png);
-      height: 1.3em;
-      position: relative;
-      bottom: -0.25em;
-      margin: 0 0.3em;
-    }
-    .instagram-logo {
-        display: inline-block;
-        content: url(/imagenes/LogoInstagram.png);
-        height: 1.3em;
-        position: relative;
-        bottom: -0.25em;
-        margin: 0 0.3em;
-      }
-    .twitter-logo {
-          display: inline-block;
-          content: url(/imagenes/LogoTwiter.png);
-          height: 1.3em;
-          position: relative;
-          bottom: -0.25em;
-          margin: 0 0.3em;
-      }
-
-/* TABLET */
-    @media (min-width: 481px) and (max-width: 768px) {
-    }
-
-
-/* DESKTOP */
-    @media (min-width: 769px) {
-      /* header {
-        background: #0158aa;
-        position: sticky;
-        width: 100vw;
-        height: 6vw;
-        padding: 15px;
-        z-index: 1;
-        justify-content: space-between;
-        display: flex;
-        top:0;
-        color: white;
-      }
-
-      .burger-menu {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-left: 20px;
-      }
-      
-      .burger-menu i {
-        font-size: 30px;
-      }
-      .header-right {
-        width: 7vw;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-right: 20px;
-      }
-      
-      .header-right i {
-        font-size: 25px;
-      }
-      
-      header img {
-        width: 25%;
-        height: 120%;
-        margin-right: 10.5%;
-      } */
-      
-      
-      /*MENU HAMBURGUESA */
-      /* nav ul {
-        display: none;
-      }  */
-      
-      main {
-        position: relative;
-      }
-      
-      main h1 {
-        text-align: center;
-        font-size: 30px;
-        margin-bottom: 0;
-      }
-      
-      .contenedor-tarjetas {
-        display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          align-items: stretch;
-        margin: 10px;
-        margin-bottom: 15px;
-      }
-      
-      .tarjeta {
-        background-color: #EDEEF0;
-        width: 23%;
-        border-radius: 10px;
-        text-align: center;
-        margin: auto;
-        margin-top: 15px;
-      }
-      
-      .tarjeta img {
-        width: 85%;
-        height: auto;
-        margin-top: 15px;
-        border-radius: 5px;
-        
-      }
-      
-      .tarjeta p {
-        margin-bottom: 10px;
-        font-size: 22px;
-        margin-top: 10px;
-      }
-      
-      .tarjeta h2 {
-        font-weight: bold;
-        margin-top: 2px;
-        margin-bottom: 0px;
-        font-size: 25px;
-      }
-      
-      .tarjeta .txt-cuotas {
-        font-size: 13px;
-        margin-top: 2px;
-      }
-      
-/* FOOTER */
-        footer {
-            width: auto;
-            height: auto;
-            text-align: center;
-        }
-
-        .footer-site-info {
-            margin-top: 5.55555556vw;
-            padding: 2.43055556vw 0;
-            font-size: 0.66666667rem;
-            line-height: 2;
-            text-transform: uppercase;
-            background: #0158AA;
-            color: #fff;
-          }
-      
-        .footer-site-info {
-              margin: 0px 0;
-              padding: 0 0px;
-            }
-      
-        .footer-site-info-insta {
-              display: inline-block;
-              font-size: 0;
-              width: 1.73611111vw;
-              height: 1.73611111vw;
-              margin: 1.04166667vw;
-              background-size: contain;
-              background-repeat: no-repeat;
-              background-position: center;
-            }
-            .footer-site-info-face {
-                display: inline-block;
-                font-size: 0;
-                width: 1.73611111vw;
-                height: 1.73611111vw;
-                margin: 1.04166667vw;
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-position: center;
-              }
-          .footer-site-info-twit{
-            display: inline-block;
-            font-size: 0;
-            width: 1.73611111vw;
-            height: 1.73611111vw;
-            margin: 1.04166667vw;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-          }
-      
-            .imagen-logo-buy {
-                width: 20%;
-                margin-top: 1%;
-                margin-bottom: -10px;
-            }
-
-            footer p{
-              margin-bottom: 0px;
-              margin-top: -4px;
-              font-size: 15px;
-            }
-            
-    }
+@media (min-width: 1024px) {
+  .product_section{
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
