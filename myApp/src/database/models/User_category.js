@@ -8,8 +8,8 @@ module.exports = (sequelize, DataTypes) => {
       autoIncremental: true,
       primaryKey: true,
     },
-    admin: {
-      type: DataTypes.BOOLEAN,      
+    type: {
+      type: DataTypes.STRING,
     }    
   };
 

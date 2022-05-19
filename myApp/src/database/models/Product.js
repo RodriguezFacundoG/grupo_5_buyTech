@@ -19,28 +19,30 @@ module.exports = (sequelize, DataTypes) => {
     },
     weight: {
       type: DataTypes.TINYINT.UNSIGNED,
+      allowNull: true
     },
     color: {
       type: DataTypes.STRING,
+      allowNull: true
     },
     size: {
-      type: DataTypes.STRING,     
+      type: DataTypes.STRING,
+      allowNull: true   
     },
     price: {
       type: DataTypes.INTEGER.UNSIGNED,
     },
     discount: {
       type: DataTypes.TINYINT.UNSIGNED,
+      allowNull: true
     },
     picture: {
       type: DataTypes.STRING,
     },
     product_category_id: {
-        type: DataTypes.BIGINT.UNSIGNED
-    },
-    cart_id: {
-        type: DataTypes.BIGINT.UNSIGNED
-    }
+        type: DataTypes.BIGINT.UNSIGNED,
+        allowNull: true
+    },    
   };
 
   const config = {
@@ -55,10 +57,10 @@ module.exports = (sequelize, DataTypes) => {
       as: 'product_category',
       foreignKey: 'product_category_id'
     }),
-    // Un producto pertenece solo a un carrito pq la idea es que se haga 1 carrito por producto
-    Product.belongsTo(models.Cart,{
-      as: "cart",      
-      foreignKey: "cart_id"
+    
+    Product.hasMany(models.Item,{
+      as: "items",      
+      foreignKey: "product_id"
     })
   };
   return Product;
