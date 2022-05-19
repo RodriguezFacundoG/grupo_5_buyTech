@@ -1,8 +1,8 @@
 module.exports={
   "development": {
     "username": "root",
-    "password": "root",
-    "database": "structure",
+    "password": null,
+    "database": "buytech_database",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
