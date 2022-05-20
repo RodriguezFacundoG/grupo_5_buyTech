@@ -50,11 +50,9 @@ const productsController = {
       price: body.product_price,
       discount: body.product_discount,
       picture: filename,
-      product_category_id: body.product_category,
-      //Aca me queda por completas con el id del carrito
+      product_category_id: body.product_category,      
       
-    })  .then( () => res.redirect("/products") );
-           
+    })  .then( () => res.redirect("/products") );         
 
   },
 
@@ -81,7 +79,7 @@ const productsController = {
 
   //Actualiza la informacion del producto a traves de PUT
   update: (req, res) => {
-
+    let idABuscar = req.params.id;
     db.Product.update({
 
       name: body.product_name,
@@ -97,18 +95,19 @@ const productsController = {
       
     }, {
 
-      where: { id: req.params.id }
+      where: { id: idABuscar }
 
     }).then( () => res.redirect("/products") );   
   },
 
   //Elimina el producto seleccionado por id
   delete: (req, res) => {
-    db.Product.destroy({where: { id: req.params.id }})
+    let idABuscar = req.params.id;
+    db.Product.destroy({where: { id: idABuscar }})
       .then( () => {
-        db.Cart.findAll({where: {id: req.params.id}})
-    })
-      // .then( () => res.redirect("/products"))
+        db.Item.destroy({where: {product_id: idABuscar}})
+          .then( () => res.redirect("/products"))          
+      })
   },
 };
 
