@@ -7,24 +7,32 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BIGINT.UNSIGNED,
       autoIncremental: true,
       primaryKey: true,
+      allowNull: false,
     },
     first_name: {
-      type: DataTypes.STRING,      
+      type: DataTypes.STRING,
+      allowNull: false,      
     },
     last_name: {
-      type: DataTypes.STRING,      
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     email: {
-      type: DataTypes.STRING,      
+      type: DataTypes.STRING,
+      allowNull: false, 
     },
     password: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     avatar: {
         type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: null,
     },
     user_category_id: {
         type: DataTypes.BIGINT.UNSIGNED,
+        allowNull: false,
         
     }
 };
@@ -41,9 +49,12 @@ module.exports = (sequelize, DataTypes) => {
       as: 'user_category',
       foreignKey: 'user_category_id'
     }),
-    User.hasMany(models.Cart, {
-      as:"carts",
-      foreignKey:"user_id"
+    User.belongsToMany(models.Item, {
+      as:"items",
+      through: "users_items",
+      foreignKey: "user_id",
+      otherKey: "item_id",
+      timestamps: false
     })
   };
   return User;

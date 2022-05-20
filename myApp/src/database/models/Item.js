@@ -7,9 +7,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BIGINT.UNSIGNED,
       autoIncremental: true,
       primaryKey: true,
+      allowNull: false,
     },     
     product_id: {
-        type: DataTypes.BIGINT.UNSIGNED
+        type: DataTypes.BIGINT.UNSIGNED,
+        allowNull: false,
     }    
   };
 
@@ -24,8 +26,8 @@ module.exports = (sequelize, DataTypes) => {
     Item.belongsToMany(models.User, {
       as: "users",
       through: "users_items",
-      foreignKey: "user_id",
-      otherKey: "item_id", 
+      foreignKey: "item_id",
+      otherKey: "user_id", 
       timestamps: false
     }),
     Item.belongsTo(models.Product, {

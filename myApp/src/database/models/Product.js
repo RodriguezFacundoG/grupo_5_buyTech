@@ -7,41 +7,52 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BIGINT.UNSIGNED,
       autoIncremental: true,
       primaryKey: true,
+      allowNull: false,
     },   
     name: {
-      type: DataTypes.STRING,      
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     description: {
-      type: DataTypes.STRING,      
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     stock: {
       type: DataTypes.INTEGER.UNSIGNED,
+      allowNull: false,
     },
     weight: {
       type: DataTypes.TINYINT.UNSIGNED,
-      allowNull: true
+      allowNull: true,
+      defaultValue: null,
     },
     color: {
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: true,
+      defaultValue: null,
     },
     size: {
       type: DataTypes.STRING,
-      allowNull: true   
+      allowNull: true,
+      defaultValue: null,
     },
     price: {
       type: DataTypes.INTEGER.UNSIGNED,
+      allowNull: false,
     },
     discount: {
       type: DataTypes.TINYINT.UNSIGNED,
-      allowNull: true
+      allowNull: true,
+      defaultValue: 0,
     },
     picture: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     product_category_id: {
         type: DataTypes.BIGINT.UNSIGNED,
-        allowNull: true
+        allowNull: true,
+        defaultValue: null,
     },    
   };
 
