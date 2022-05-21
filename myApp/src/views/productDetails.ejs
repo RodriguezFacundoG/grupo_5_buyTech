@@ -68,37 +68,33 @@
                     </select>
                 </div>
             </div>
-            <form action="/user/", method="POST">
+            
 
-                <div class="add-to-cart">
+            <div class="add-to-cart">
+                <div class="button-container">    
+                    <form action="/products/<%= element.id %>" method="POST">
+                        <button type="submit">Add to cart</button>
+                    </form>    
+                </div>
+            </div>
+            <%# if (locals.userLogged.category == "admin") { %>
+                
+                <div class="edit">
                     <div class="button-container">    
-                        <form action="/products/<%= element.id %>?_method=DELETE" method="POST" style="display: inline-flex">
-							<button type="submit">Add to cart</button>
-						</form>    
+                        <form action="/products/<%= element.id %>?_method=PUT" method="POST">
+                            <button type="submit">Edit</button>
+                        </form>    
                     </div>
                 </div>
-                <%# if (locals.userLogged.category == "admin") { %>
-                 
-                    <div class="edit">
-                        <div class="button-container">    
-                            <form action="/products/<%= element.id %>?_method=PUT" method="POST" style="display: inline-flex">
-                                <button type="submit">Edit</button>
-                            </form>    
-                        </div>
+                <div class="delete">
+                    <div class="button-container">    
+                        <form action="/products/<%= element.id %>?_method=DELETE" method="POST">
+                            <button type="submit">Delete</button>
+                        </form>    
                     </div>
-                    <div class="delete">
-                        <div class="button-container">    
-                            <form action="/products/<%= element.id %>?_method=DELETE" method="POST" style="display: inline-flex">
-                                <button type="submit">Delete</button>
-                            </form>    
-                        </div>
-                    </div>
+                </div>
 
-                <%# } %>
-
-                
-                
-            </form>
+            <%# } %>           
         </div>
     </main>
 
