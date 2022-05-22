@@ -115,6 +115,16 @@ const userController = {
           })     
     },
 
+    /* Muestra el Formulario de Edición para el Usuario */
+    edit: (req, res) => {
+        let idABuscar = req.params.id;
+       
+        db.User.findByPk(idABuscar)
+          .then( (user) => {        
+              return res.render("userEdit", { user: user });
+          })     
+    },
+
     /*ACA ES EL METODO QUE PUSO JUANPA PARA PROBAR LA CONEXION A LA DB*/ 
 
     // listUsers: async (req, res) => {
