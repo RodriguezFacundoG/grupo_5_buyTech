@@ -103,7 +103,18 @@ const userController = {
         res.clearCookie("recordarEmail");
         req.session.destroy();
         res.redirect('/');
-    }
+    },
+
+    /* Muestra el Perfil del Usuario */
+    profile: (req, res) => {
+        let idABuscar = req.params.id;
+       
+        db.User.findByPk(idABuscar)
+          .then( (user) => {        
+              return res.render("userProfile", { user: user });
+          })     
+    },
+
     /*ACA ES EL METODO QUE PUSO JUANPA PARA PROBAR LA CONEXION A LA DB*/ 
 
     // listUsers: async (req, res) => {
