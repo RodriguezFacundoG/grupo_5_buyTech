@@ -11,6 +11,7 @@ const userController = {
     loginForm: (req, res) => {
         return res.render('login');
     },
+
     loginProcess: (req, res) => {
 
         let errors = validationResult(req);
@@ -57,9 +58,12 @@ const userController = {
             });          
 
     },
+
+     // Muestra formulario de creacion de usuario
     registerForm: (req, res) => {
-        return res.render('register');
+        return res.render("register");
     },
+
     registerUpload: async (req, res) => {
         let errors = validationResult(req);        
         let userPass = req.body.password;
@@ -94,11 +98,12 @@ const userController = {
     }catch(error){
         console.log(error)
     }
+    },
 
-},
     productCart: (req, res) => {           
         return res.render('productCart')
     },
+
     logout: (req, res) => {
         res.clearCookie("recordarEmail");
         req.session.destroy();
@@ -108,7 +113,6 @@ const userController = {
     /* Muestra el Perfil del Usuario */
     profile: (req, res) => {
         let idABuscar = req.params.id;
-       
         db.User.findByPk(idABuscar)
           .then( (user) => {        
               return res.render("userProfile", { user: user });
@@ -118,12 +122,26 @@ const userController = {
     /* Muestra el Formulario de Edición para el Usuario */
     edit: (req, res) => {
         let idABuscar = req.params.id;
-       
         db.User.findByPk(idABuscar)
           .then( (user) => {        
               return res.render("userEdit", { user: user });
           })     
     },
+
+    /* Actualiza los datos del Usuario */
+    update: (req, res) => {
+        db.User.update ({
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            email:req.body.email,
+            password: req.body.password
+        }, {
+            where:{
+                id: req.params.userId
+            }
+        })
+        res.redirect('/users/profile'+ req.params.userId)
+        }
 
     /*ACA ES EL METODO QUE PUSO JUANPA PARA PROBAR LA CONEXION A LA DB*/ 
 
