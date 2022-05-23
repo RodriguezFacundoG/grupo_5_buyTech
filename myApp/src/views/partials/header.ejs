@@ -21,17 +21,19 @@
 
     <!-- Nav de user y cart -->
     <div class="icons">
-        <div class="icon-user">
-            <a href="/user/login">           
+        <div class="icon-user"> 
                 <% if(locals.isLogged == false){ %>
-                    <i class="fas fa-user"></i>
-                    <span class="nav-personal__text">User</span>
-                    
+                    <a href="/user/login">
+                        <i class="fas fa-user"></i>
+                        <span class="nav-personal__text">User</span>
+                    </a>
+
                 <% } else { %>
-                    <img src="images/userAvatars/<%= locals.userLogged.avatar %>" alt="No carga avatar">
-                    <span class="nav-personal__text"><%= locals.userLogged.firstName %></span>
+                    <a href="/user/profile/<%= locals.userLogged.id %>">
+                        <img src="images/userAvatars/<%= locals.userLogged.avatar %>" alt="No carga avatar">
+                        <span class="nav-personal__text"><%= locals.userLogged.firstName %></span>
+                    </a>
                 <% } %>
-            </a>
         </div>
         <div class="icon-cart">
             <a href="/user/cart">  
