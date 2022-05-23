@@ -26,7 +26,7 @@ const productsController = {
       })     
   },
 
-  //Muestra form de creacion
+  // Muestra formulario de creacion de productos
   create: (req, res) => {
     db.Product_category.findAll()
       .then((categories) => {

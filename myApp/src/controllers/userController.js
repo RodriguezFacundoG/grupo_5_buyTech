@@ -59,8 +59,12 @@ const userController = {
 
     },
 
+     // Muestra formulario de creacion de usuario
     registerForm: (req, res) => {
-        return res.render('register');
+        db.User_category.findAll()
+        .then((categories) => {
+          return res.render("register", {categories});
+        })
     },
 
     registerUpload: async (req, res) => {
