@@ -25,15 +25,14 @@ const userController = {
         })
             .then((userToLogin) => {
                 let samePassword = bcrypt.compareSync(req.body.password, userToLogin.password)
-                console.log(samePassword)
+                console.log("Coinciden las contraseñas? " + samePassword)
                 if (samePassword) { 
                     delete userToLogin.password;            //Borro el password antes de guardar el usuario en sesion para mayor seguridad
                     req.session.userLogged = userToLogin;   //creo la propiedad userLogged en el objeto global req.session
                     //Cookie
                     if (req.body.remember_me) {
                         res.cookie('recordarEmail', req.session.userLogged.email, { maxAge: 60000 });
-                    }
-
+                    }                    
                     return res.redirect('/');
                 }
 
@@ -67,7 +66,7 @@ const userController = {
         //Si tiene errores sintácticos o las contraseñas no coinciden:
         // if (!errors.isEmpty() || userPass !== userPassVerification) {                   
         //     return res.render('register', { errors: errors.mapped(), old: req.body, passComparitionMsg: 'Las contraseñas no coinciden' });           
-        // }            
+        // }
         if ( !errors.isEmpty() ) {            
             return res.render('register', { errors: errors.mapped(), old: req.body });           
         }
@@ -95,9 +94,79 @@ const userController = {
         console.log(error)
     }
 
-},
-    productCart: (req, res) => {           
-        return res.render('productCart')
+    },
+    getCart: (req, res) => {     
+        
+        db.Item.findAll({            
+            include: [
+                {
+                    model: db.User,
+                    as: 'users',
+                    where:{
+                        id: req.session.userLogged.id
+                    }
+                },
+                {
+                    model: db.Product,
+                    as: 'product',
+                    where:{
+                        id: product_id
+                    }
+                }
+            ],
+        })
+            .then( (items) => {     //En "items" tengo todos los items relacionados al usuario logueado, pero me falta relacionar cada product_id con el producto en sí
+                return res.render('productCart',{elements: items})
+            })
+        
+    },
+    addToCart: (req, res) => {
+        let productIdToCreate = req.params.id;
+        db.Item.create({
+            product_id: productIdToCreate,
+
+        },
+        {
+            include: [
+                {
+                    association: 'users',
+                    where: {
+                        id: req.session.userLogged.id
+                    }
+                }
+            ]
+        })
+            .then( () => {
+                console.log("Item agregado")
+                return res.redirect("/user/cart")
+            })
+        // console.log("Llegue hasta el addToCart method")
+        // db.Item.create({
+        //     product_id: productIdToCreate,
+        //     users: {
+        //         user_id: req.session.userLogged.id, //El id del usuario que está en sesion que sería req.session.userLogged.id
+        //         item_id: productIdToCreate,
+        //     }
+        // },
+        // {
+        //     include: ['users']
+        // })
+        //     .then( (a) => res.send(a))
+        //     .catch((e) => res.send(e) )
+        
+        // db.Product_category.create({
+        //     type: "nuevaCategoria",
+        //     products: {
+        //       name: 'Mick',
+        //       description: 'Broadstone',
+        //       stock: 20,
+        //       product_category_id: 11
+        //     }
+        // },
+        // {
+        //     include: ["products"]
+        // });
+          
     },
     logout: (req, res) => {
         res.clearCookie("recordarEmail");
