@@ -3,7 +3,7 @@ const db = require("../database/models/index")
 
 const mainController = {
     home: (req, res) => {
-        res.render('index', { products: products });
+        res.render('index');
     }    
 };
 
