@@ -95,6 +95,16 @@
                         <input type="file" accept=".jpg" placeholder="Foto Jpg" id="avatar" name="avatar">
                     </div>
 
+                    <div class="form_user_category">
+                        <label for="create_form_user_category">Category *</label>
+                        <select class="form_select" name="user_category" id="create_form_user_category">
+                            <option value disabled selected hidden>Select:</option>
+                            <% for (let i=0; i < categories.length; i++) { %>                               
+                                <option value="<%=categories[i].id%>"><%=categories[i].type%></option>
+                            <% }) %>
+                        </select>
+                </div>
+
                     <div class="no-pass">
                         <a href="/user/login">Already User?</a>
                     </div>
