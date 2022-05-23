@@ -11,28 +11,28 @@ module.exports = (sequelize, DataTypes) => {
     },
     first_name: {
       type: DataTypes.STRING,
-      allowNull: false,      
+      // allowNull: false,      
     },
     last_name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      // allowNull: false,
     },
     email: {
       type: DataTypes.STRING,
-      allowNull: false, 
+      // allowNull: false, 
     },
     password: {
       type: DataTypes.STRING,
-      allowNull: false,
+      // allowNull: false,
     },
     avatar: {
         type: DataTypes.STRING,
-        allowNull: true,
+        // allowNull: true,
         defaultValue: null,
     },
     user_category_id: {
         type: DataTypes.BIGINT.UNSIGNED,
-        allowNull: false,
+        // allowNull: false,
         
     }
 };

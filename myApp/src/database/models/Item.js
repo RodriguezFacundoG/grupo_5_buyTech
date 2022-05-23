@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     },     
     product_id: {
         type: DataTypes.BIGINT.UNSIGNED,
-        allowNull: false,
+        // allowNull: false,
     }    
   };
 
