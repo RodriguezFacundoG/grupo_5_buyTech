@@ -67,36 +67,61 @@ const userController = {
         let errors = validationResult(req);        
         let userPass = req.body.password;
         let userPassVerification = req.body.password_verification;
-        //Si tiene errores sintácticos o las contraseñas no coinciden:
-        // if (!errors.isEmpty() || userPass !== userPassVerification) {                   
-        //     return res.render('register', { errors: errors.mapped(), old: req.body, passComparitionMsg: 'Las contraseñas no coinciden' });           
-        // }
-        if ( !errors.isEmpty() ) {            
-            return res.render('register', { errors: errors.mapped(), old: req.body });           
-        }
-        if (userPass !== userPassVerification) {                          
-            return res.render('register', { old: req.body, errors: {
-                                                                        password_verification: {
-                                                                            msg: 'Las contraseñas no coinciden'
-                                                                        }
-                                                                    }
-            });
-        }            
+
+        db.User.findOne({       
+            attributes: ['id', 'first_name', 'email'], //No agrego todos los att, para no sobrecargar la consulta con info
+            where: {
+                email: req.body.email
+            }
+        })
+            .then( (user) => {
+
+                if ( !errors.isEmpty() ) {            
+                    return res.render('register', { errors: errors.mapped(), old: req.body });           
+                }
+
+                if ( user != null ) {   //Si encuentra un usuario, interrumpe la lógica, si no lo encuentra (devuvelve null), sigue con las demas validaciones
+                    return res.render('register', { 
+                        errors: {
+                            email: {
+                                msg: "Este email no está registrado"
+                            }
+                        }
+                    })
+                }
+
+                if (userPass !== userPassVerification) {                          
+                    return res.render('register', { old: req.body, 
+                        errors: {
+                            password_verification: {
+                                msg: 'Las contraseñas no coinciden'
+                            }
+                        }
+                    })
+                }
+
+                let passEncripted = bcrypt.hashSync(userPass, 10);        
+                let newUser = {
+                    ...req.body,
+                    password: passEncripted,                
+                    avatar: req.file != undefined ? req.file.filename : 'user-solid.svg', //Solo agrega esta propíedad en caso de que se cree agregue una imagen, sino
+                    user_category_id: 0,                                                  // pone una por default
+                };
+                delete newUser.password_verification;   //Necesito borrar el password que se verifica, porque no está hasheado (el otro se pisa directamente)
         
-        let passEncripted = bcrypt.hashSync(userPass, 10);        
-        let newUser = {
-            ...req.body,
-            password: passEncripted,                
-            avatar: req.file != undefined ? req.file.filename : 'user-solid.svg', //Solo agrega esta propíedad en caso de que se cree agregue una imagen, sino pone una por default
-            user_category_id: 0,
-        };
-        delete newUser.password_verification;   //Necesito borrar el password que se verifica, porque no está hasheado    
-        try{   
-        await db.User.create(newUser);        
-        return res.redirect("/");        
-    }catch(error){
-        console.log(error)
-    }
+                try{   
+                    await db.User.create(newUser);        
+                    return res.redirect("/");        
+                }
+        
+                catch(error){
+                    console.log(error)
+                }
+
+            })
+                
+        
+    
     },
     
     getCart: (req, res) => {     
