@@ -16,7 +16,10 @@ router.get('/register', guestMiddleware, userController.registerForm);
 // el orden de Multer y Verification debe ser asi: 1ero Multer, 2do Verification.
 router.post('/register', multerUploadUser.single('avatar'), verificationRegister, userController.registerUpload);
 
-router.get('/cart', authMiddleware, userController.productCart);
+router.get('/cart',authMiddleware , userController.getCart);
+
+router.post('/:id', authMiddleware, userController.addToCart);
+
 
 router.get('/logout', authMiddleware, userController.logout);
 

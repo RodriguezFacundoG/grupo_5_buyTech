@@ -5,13 +5,13 @@ module.exports = (sequelize, DataTypes) => {
   const cols = {
     id: {
       type: DataTypes.BIGINT.UNSIGNED,
-      autoIncremental: true,
+      autoIncrement: true,
       primaryKey: true,
       // allowNull: false,
     },     
     product_id: {
         type: DataTypes.BIGINT.UNSIGNED,
-        allowNull: false,
+        // allowNull: false,
     }    
   };
 

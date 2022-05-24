@@ -5,53 +5,53 @@ module.exports = (sequelize, DataTypes) => {
   const cols = {
     id: {
       type: DataTypes.BIGINT.UNSIGNED,
-      autoIncremental: true,
+      autoIncrement: true,
       primaryKey: true,
       // allowNull: false,
     },   
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      // allowNull: false,
     },
     description: {
       type: DataTypes.STRING,
-      allowNull: false,
+      // allowNull: false,
     },
     stock: {
       type: DataTypes.INTEGER.UNSIGNED,
-      allowNull: false,
+      // allowNull: false,
     },
     weight: {
       type: DataTypes.TINYINT.UNSIGNED,
-      allowNull: true,
+      // allowNull: true,
       defaultValue: null,
     },
     color: {
       type: DataTypes.STRING,
-      allowNull: true,
+      // allowNull: true,
       defaultValue: null,
     },
     size: {
       type: DataTypes.STRING,
-      allowNull: true,
+      // allowNull: true,
       defaultValue: null,
     },
     price: {
       type: DataTypes.INTEGER.UNSIGNED,
-      allowNull: false,
+      // allowNull: false,
     },
     discount: {
       type: DataTypes.TINYINT.UNSIGNED,
-      allowNull: true,
+      // allowNull: true,
       defaultValue: 0,
     },
     picture: {
       type: DataTypes.STRING,
-      allowNull: false,
+      // allowNull: false,
     },
     product_category_id: {
         type: DataTypes.BIGINT.UNSIGNED,
-        allowNull: true,
+        // allowNull: true,
         defaultValue: null,
     },    
   };

@@ -63,18 +63,8 @@ const productsController = {
     const promise2 = db.Product.findByPk(idABuscar, {include: ["product_category"] })
     Promise.all([promise1, promise2]) 
       .then( ([categories, product]) => {       
-        return res.render("productEdit", {element: product, categories: categories})
-        // return res.send({categories, product}) 
-      })
-    // let categories = await db.Product_category.findAll();
-    // let producto = await db.Product.findByPk(idABuscar, {include: ["product_category"] })  
-
-    // return res.render("productEdit", {element: producto, categories: categories})
-    // db.Product.findByPk(idABuscar, {include: ["product_category"] })
-    //   .then( (producto) => {        
-    //       // return res.send( producto );
-    //       return res.render("productEdit", { element: producto });
-    //   })           
+        return res.render("productEdit", {element: product, categories: categories})         
+      })              
   },
 
   //Actualiza la informacion del producto a traves de PUT
