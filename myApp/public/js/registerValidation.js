@@ -27,9 +27,9 @@ window.addEventListener('load', function()  {
             alert("Ingrese una contraseña valida, minimo 8 caracteres");
         };
         
-        let imageRegExp = /\.(jpg|png|gif)$/i;
+        let imageRegExp = /\.(jpg|jpeg|png|gif)$/i;
         let testeoImage = imageRegExp.test(image.value);
-        console.log(image.value;)
+        console.log(image.value)
         if(testeoImage == 0 || testeoImage == false) {
             alert(`Ingrese una imagen valida`);
         }
