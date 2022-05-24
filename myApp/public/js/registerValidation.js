@@ -25,6 +25,11 @@ window.addEventListener('load', function()  {
         if(password.value.length < 8) {
             alert("Ingrese una contraseña valida, minimo 8 caracteres");
         };
+        
+        if (testeoMail == true && password.value.length >= 8) {
+            form.submit();
+        }
     });
+
 });
 
