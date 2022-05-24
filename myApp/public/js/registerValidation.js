@@ -3,6 +3,7 @@ window.addEventListener('load', function()  {
     let firstName = document.querySelector('#first_name');
     let lastName = document.querySelector('#last_name');
     let email = document.querySelector('#email');
+    let image = document.querySelector('#avatar');
     let password = document.querySelector('#password');
 
     form.addEventListener('submit', function(e) {
@@ -26,7 +27,14 @@ window.addEventListener('load', function()  {
             alert("Ingrese una contraseña valida, minimo 8 caracteres");
         };
         
-        if (testeoMail == true && password.value.length >= 8) {
+        let imageRegExp = /\.(jpg|png|gif)$/i;
+        let testeoImage = imageRegExp.test(image.value);
+        console.log(image.value;)
+        if(testeoImage == 0 || testeoImage == false) {
+            alert(`Ingrese una imagen valida`);
+        }
+
+        if ( testeoMail == true && password.value.length >= 8 && testeoImage == true) {
             form.submit();
         }
     });
