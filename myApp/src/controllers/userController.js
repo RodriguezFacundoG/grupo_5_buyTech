@@ -110,7 +110,7 @@ const userController = {
                 delete newUser.password_verification;   //Necesito borrar el password que se verifica, porque no está hasheado (el otro se pisa directamente)
         
                 try{   
-                    await db.User.create(newUser);        
+                    db.User.create(newUser);        
                     return res.redirect("/");        
                 }
         
