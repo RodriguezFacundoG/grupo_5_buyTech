@@ -106,6 +106,7 @@ const userController = {
                 {
                     model: db.User,
                     as: 'users',
+                    
                     where:{
                         id: req.session.userLogged.id
                     }
@@ -113,20 +114,21 @@ const userController = {
                 {
                     model: db.Product,
                     as: 'product',
-                    where:{
-                        id: product_id
-                    }
+                    // where:{
+                    //     id: product_id
+                    // }
                 }
             ],
         })
             .then( (items) => {     //En "items" tengo todos los items relacionados al usuario logueado, pero me falta relacionar cada product_id con el producto en sí
+                return res.send(items)
                 return res.render('productCart',{elements: items})
             })        
     },
-    addToCart: (req, res) => {
+    addToCart: async (req, res) => {
         let productIdToCreate = req.params.id;
-        db.Item.create({
-            product_id: productIdToCreate,
+        const item = await db.Item.create({
+            product_id: productIdToCreate,    
 
         },
         {
@@ -139,37 +141,10 @@ const userController = {
                 }
             ]
         })
-            .then( () => {
-                console.log("Item agregado")
-                return res.redirect("/user/cart")
-            })
-        // console.log("Llegue hasta el addToCart method")
-        // db.Item.create({
-        //     product_id: productIdToCreate,
-        //     users: {
-        //         user_id: req.session.userLogged.id, //El id del usuario que está en sesion que sería req.session.userLogged.id
-        //         item_id: productIdToCreate,
-        //     }
-        // },
-        // {
-        //     include: ['users']
-        // })
-        //     .then( (a) => res.send(a))
-        //     .catch((e) => res.send(e) )
-        
-        // db.Product_category.create({
-        //     type: "nuevaCategoria",
-        //     products: {
-        //       name: 'Mick',
-        //       description: 'Broadstone',
-        //       stock: 20,
-        //       product_category_id: 11
-        //     }
-        // },
-        // {
-        //     include: ["products"]
-        // });
-          
+        await item.save()
+        console.log(item);
+        item.setUsers([req.session.userLogged.id])
+        res.redirect('/');          
     },
 
     logout: (req, res) => {
