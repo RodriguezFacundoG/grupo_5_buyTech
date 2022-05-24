@@ -169,7 +169,7 @@ const userController = {
         await item.save()
         console.log(item);
         item.setUsers([req.session.userLogged.id])
-        res.redirect('/');          
+        res.redirect('/');
     },
 
     logout: (req, res) => {
