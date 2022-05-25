@@ -15,7 +15,8 @@ module.exports = [
     body('create_form_product_name').notEmpty().withMessage("Debes ingresar el nombre").bail().isLength({min: 5}).withMessage("El nombre debe tener al menos 5 caracteres"),
     body('create_form_product_description').notEmpty().withMessage("Debes ingresar la descripción del producto").bail().isLength({min: 20}).withMessage("La descripción debe tener al menos 20 caracteres"),
     body('create_form_product_image').notEmpty().withMessage("Debes ingresar la imagen del producto").bail().custom(value => {
-        return isImage(value, req.files['create_form_product_image'][0].filename);
+        return res.send(value)
+        return customValidation.isImage(value, req.files['create_form_product_image'][0].filename);
     }
     ).withMessage("La imagen debe ser una imagen válida"),
 ]

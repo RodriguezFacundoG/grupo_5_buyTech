@@ -9,6 +9,7 @@ window.addEventListener('load', function()  {
     form.addEventListener('submit', function(e) {
         e.preventDefault();
 
+
         if(firstName.value.length <2 ) {
            return alert('Ingrese un nombre valido, minimo 2 caracteres');
         };
@@ -37,7 +38,7 @@ window.addEventListener('load', function()  {
             if (image.value == "") {
                 testeoImage = true;
             }
-            if(testeoImage == false) {
+            else if (testeoImage == false) {
                return alert('Ingrese una imagen valida');
             };
         
