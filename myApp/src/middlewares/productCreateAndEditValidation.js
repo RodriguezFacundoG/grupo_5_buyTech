@@ -2,6 +2,13 @@ const {body} = require('express-validator')
 const { CustomValidation } = require('express-validator/src/context-items')
 const path = require('path');
 
+customValidation = new CustomValidation(
+    {
+        isImage: (value) => {   
+            return path.extname(value).match(/\.(jpg|jpeg|png|gif)$/);
+        }
+    }
+);
 
 
 module.exports = [
