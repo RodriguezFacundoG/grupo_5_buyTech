@@ -10,34 +10,43 @@ window.addEventListener('load', function()  {
         e.preventDefault();
 
         if(firstName.value.length <2 ) {
-           return firstName.value = 'Ingrese un nombre valido, minimo 2 caracteres';
+           return alert('Ingrese un nombre valido, minimo 2 caracteres');
         };
+
         if(lastName.value.length <2 ) {
-            return lastName.value = 'Ingrese un apellido valido, minimo 2 caracteres';
+            return alert('Ingrese un apellido valido, minimo 2 caracteres');
         };
-       
+
+        /* verificacion MAIL */
         let valor = email.value;
         let mailRegExp = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
         let testeoMail = mailRegExp.test(valor);
             if(testeoMail == false) {
-             alert('Ingrese un email valido');
-        };
+            return alert('Ingrese un email valido');
+            };
 
         if(password.value.length < 8) {
-            alert("Ingrese una contraseña valida, minimo 8 caracteres");
+           return alert("Ingrese una contraseña valida, minimo 8 caracteres");
         };
+        
+        /* verificacione de IMAGEN */
         
         let imageRegExp = /\.(jpg|jpeg|png|gif)$/i;
         let testeoImage = imageRegExp.test(image.value);
-        console.log(image.value)
-        if(testeoImage == 0 || testeoImage == false) {
-            alert(`Ingrese una imagen valida`);
+        
+            if (image.value == "") {
+                testeoImage = true;
+            }
+            if(testeoImage == false) {
+               return alert('Ingrese una imagen valida');
+            };
+        
+        if ( testeoMail == true && password.value.length >= 8 && testeoImage == true) {
+            return form.submit();
         }
 
-        if ( testeoMail == true && password.value.length >= 8 && testeoImage == true) {
-            form.submit();
-        }
     });
 
 });
+
 

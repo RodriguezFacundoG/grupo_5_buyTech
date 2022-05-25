@@ -13,11 +13,11 @@ window.addEventListener('load', function()  {
         let mailRegExp = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
         let testeoMail = mailRegExp.test(valor);
             if(testeoMail == false) {
-             alert('Ingrese un email valido');
+             return alert('Ingrese un email valido');
             };
 
         if(password.value.length < 8) {
-            alert("Ingrese una contraseña valida, minimo 8 caracteres");
+            return alert("Ingrese una contraseña valida, minimo 8 caracteres");
         };
         
         if ( testeoMail == true && password.value.length >= 8) {
