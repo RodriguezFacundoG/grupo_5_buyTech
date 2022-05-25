@@ -7,11 +7,11 @@ const db = require("../database/models/index")
 // Que es lo mismo que hacer require("../database/models") porque Javascript va a buscar siempre el archivo index
 
 const userController = {
-
+    //Muestro form de login
     loginForm: (req, res) => {
         return res.render('login');
     },
-
+    //Logueo al usuario y lo pongo en sesión, también creo la cookie en caso de requerirse
     loginProcess: (req, res) => {
 
         let errors = validationResult(req);
@@ -26,7 +26,7 @@ const userController = {
         })
             .then((userToLogin) => {
                 let samePassword = bcrypt.compareSync(req.body.password, userToLogin.password)
-                console.log("Coinciden las contraseñas? " + samePassword)
+                
                 if (samePassword) { 
                     delete userToLogin.password;            //Borro el password antes de guardar el usuario en sesion para mayor seguridad
                     req.session.userLogged = userToLogin;   //creo la propiedad userLogged en el objeto global req.session
@@ -58,98 +58,90 @@ const userController = {
 
     },
 
-     // Muestra formulario de creacion de usuario
+    // Muestra formulario de creacion de usuario
     registerForm: (req, res) => {
         return res.render("register");
     },
-
+    //Guardo la info de usuario registrado
     registerUpload: async (req, res) => {
         let errors = validationResult(req);        
         let userPass = req.body.password;
         let userPassVerification = req.body.password_verification;
 
-        db.User.findOne({       
+        const user = await db.User.findOne({       
             attributes: ['id', 'first_name', 'email'], //No agrego todos los att, para no sobrecargar la consulta con info
             where: {
                 email: req.body.email
             }
         })
-            .then( (user) => {
+            
 
-                if ( !errors.isEmpty() ) {            
-                    return res.render('register', { errors: errors.mapped(), old: req.body });           
-                }
+        if ( !errors.isEmpty() ) {            
+            return res.render('register', { errors: errors.mapped(), old: req.body });           
+        }
 
-                if ( user != null ) {   //Si encuentra un usuario, interrumpe la lógica, si no lo encuentra (devuvelve null), sigue con las demas validaciones
-                    return res.render('register', { 
-                        errors: {
-                            email: {
-                                msg: "Este email no está registrado"
-                            }
-                        }
-                    })
+        if ( user != null ) {   //Si encuentra un usuario, interrumpe la lógica, si no lo encuentra (devuvelve null), sigue con las demas validaciones
+            return res.render('register', { 
+                errors: {
+                    email: {
+                        msg: "Este email no está registrado"
+                    }
                 }
-
-                if (userPass !== userPassVerification) {                          
-                    return res.render('register', { old: req.body, 
-                        errors: {
-                            password_verification: {
-                                msg: 'Las contraseñas no coinciden'
-                            }
-                        }
-                    })
-                }
-
-                let passEncripted = bcrypt.hashSync(userPass, 10);        
-                let newUser = {
-                    ...req.body,
-                    password: passEncripted,                
-                    avatar: req.file != undefined ? req.file.filename : 'user-solid.svg', //Solo agrega esta propíedad en caso de que se cree agregue una imagen, sino
-                    user_category_id: 0,                                                  // pone una por default
-                };
-                delete newUser.password_verification;   //Necesito borrar el password que se verifica, porque no está hasheado (el otro se pisa directamente)
-        
-                try{   
-                    await db.User.create(newUser);        
-                    return res.redirect("/");        
-                }
-        
-                catch(error){
-                    console.log(error)
-                }
-
             })
-                
-        
-    
+        }
+
+        if (userPass !== userPassVerification) {                          
+            return res.render('register', { old: req.body, 
+                errors: {
+                    password_verification: {
+                        msg: 'Las contraseñas no coinciden'
+                    }
+                }
+            })
+        }
+
+        let passEncripted = bcrypt.hashSync(userPass, 10);        
+        let newUser = {
+            ...req.body,
+            password: passEncripted,                
+            avatar: req.file != undefined ? req.file.filename : 'user-solid.svg', //Solo agrega esta propíedad en caso de que se cree agregue una imagen, sino
+            user_category_id: 0,                                                  // pone una por default
+        };
+        delete newUser.password_verification;   //Necesito borrar el password que se verifica, porque no está hasheado (el otro se pisa directamente)
+
+        try{   
+            await db.User.create(newUser);        
+            return res.redirect("/");        
+        }
+
+        catch(error){
+            console.log(error)
+        }  
     },
-    
-    getCart: (req, res) => {     
-        
+    //Muestro el producto con todos sus items
+    getCart: (req, res) => {           
         db.Item.findAll({            
             include: [
                 {
                     model: db.User,
-                    as: 'users',
-                    
+                    as: 'users',                    
                     where:{
                         id: req.session.userLogged.id
                     }
                 },
                 {
                     model: db.Product,
-                    as: 'product',
-                    // where:{
-                    //     id: product_id
-                    // }
+                    as: 'product',                    
                 }
             ],
         })
-            .then( (items) => {     //En "items" tengo todos los items relacionados al usuario logueado, pero me falta relacionar cada product_id con el producto en sí
-                return res.send(items)
-                return res.render('productCart',{elements: items})
+            //En "items" tengo todos los items relacionados al usuario logueado, no hace falta filtrar por product_id,
+            // porque ya trae la relacion sequelize automaticamente al ser la FK de la tabla products 
+            .then( (items) => {                                         
+                return res.render('productCart',{elements: items})               
             })        
     },
+    //Añado un producto al carrito cuando toco el botón en la vista de productDetails
     addToCart: async (req, res) => {
         let productIdToCreate = req.params.id;
         const item = await db.Item.create({
@@ -171,7 +163,7 @@ const userController = {
         item.setUsers([req.session.userLogged.id])
         res.redirect('/');
     },
-
+    //Destruyo la sesión y la cookie
     logout: (req, res) => {
         res.clearCookie("recordarEmail");
         req.session.destroy();
