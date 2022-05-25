@@ -87,6 +87,38 @@ const userController = {
                         msg: "Este email no está registrado"
                     }
                 }
+<<<<<<< HEAD
+=======
+
+                if (userPass !== userPassVerification) {                          
+                    return res.render('register', { old: req.body, 
+                        errors: {
+                            password_verification: {
+                                msg: 'Las contraseñas no coinciden'
+                            }
+                        }
+                    })
+                }
+
+                let passEncripted = bcrypt.hashSync(userPass, 10);        
+                let newUser = {
+                    ...req.body,
+                    password: passEncripted,                
+                    avatar: req.file != undefined ? req.file.filename : 'user-solid.svg', //Solo agrega esta propíedad en caso de que se cree agregue una imagen, sino
+                    user_category_id: 0,                                                  // pone una por default
+                };
+                delete newUser.password_verification;   //Necesito borrar el password que se verifica, porque no está hasheado (el otro se pisa directamente)
+        
+                try{   
+                    db.User.create(newUser);        
+                    return res.redirect("/");        
+                }
+        
+                catch(error){
+                    console.log(error)
+                }
+
+>>>>>>> c7bd14c29b70b8dd3ee2a653d2b2e0f20323ab17
             })
         }
 
