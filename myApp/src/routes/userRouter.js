@@ -28,8 +28,6 @@ router.get('/profile/:userId', userController.profile);
 router.get('/edit/:userId', userController.edit);
 router.post('/edit/:userId', userController.update);
 
-router.get('/list', userController.listUsers);
-
 module.exports = router;
 
 
