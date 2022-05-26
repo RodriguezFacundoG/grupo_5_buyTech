@@ -200,7 +200,7 @@ const userController = {
                 id: req.params.userId
             }
         })
-        res.redirect('/users/profile'+ req.params.userId)
+        res.redirect('/users/profile/'+ req.params.userId)
     },   
 };
 
