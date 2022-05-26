@@ -37,7 +37,7 @@ const productsController = {
   //Guarda la informacion por POST
   store: (req, res) => {
     let body = req.body;
-    let filename = req.file.filename
+    let fileName = req.file.filename
     
     db.Product.create({
 
@@ -49,10 +49,10 @@ const productsController = {
       size: body.product_size,
       price: body.product_price,
       discount: body.product_discount,
-      picture: filename,
+      picture: fileName,
       product_category_id: body.product_category,      
       
-    })  .then( () => res.redirect("/products") );         
+    })  .then( () => res.redirect("/") );         // Redirecciona a la pagina principal, porque antes redireccionaba a /products y eso no tiene pagina.
 
   },
 
@@ -87,7 +87,7 @@ const productsController = {
 
       where: { id: idABuscar }
 
-    }).then( () => res.redirect("/products") );   
+    }).then( () => res.redirect("/") );        // Redirecciona a la pagina principal, porque antes redireccionaba a /products y eso no tiene pagina.   
   },
 
   //Elimina el producto seleccionado por id
@@ -96,7 +96,8 @@ const productsController = {
     db.Product.destroy({where: { id: idABuscar }})
       .then( () => {
         db.Item.destroy({where: {product_id: idABuscar}})
-          .then( () => res.redirect("/products"))          
+          .then( () => res.redirect("/"))      // Redirecciona a la pagina principal, porque antes redireccionaba a /products y eso no tiene pagina.
+
       })
   },
 };
