@@ -201,14 +201,7 @@ const userController = {
             }
         })
         res.redirect('/users/profile'+ req.params.userId)
-    },
-
-    /*ACA ES EL METODO QUE PUSO JUANPA PARA PROBAR LA CONEXION A LA DB*/ 
-
-    listUsers: async (req, res) => {
-        const users = await db.User.findAll();
-        return res.json(users)
-    }
+    },   
 };
 
 module.exports = userController;
