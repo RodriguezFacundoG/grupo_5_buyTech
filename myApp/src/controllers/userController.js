@@ -135,8 +135,8 @@ const userController = {
                 }
             ],
         })
-            //En "items" tengo todos los items relacionados al usuario logueado, no hace falta filtrar por product_id,
-            // porque ya trae la relacion sequelize automaticamente al ser la FK de la tabla products 
+            //En "items" tengo todos los items relacionados al usuario logueado; con respecto a products ya viene 
+            // por la relación, ligado a un solo producto (Ver en ERD) 
             .then( (items) => {                                         
                 return res.render('productCart',{elements: items})               
             })        
@@ -201,14 +201,14 @@ const userController = {
             }
         })
         res.redirect('/users/profile'+ req.params.userId)
-        }
+    },
 
     /*ACA ES EL METODO QUE PUSO JUANPA PARA PROBAR LA CONEXION A LA DB*/ 
 
-    // listUsers: async (req, res) => {
-    //     const users = await db.User.findAll();
-    //     return res.send(users)
-    // }
+    listUsers: async (req, res) => {
+        const users = await db.User.findAll();
+        return res.json(users)
+    }
 };
 
 module.exports = userController;
