@@ -1,105 +1,122 @@
+const { table } = require("console");
 const path = require("path");
 const db = require("../../database/models/index")
 
 const productsApiController = {
-  
-  //Muestra todos los productos segun categoria
-  types: (req, res) => {
-    
-    let categoryId = req.params.type;
-    db.Product_category.findOne({where: {type: categoryId}})
-      .then( category => {
-        db.Product.findAll({where: {product_category_id: category.id}})
-          .then ( products => {
-            res.render('productTypeList', { products })
-          })
-      })      
-  },
 
-  //Muestra el detalle de un producto
-  detail: (req, res) => {
-    let idABuscar = req.params.id;
+  list: async (req, res) => {    
+    const products = await db.Product.findAll({
+      include: [
+        {
+          association: 'product_category'
+        },
+      //   {
+      //     association: 'items',
+      //     include: {association: 'users'}
+      //   }
+      ]
+    });
+
+    const [laptops, smartphones, tablets, accesories] = await Promise.all([
+      db.Product.findAll({
+        include: [
+          {
+            association: 'product_category',
+            where: {
+              type: 'laptops'
+            }
+          },
+        ]
+      }),
+
+      db.Product.findAll({
+        include: [
+          {
+            association: 'product_category',
+            where: {
+              type: 'smartphones'
+            }
+          },
+        ]
+      }),
+
+      db.Product.findAll({
+        include: [
+          {
+            association: 'product_category',
+            where: {
+              type: 'tablets'
+            }
+          },
+        ]
+      }),
+
+      db.Product.findAll({
+        include: [
+          {
+            association: 'product_category',
+            where: {
+              type: 'accesories'
+            }
+          },
+        ]
+      })  
+    ]);
    
-    db.Product.findByPk(idABuscar, {include: ["product_category"] })
-      .then( (producto) => {        
-          return res.render("productDetails", { element: producto });
-      })     
-  },
-
-  // Muestra formulario de creacion de productos
-  create: (req, res) => {
-    db.Product_category.findAll()
-      .then((categories) => {
-        return res.render("productCreate", {categories});
-      })
-  },
-
-  //Guarda la informacion por POST
-  store: (req, res) => {
-    let body = req.body;
-    let fileName = req.file.filename
+    const newProductsArray = products.map( (product) => {
+      return {
+          id: product.id,
+          name: product.name,
+          description: product.description,          
+          category: product.product_category.type,          
+          detail: '/api/products/' + product.id
+      }
+    });
     
-    db.Product.create({
-
-      name: body.product_name,
-      description: body.product_description,
-      stock: body.product_stock,
-      weight: body.product_weight,
-      color: body.product_color,
-      size: body.product_size,
-      price: body.product_price,
-      discount: body.product_discount,
-      picture: fileName,
-      product_category_id: body.product_category,      
+    /* En este formado lo tengo que entregar después, para eso, incluyo este objeto ya formateado */
+    /* de newProductsArray dentro de la clave products con destructuring */
+    /* Lo que faltaría es analizar como contar por categoria los productos */
+    return res.json({
+      count: newProductsArray.length,
+      countByCategory: {
+        laptopsCount: laptops.length,
+        smartphonesCount: smartphones.length,
+        tabletsCount: tablets.length,
+        accesoriesCount: accesories.length
+      },
+      products: [...newProductsArray]        
       
-    })  .then( () => res.redirect("/") );         // Redirecciona a la pagina principal, porque antes redireccionaba a /products y eso no tiene pagina.
-
+    });
   },
 
-  //Muestra form de edición para el producto seleccionado por id
-  edit: (req, res) => {
-    let idABuscar = req.params.id;
-    const promise1 = db.Product_category.findAll();
-    const promise2 = db.Product.findByPk(idABuscar, {include: ["product_category"] })
-    Promise.all([promise1, promise2]) 
-      .then( ([categories, product]) => {       
-        return res.render("productEdit", {element: product, categories: categories})         
-      })              
+  detail: async (req, res) => {    
+    let productToFind = req.params.id;
+    const product = await db.Product.findByPk(productToFind, {
+      include: [
+        {association: 'product_category'},
+        {
+          association: 'items',
+          include: [{association: 'users'}]
+        }
+      ]
+    });
+    return res.json({
+      id: product.id,
+      name: product.name,
+      description: product.description,        
+      stock: product.stock,  
+      weight: product.weight,  
+      color: product.color,  
+      size: product.size,
+      price: product.price,
+      discount: product.discount,
+      picture: product.picture,
+      category: product.product_category.type,      
+      // items: product.items.users,      Falta refinar esta parte que sería el array con todas las relaciones 1 a muchos que hay
+      detail: '/api/products/' + product.id
+    });
   },
 
-  //Actualiza la informacion del producto a traves de PUT
-  update: (req, res) => {
-    let idABuscar = req.params.id;
-    db.Product.update({
-
-      name: body.product_name,
-      description: body.product_description,
-      stock: body.product_stock,
-      weight: body.product_weight,
-      color: body.product_color,
-      size: body.product_size,
-      price: body.product_price,
-      discount: body.product_discount,
-      picture: filename,
-      product_category_id: body.product_category,
-      
-    }, {
-
-      where: { id: idABuscar }
-
-    }).then( () => res.redirect("/") );        // Redirecciona a la pagina principal, porque antes redireccionaba a /products y eso no tiene pagina.   
-  },
-
-  //Elimina el producto seleccionado por id
-  delete: (req, res) => {
-    let idABuscar = req.params.id;
-    db.Product.destroy({where: { id: idABuscar }})
-      .then( () => {
-        db.Item.destroy({where: {product_id: idABuscar}})
-          .then( () => res.redirect("/"))      // Redirecciona a la pagina principal, porque antes redireccionaba a /products y eso no tiene pagina.
-
-      })
-  },
 };
 
 module.exports = productsApiController;
