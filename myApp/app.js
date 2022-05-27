@@ -37,8 +37,8 @@ app.use(session({
 app.use('/', userLoggedMiddleware, mainRouter);
 app.use('/products', userLoggedMiddleware, productsRouter);
 app.use('/user', userLoggedMiddleware, userRouter);
-app.use('/api/products', productsApiRouter);
-app.use('/api/user', userApiRouter);
+app.use('/api/products/', productsApiRouter);
+app.use('/api/users/', userApiRouter);
 
 
 // catch 404 and forward to error handler
