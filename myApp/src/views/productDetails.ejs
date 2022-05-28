@@ -72,19 +72,21 @@
                 </div>
             </div>
             <%# if (locals.userLogged.category == "admin") { %>
-                
-                <div class="edit">
-                    <div class="button-container">    
-                        <form action="/products/<%= element.id %>?_method=PUT" method="POST">
-                            <button type="submit">Edit</button>
-                        </form>    
+            
+                <div class="buttons-administrator">
+                    <div class="edit">
+                        <div class="button-container">    
+                            <form action="/products/<%= element.id %>?_method=PUT" method="POST">
+                                <button type="submit">Edit</button>
+                            </form>    
+                        </div>
                     </div>
-                </div>
-                <div class="delete">
-                    <div class="button-container">    
-                        <form action="/products/<%= element.id %>?_method=DELETE" method="POST">
-                            <button type="submit">Delete</button>
-                        </form>    
+                    <div class="delete">
+                        <div class="button-container">    
+                            <form action="/products/<%= element.id %>?_method=DELETE" method="POST">
+                                <button type="submit">Delete</button>
+                            </form>    
+                        </div>
                     </div>
                 </div>
 
