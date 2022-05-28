@@ -33,20 +33,19 @@
             </div>
 
             <div class="product-info-name">
-                <h3 class="product-name">JBL Flip 6</h3>
+                <h3 class="product-name"><%= element.name %></h3>
             </div>
             <div class="product-info-description">
-                <p class="product-description">Portable Waterproof Speaker</p>
+                <p class="product-description"><%= element.description %></p>
             </div>
             <div class="product-info-price">
-                <p class="product-price">$25.800</p>
+                <p class="product-price">$<%= element.price %></p>
             </div>
             <div class="product-properties">
                 <ul class="list-properties">
-                    <li><i class="far fa-check-circle"></i><p>Color: Blue</p></li>
-                    <li><i class="far fa-check-circle"></i><p>Sound output: 20 Watt</p></li>
-                    <li><i class="far fa-check-circle"></i><p>Size: Small (4-8 in)</p></li>
-                    <li><i class="far fa-check-circle"></i><p>Music playing time: 12hrs</p></li>
+                    <li><i class="far fa-check-circle"></i><p>Color: <%= element.color %></p></li>
+                    <li><i class="far fa-check-circle"></i><p>Weight: <%= element.weight %></p></li>
+                    <li><i class="far fa-check-circle"></i><p>Size: <%= element.size %></p></li>
                 </ul>
             </div>
             <div class="product-quantity">
@@ -60,11 +59,6 @@
                         <option value="3">3</option>
                         <option value="4">4</option>
                         <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
                     </select>
                 </div>
             </div>
