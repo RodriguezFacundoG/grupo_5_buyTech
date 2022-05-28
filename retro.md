@@ -72,3 +72,16 @@ o	Definir el alcance de las tareas en Trello con mayor claridad.
 Continuar haciendo:
 o	Dividir todas las actividades al inicio de cada Sprint para asegurar que se cumpla con el entregable.
 o	Reuniones de trabajo al menos dos veces por semana para garantizar la entrega en fecha.
+
+
+# **RETROSPECTIVA SPRINT 6**
+Dejar de hacer:
+o	Agregar tarjetas en Trello sin detalle adecuado, luego uno se olvida lo que se buscaba realizar.
+o	Identificar tareas pendientes de realizar y no agregar la acción en Trello para su seguimiento.
+
+Hacer más:
+o	Definir el alcance de las tareas en Trello con mayor claridad.
+
+Continuar haciendo:
+o	Dividir todas las actividades al inicio de cada Sprint para asegurar que se cumpla con el entregable.
+o	Reuniones de trabajo al menos dos veces por semana para garantizar la entrega en fecha.
