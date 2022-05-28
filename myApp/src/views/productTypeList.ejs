@@ -45,192 +45,39 @@
         </div>
 
         <div class="product_section">
-            <div class="product">
-                <div class="product_img">
-                    <img src="/images/productos/img-samsung-galaxy-s10_1.jpg" alt="" class="product__img">
-                </div>
-                <div class="product_list_content_info">
-                    <div class="product_section_name">
-                        <span class="product__name">Samsung Galaxy S10 </span>
+            <% for (let i = 0; i < products.lenght; i ++) { %>
+                <div class="product">
+                    <div class="product_img">
+                        <img src="/images/productos/img-samsung-galaxy-s10_1.jpg" alt="" class="product__img">
                     </div>
-                    <div class="product_section_discount">
-                        <span class="product_old_price">$40.000%</span> 
-                        <span class="product_discount">30%</span> 
-                    </div>
-                    <div class="product_section_price">
-                        <span class="product_price">$28.000</span>
-                    </div>
-                    <div class="buttons">
-                        <a href="/productDetails">
+                    <div class="product_list_content_info">
+                        <div class="product_section_name">
+                            <span class="product__name"><%= product.name %></span>
+                        </div>
+                        <div class="product_section_discount">
+                            <span class="product_old_price">$<%= product.price %></span> 
+                            <span class="product_discount">- <%= product.discount %> %</span> 
+                        </div>
+                        <div class="product_section_price">
+                            <span class="product_price">$28.000</span>
+                        </div>
+                        <div class="buttons">
+                            <a href="/products/<%= product.id %>">
+                                <div class="button-container">
+                                    <button class="button-product" type="submit">
+                                        <p>Details</p>
+                                    </button>
+                                </div>
+                            </a> 
                             <div class="button-container">
                                 <button class="button-product" type="submit">
-                                    <p>Details</p>
+                                    <p>Add to cart</p>
                                 </button>
                             </div>
-                        </a> 
-                        <div class="button-container">
-                            <button class="button-product" type="submit">
-                                <p>Add to cart</p>
-                            </button>
                         </div>
-                    </div>
-                </div>    
-            </div>
-            <div class="product">
-                <div class="product_img">
-                    <img src="/images/productos/img-samsung-galaxy-s10_1.jpg" alt="" class="product__img">
+                    </div>    
                 </div>
-                <div class="product_list_content_info">
-                    <div class="product_section_name">
-                        <span class="product__name">Samsung Galaxy S10 </span>
-                    </div>
-                    <div class="product_section_discount">
-                        <span class="product_old_price">$40.000%</span> 
-                        <span class="product_discount">30%</span> 
-                    </div>
-                    <div class="product_section_price">
-                        <span class="product_price">$28.000</span>
-                    </div>
-                    <div class="buttons">
-                        <a href="/productDetails">
-                            <div class="button-container">
-                                <button class="button-product" type="submit">
-                                    <p>Details</p>
-                                </button>
-                            </div>
-                        </a> 
-                        <div class="button-container">
-                            <button class="button-product" type="submit">
-                                <p>Add to cart</p>
-                            </button>
-                        </div>
-                    </div>
-                </div>    
-            </div>
-            <div class="product">
-                <div class="product_img">
-                    <img src="/images/productos/img-samsung-galaxy-s10_1.jpg" alt="" class="product__img">
-                </div>
-                <div class="product_list_content_info">
-                    <div class="product_section_name">
-                        <span class="product__name">Samsung Galaxy S10 </span>
-                    </div>
-                    <div class="product_section_discount">
-                        <span class="product_old_price">$40.000%</span> 
-                        <span class="product_discount">30%</span> 
-                    </div>
-                    <div class="product_section_price">
-                        <span class="product_price">$28.000</span>
-                    </div>
-                    <div class="buttons">
-                        <a href="/productDetails">
-                            <div class="button-container">
-                                <button class="button-product" type="submit">
-                                    <p>Details</p>
-                                </button>
-                            </div>
-                        </a> 
-                        <div class="button-container">
-                            <button class="button-product" type="submit">
-                                <p>Add to cart</p>
-                            </button>
-                        </div>
-                    </div>
-                </div>    
-            </div>
-            <div class="product">
-                <div class="product_img">
-                    <img src="/images/productos/img-samsung-galaxy-s10_1.jpg" alt="" class="product__img">
-                </div>
-                <div class="product_list_content_info">
-                    <div class="product_section_name">
-                        <span class="product__name">Samsung Galaxy S10 </span>
-                    </div>
-                    <div class="product_section_discount">
-                        <span class="product_old_price">$40.000%</span> 
-                        <span class="product_discount">30%</span> 
-                    </div>
-                    <div class="product_section_price">
-                        <span class="product_price">$28.000</span>
-                    </div>
-                    <div class="buttons">
-                        <a href="/productDetails">
-                            <div class="button-container">
-                                <button class="button-product" type="submit">
-                                    <p>Details</p>
-                                </button>
-                            </div>
-                        </a> 
-                        <div class="button-container">
-                            <button class="button-product" type="submit">
-                                <p>Add to cart</p>
-                            </button>
-                        </div>
-                    </div>
-                </div>    
-            </div>
-            <div class="product">
-                <div class="product_img">
-                    <img src="/images/productos/img-samsung-galaxy-s10_1.jpg" alt="" class="product__img">
-                </div>
-                <div class="product_list_content_info">
-                    <div class="product_section_name">
-                        <span class="product__name">Samsung Galaxy S10 </span>
-                    </div>
-                    <div class="product_section_discount">
-                        <span class="product_old_price">$40.000%</span> 
-                        <span class="product_discount">30%</span> 
-                    </div>
-                    <div class="product_section_price">
-                        <span class="product_price">$28.000</span>
-                    </div>
-                    <div class="buttons">
-                        <a href="/productDetails">
-                            <div class="button-container">
-                                <button class="button-product" type="submit">
-                                    <p>Details</p>
-                                </button>
-                            </div>
-                        </a> 
-                        <div class="button-container">
-                            <button class="button-product" type="submit">
-                                <p>Add to cart</p>
-                            </button>
-                        </div>
-                    </div>
-                </div>    
-            </div>
-            <div class="product">
-                <div class="product_img">
-                    <img src="/images/productos/img-samsung-galaxy-s10_1.jpg" alt="" class="product__img">
-                </div>
-                <div class="product_list_content_info">
-                    <div class="product_section_name">
-                        <span class="product__name">Samsung Galaxy S10 </span>
-                    </div>
-                    <div class="product_section_discount">
-                        <span class="product_old_price">$40.000%</span> 
-                        <span class="product_discount">30%</span> 
-                    </div>
-                    <div class="product_section_price">
-                        <span class="product_price">$28.000</span>
-                    </div>
-                    <div class="buttons">
-                        <a href="/productDetails">
-                            <div class="button-container">
-                                <button class="button-product" type="submit">
-                                    <p>Details</p>
-                                </button>
-                            </div>
-                        </a> 
-                        <div class="button-container">
-                            <button class="button-product" type="submit">
-                                <p>Add to cart</p>
-                            </button>
-                        </div>
-                    </div>
-                </div>    
-            </div>
+            <% } %>
         </div>
     </main>
 

@@ -9,9 +9,9 @@ const productsController = {
     let categoryId = req.params.type;
     db.Product_category.findOne({where: {type: categoryId}})
       .then( category => {
-        db.Product.findAll({where: {product_category_id: category.id}})
+        db.Product.findAll({where: {product_category_id: category.id}}, {include:{association: "product_category"}})
           .then ( products => {
-            res.render('productTypeList', { products })
+            res.render('productTypeList', {products:products})
           })
       })      
   },
