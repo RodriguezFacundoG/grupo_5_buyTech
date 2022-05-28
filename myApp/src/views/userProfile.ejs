@@ -7,7 +7,7 @@
     <title>Register</title>
 
     <!-- Linkear el CSS -->
-    <link href="/css/user.css" rel="stylesheet" type="text/css">
+    <link href="/css/StyleUserProfile.css" rel="stylesheet" type="text/css">
     <link href="/css/styleFooter.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/css/styleHeader.css">
     <!-- Linkear Google Font -->
@@ -24,45 +24,35 @@
     <%- include('./partials/header.ejs') %>
 
     <main>
-        <div class="register-container">
-            <div class="register-title">
-                <h3 class="register">Hola <%= user.first_name %></h3>
+        <div class="profile-container">
+
+            <div class="profile-welcome">
+                <div class="profile-image">
+                    <img class="profile-image-user" src="/images/userAvatars/avatar.png" alt="user-image">
+                </div>
+                <h3 class="profile-welcome-user">Hola <%= user.first_name %></h3>
             </div>
-            <form action="/user/register" method="POST" class="form-complete" enctype="multipart/form-data">     
-                    <div class="form-box">
-                        <label for="first_name"></label>
-                        <input type="text" placeholder="First Name" id="first_name" name="first_name" value="<%= user.first_name %>">
-                    </div>
-                    <div class="form-box">
-                        <label for="last_name"></label>
-                        <input type="text" placeholder="Last Name" id="last_name" name="last_name" value="<%= user.last_name %>">
-                    </div>
 
-                    <div class="form-box">
-                        <label for="email"></label>
-                        <input type="mail" placeholder="email@example.com" id="email" name="email" value="<%= user.email %>">
-                    </div>
+            <div class="profile-summary">
+                <div class="form-box">
+                    <label class="form-title">First Name</label>
+                    <div class="form-data"><%= user.first_name %></div>
+                </div>
+                <div class="form-box">
+                    <label class="form-title">Last Name</label>
+                    <div class="form-data"><%= user.last_name %></div>
+                </div>
+                <div class="form-box">
+                    <label class="form-title">e-mail</label>
+                    <div class="form-data"><%= user.email %></div>
+                </div>
 
-                    <div class="form-box">
-                        <label for="password"></label>
-                        <input type="password" placeholder="Password" id="password" name="password" value="<%= user.password %>">
-                    </div>
-
-                    
-                    <div class="form-box">
-                        <label for="avatar"></label>
-                        <input type="file" accept=".jpg" placeholder="Foto Jpg" id="avatar" name="avatar">
-                    </div>
-                    
-                    <div class="form-button">
-                        <a href="/edit/<%= user.id %>">
-                            <button type="submit">Edit</button>                           
-                        </a>
-                    </div>
-            </form>
-
-            <div class="no-user">
-                <a href="/">Back</a>
+                <div class="form-button">
+                    <a href="/">
+                        <button class="button-edit" type="submit">Edit</button>                           
+                    </a>
+                </div>
+                
             </div>
         </div>
     </main>
