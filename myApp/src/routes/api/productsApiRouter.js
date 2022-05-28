@@ -5,7 +5,7 @@ const productsApiController = require('../../controllers/api/productsApiControll
 const multerUploadProduct = require('../../middlewares/multerProducts');
 const productCreateAndEditValidation = require('../../middlewares/productCreateAndEditValidation');
 
-//router.get('/', productsApiController.list)
+router.get('/', productsApiController.list)
 router.get('/:id', productsApiController.detail);
 
 

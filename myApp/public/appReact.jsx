@@ -8,10 +8,8 @@ const ComponenteInicial = () => {
             <h1>Componente Inicial</h1>
             <h1>Componente Inicial</h1>
 
-            <div className="componentedos">
-                
-            </div>
-           // <script src="componentedos.jsx"></script>
+            <ComponenteDos />
+
         </div>
 
     )
