@@ -10,13 +10,24 @@ function userLoggedMiddleware (req, res, next) {
     let emailInCookie = req.cookies.recordarEmail;
     
     if(req.cookies.recordarEmail) {
-        db.User.findOne({           //Busco el usuario, en base al email de la cookie
+        db.User.findOne({           //Busco el usuario, en base al email de la cookie            
             where: {
                 email: emailInCookie,
-            }
+            },
+            include: [{association: 'user_category'}]
         })
             .then( userFromCookie => {
-                req.session.userLogged = userFromCookie;    //si está en cookie, lo guardará en sesion al usuario.
+                //si está en cookie, lo guardará en sesion al usuario.
+                req.session.userLogged = {      
+                    id: userFromCookie.id,         
+                    first_name: userFromCookie.first_name,
+                    last_name: userFromCookie.last_name,
+                    email: userFromCookie.email,
+                    avatar: userFromCookie.avatar,
+                    user_category: {
+                        type: userToLogin.userFromCookie.type
+                    }
+                }
             })        
     }       
     

@@ -20,16 +20,26 @@ const userController = {
         }
 
         db.User.findOne({
+            // attributes:['id', 'first_name', 'last_name', 'email', 'avatar'], //Campos que quiero traer de la tabla User, si pongo user_category se rompe la query
             where: {
                 email: req.body.email
-            }
+            },
+            include: [{association: 'user_category'}]
         })
-            .then((userToLogin) => {
+            .then((userToLogin) => {                
                 let samePassword = bcrypt.compareSync(req.body.password, userToLogin.password)
                 
-                if (samePassword) { 
-                    delete userToLogin.password;            //Borro el password antes de guardar el usuario en sesion para mayor seguridad
-                    req.session.userLogged = userToLogin;   //creo la propiedad userLogged en el objeto global req.session
+                if (samePassword) {                     
+                    req.session.userLogged = {      //creo la propiedad userLogged en el objeto global req.session y le doy la estructura que yo quiero,
+                        id: userToLogin.id,         //porque no puedo sacar el password con delete userToLogin.password
+                        first_name: userToLogin.first_name,
+                        last_name: userToLogin.last_name,
+                        email: userToLogin.email,
+                        avatar: userToLogin.avatar,
+                        user_category: {
+                            type: userToLogin.user_category.type
+                        }
+                    }
                     //Cookie
                     if (req.body.remember_me) {
                         res.cookie('recordarEmail', req.session.userLogged.email, { maxAge: 60000 });
@@ -46,7 +56,8 @@ const userController = {
                 });
             })
             
-            .catch( () => { // Si quiero puedo captar el error como parámetro en el callback del catch        
+            .catch( (e) => { // Si quiero puedo captar el error como parámetro en el callback del catch     
+                console.log(e)   
                 return res.render('login', { 
                     errors: {
                         email: {
