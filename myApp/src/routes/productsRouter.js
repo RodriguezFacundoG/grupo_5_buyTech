@@ -19,5 +19,6 @@ router.put('/:id', authMiddleware, productCreateAndEditValidation, productsContr
 
 router.delete('/:id', authMiddleware, productsController.delete)
 
+router.get('/search', productsController.productSearch)
 
 module.exports = router;

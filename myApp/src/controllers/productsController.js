@@ -126,6 +126,15 @@ const productsController = {
 
       })
   },
+
+  //Barra de búsqueda
+  productSearch: (req, res) => {
+    db.Product.findAll({
+      where: {name: req.query.keywords}})
+      .then ((products) => {
+        res.render('productTypeList', {products:products})
+      })
+  }
 };
 
 module.exports = productsController;
