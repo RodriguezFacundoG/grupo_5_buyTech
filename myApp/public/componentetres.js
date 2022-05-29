@@ -1,34 +1,38 @@
-const ComponenteTres= (props) => {
-   
-    let [user, setUser] = useState([]);
+class ComponenteTres extends React.Component {
+    // Constructor 
+    constructor(props) {
+        super(props);
     
-    
-    
-    fetch('http://localhost:3000/api/users')
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(
-          `This is an HTTP error: The status is ${response.status}`
-        );
-      }
-      return response.json();
-    })
-    .then((actualData) => console.log(actualData))
-    .catch((err) => {
-      console.log(err.message);
-    });
+        this.state = {
+            items : [],
+            estado : "",
+        };
+    }
 
 
+componentDidMount(){
+  fetch('http://localhost:3000/api/users')
+  .then((res) => res.json())
+  .then((data) => {this.state({ items : data, estado : "soy un compi cargando..." })});
+}
 
-   return (
-        <div>
-            <h1>Componente TRESSSSHHH</h1>
-           
-       </div>
+render(){
 
+  let contenido 
+    if (this.state.items == ""){
+      contenido = <h3>Cargando...</h3>
+    } else {
+      contenido = <h3> {this.state.items} </h3>
+    }
+    return (
+      <div>
+        {contenido}
+      </div>
     )
 
+  }
 }
+
 
 //Contenedor del componente dos
 const domContainer3 = document.querySelector('#componentetres')
