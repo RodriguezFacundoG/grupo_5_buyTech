@@ -1,14 +1,14 @@
 const ComponenteCuatro= (props) => {
    
-    class App extends React.Component {
+    class componito extends React.Component {
    
     // Constructor 
     constructor(props) {
         super(props);
    
         this.state = {
-            items: [],
-            DataisLoaded: false
+            items : [],
+            estado : "",
         };
     }
    
@@ -19,25 +19,25 @@ const ComponenteCuatro= (props) => {
             .then((res) => res.json())
             .then((json) => {
                 this.setState({
-                    items: json,
-                    DataisLoaded: true
+                    items : json,
+                    estado : "soy un compi cargando..."
                 });
             })
     }
     render() {
-        const { DataisLoaded, items } = this.state;
-        if (!DataisLoaded) return <div>
+        const { items, estado  } = this.state;
+        if (!estado) return <div>
             <h1> Pleses wait some time.... </h1> </div> ;
    
         return (
         <div className = "componentecuatro_resultados">
-            <h1> Fetch data from an api in react </h1>  {
+            <h1> Pretendo ser un Fetch muy feliz</h1>  {
                 items.map((item) => ( 
-                <ol key = { item.id } >
-                    firstName: { item.username }, 
-                    lastName: { item.name }, 
-                    email: { item.email } 
-                    </ol>
+                <ul key = { item.id } >
+                    <li>{ item.name }</li>
+                    name: { item.name }, 
+                    email: { item.email },
+                </ul>
                 ))
             }
             <h3>hola hola hola</h3>

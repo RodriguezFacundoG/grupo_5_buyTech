@@ -1,6 +1,6 @@
 const ComponenteTres= (props) => {
    
-    const [user, setUser] = useState([]);
+    let [user, setUser] = useState([]);
     
     
     
