@@ -28,6 +28,12 @@ const productsController = {
 
   // Muestra formulario de creacion de productos
   create: (req, res) => {
+    // return res.json(req.session.userLogged)
+    if(req.session.userLogged.user_category.type != 1){ //Si NO es admin, lo saco
+      console.log("No tenes los privilegios necesarios para editar un producto")
+      return res.redirect('/')    
+    }
+
     db.Product_category.findAll()
       .then((categories) => {
         return res.render("productCreate", {categories});
@@ -36,6 +42,11 @@ const productsController = {
 
   //Guarda la informacion por POST
   store: (req, res) => {
+    if(req.session.userLogged.user_category.type != 1){ //Si NO es admin, lo saco
+      console.log("No tenes los privilegios necesarios para editar un producto")
+      return res.redirect('/')    
+    }
+
     let body = req.body;
     let fileName = req.file.filename
     
@@ -58,6 +69,11 @@ const productsController = {
 
   //Muestra form de edición para el producto seleccionado por id
   edit: (req, res) => {
+    if(req.session.userLogged.user_category.type != 1){ //Si NO es admin, lo saco
+      console.log("No tenes los privilegios necesarios para editar un producto")
+      return res.redirect('/')    
+    }
+
     let idABuscar = req.params.id;
     const promise1 = db.Product_category.findAll();
     const promise2 = db.Product.findByPk(idABuscar, {include: ["product_category"] })
@@ -69,6 +85,11 @@ const productsController = {
 
   //Actualiza la informacion del producto a traves de PUT
   update: (req, res) => {
+    if(req.session.userLogged.user_category.type != 1){ //Si NO es admin, lo saco
+      console.log("No tenes los privilegios necesarios para editar un producto")
+      return res.redirect('/')    
+    }
+
     let idABuscar = req.params.id;
     db.Product.update({
 
@@ -92,6 +113,11 @@ const productsController = {
 
   //Elimina el producto seleccionado por id
   delete: (req, res) => {
+    if(req.session.userLogged.user_category.type != 1){ //Si NO es admin, lo saco
+      console.log("No tenes los privilegios necesarios para editar un producto")
+      return res.redirect('/')    
+    }
+    
     let idABuscar = req.params.id;
     db.Product.destroy({where: { id: idABuscar }})
       .then( () => {
