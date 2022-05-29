@@ -2,21 +2,26 @@
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
+    text-size-adjust: 100%;
 }
-
+  
+body{
+    font-family: 'Barlow', sans-serif;
+}
+  
 html{
     font-size: 10px;
+    text-size-adjust: 100%;
 }
-
-body {
-    font-family: 'Barlow', sans-serif;
+  
+main {
+    width: 100vw;
+    padding-bottom: 20px;
+    padding-top: 60px;
     background-color: #EDEEF0;
     color:#4b5666;
 }
 
-main{
-    margin-top: 100px;
-}
 
 .product_create_container{
     margin-top: 50px;
@@ -54,7 +59,6 @@ main{
 
 label{
     display: block;
-    vertical-align: baseline;
     margin-bottom: 5px;
     font-size: 1.3rem;
     text-transform: uppercase;
@@ -62,7 +66,6 @@ label{
 
 input, select{
     display: block;
-    vertical-align: baseline;
     width: 100%;
     padding: 10px;
     margin-bottom: 0;
@@ -88,4 +91,12 @@ input, select{
     min-height: 45px;
     padding: 10px;
     width: 100%;
+}
+
+@media (min-width: 510px) {
+    .product_create_container{
+        width: 510px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
