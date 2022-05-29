@@ -1,16 +1,17 @@
-//import ComponenteDos from "componentedos.jsx";
-
-
 
 const ComponenteInicial = () => {
+
+    
+
     return (
         <div>
             <h1>Componente Inicial</h1>
             <h1>Componente Inicial</h1>
             <h1>Componente Inicial</h1>
             <h1>Componente Inicial</h1>
+            <ComponenteCuatro />
 
-            <ComponenteDos />
+          
 
         </div>
 
