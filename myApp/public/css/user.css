@@ -2,17 +2,23 @@
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
+  text-size-adjust: 100%;
 }
 
-body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 12px;
-    background-color: #FFFFFF;
+body{
+  font-family: 'Barlow', sans-serif;
 }
 
 html{
   font-size: 10px;
   text-size-adjust: 100%;
+}
+
+main {
+  width: 100vw;
+  padding-bottom: 20px;
+  padding-top: 60px;
+  background-color: #FFFFFF;
 }
 
 .sign-in-container{
@@ -46,7 +52,7 @@ html{
   font-family: 'Barlow', sans-serif;
   font-size: 2.2rem;
   letter-spacing: 0.12rem;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   padding-bottom: 10px;
   text-align: center;
   font-weight: normal;
@@ -131,16 +137,23 @@ main .user-img i{
   text-align: center;
 }
 
+
+@media (min-width: 375px) {
+  .sign-in-container{
+      width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .register-container{
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+}
   
 /* DESKTOP */
 @media (min-width: 769px) {
-
-  .sign-in-container{
-    padding:60px 100px;
-  }
-  .register-container{
-    padding:60px 100px;
-  }
   .form-button button{
     transition: all .2s;
   }
@@ -150,5 +163,4 @@ main .user-img i{
     border: 1px solid #4b5666;
     color: #4b5666;
   }
-
 }
