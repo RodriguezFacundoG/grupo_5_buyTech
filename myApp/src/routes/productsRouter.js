@@ -17,5 +17,6 @@ router.put('/:id', productCreateAndEditValidation, productsController.update)
 
 router.delete('/:id', productsController.delete)
 
+router.get('/search', productsController.productSearch)
 
 module.exports = router;
