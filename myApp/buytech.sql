@@ -142,26 +142,26 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `avatar`, `user_category_id`) VALUES
-(1, 'Jocelyn', 'McCurtain', 'email1@example.com', '$2b$10$6JMckpy6A/b5cNL7YuVNC.422ao7TWEwy1fEPgc2JtQkSBGiUfwQW', 'user-solid.svg', 2),
-(2, 'Timmie', 'Twyford', 'email2@example.com', '$2b$10$6JMckpy6A/b5cNL7YuVNC.422ao7TWEwy1fEPgc2JtQkSBGiUfwQW', 'user-solid.svg', 2),
-(3, 'Emmalynne', 'Videneev', 'email3@example.com', '$2b$10$6JMckpy6A/b5cNL7YuVNC.422ao7TWEwy1fEPgc2JtQkSBGiUfwQW', 'user-solid.svg', 2),
-(4, 'Agretha', 'Bindon', 'email4@example.com', '$2b$10$6JMckpy6A/b5cNL7YuVNC.422ao7TWEwy1fEPgc2JtQkSBGiUfwQW', 'user-solid.svg', 1),
-(5, 'Jo ann', 'Belin', 'email5@example.com', '$2b$10$6JMckpy6A/b5cNL7YuVNC.422ao7TWEwy1fEPgc2JtQkSBGiUfwQW', 'user-solid.svg', 2),
-(6, 'Hedwiga', 'Rawlison', 'email6@example.com', '$2b$10$6JMckpy6A/b5cNL7YuVNC.422ao7TWEwy1fEPgc2JtQkSBGiUfwQW', 'user-solid.svg', 1),
-(7, 'Lorilyn', 'Badrick', 'email7@example.com', '$2b$10$6JMckpy6A/b5cNL7YuVNC.422ao7TWEwy1fEPgc2JtQkSBGiUfwQW', 'user-solid.svg', 1),
-(8, 'Sherlocke', 'Druitt', 'email8@example.com', '$2b$10$6JMckpy6A/b5cNL7YuVNC.422ao7TWEwy1fEPgc2JtQkSBGiUfwQW', 'user-solid.svg', 1),
-(9, 'Gaby', 'Inett', 'email9@example.com', '$2b$10$6JMckpy6A/b5cNL7YuVNC.422ao7TWEwy1fEPgc2JtQkSBGiUfwQW', 'user-solid.svg', 2),
-(10, 'Lidia', 'Forbear', 'email10@example.com', '$2b$10$6JMckpy6A/b5cNL7YuVNC.422ao7TWEwy1fEPgc2JtQkSBGiUfwQW', 'user-solid.svg', 2),
-(11, 'Romonda', 'Keyworth', 'email11@example.com', '$2b$10$6JMckpy6A/b5cNL7YuVNC.422ao7TWEwy1fEPgc2JtQkSBGiUfwQW', 'user-solid.svg', 1),
-(12, 'Paddy', 'Biernat', 'email12@example.com', '$2b$10$6JMckpy6A/b5cNL7YuVNC.422ao7TWEwy1fEPgc2JtQkSBGiUfwQW', 'user-solid.svg', 1),
-(13, 'Vere', 'Ducarne', 'email13@example.com', '$2b$10$6JMckpy6A/b5cNL7YuVNC.422ao7TWEwy1fEPgc2JtQkSBGiUfwQW', 'user-solid.svg', 1),
-(14, 'Daria', 'MacLure', 'email14@example.com', '$2b$10$6JMckpy6A/b5cNL7YuVNC.422ao7TWEwy1fEPgc2JtQkSBGiUfwQW', 'user-solid.svg', 2),
-(15, 'Marcello', 'Ruoff', 'email15@example.com', '$2b$10$6JMckpy6A/b5cNL7YuVNC.422ao7TWEwy1fEPgc2JtQkSBGiUfwQW', 'user-solid.svg', 2),
-(16, 'Gustaf', 'Card', 'email16@example.com', '$2b$10$6JMckpy6A/b5cNL7YuVNC.422ao7TWEwy1fEPgc2JtQkSBGiUfwQW', 'user-solid.svg', 2),
-(17, 'Luz', 'Carp', 'email17@example.com', '$2b$10$6JMckpy6A/b5cNL7YuVNC.422ao7TWEwy1fEPgc2JtQkSBGiUfwQW', 'user-solid.svg', 2),
-(18, 'Reube', 'Rubie', 'email18@example.com', '$2b$10$6JMckpy6A/b5cNL7YuVNC.422ao7TWEwy1fEPgc2JtQkSBGiUfwQW', 'user-solid.svg', 2),
-(19, 'Nathaniel', 'Pimlett', 'email19@example.com', '$2b$10$6JMckpy6A/b5cNL7YuVNC.422ao7TWEwy1fEPgc2JtQkSBGiUfwQW', 'user-solid.svg', 2),
-(20, 'Ara', 'Matyukon', 'email20@example.com', '$2b$10$6JMckpy6A/b5cNL7YuVNC.422ao7TWEwy1fEPgc2JtQkSBGiUfwQW', 'user-solid.svg', 2);
+(1, 'Jocelyn', 'McCurtain', 'email1@example.com', '$2b$10$6U6ZeFLhiEB5/maFnor4HuHuRK0n7WMBd67XeI.3yhSIsdIdL3O2O', 'user-solid.svg', 2),
+(2, 'Timmie', 'Twyford', 'email2@example.com', '$2b$10$6U6ZeFLhiEB5/maFnor4HuHuRK0n7WMBd67XeI.3yhSIsdIdL3O2O', 'user-solid.svg', 2),
+(3, 'Emmalynne', 'Videneev', 'email3@example.com', '$2b$10$6U6ZeFLhiEB5/maFnor4HuHuRK0n7WMBd67XeI.3yhSIsdIdL3O2O', 'user-solid.svg', 2),
+(4, 'Agretha', 'Bindon', 'email4@example.com', '$2b$10$6U6ZeFLhiEB5/maFnor4HuHuRK0n7WMBd67XeI.3yhSIsdIdL3O2O', 'user-solid.svg', 1),
+(5, 'Jo ann', 'Belin', 'email5@example.com', '$2b$10$6U6ZeFLhiEB5/maFnor4HuHuRK0n7WMBd67XeI.3yhSIsdIdL3O2O', 'user-solid.svg', 2),
+(6, 'Hedwiga', 'Rawlison', 'email6@example.com', '$2b$10$6U6ZeFLhiEB5/maFnor4HuHuRK0n7WMBd67XeI.3yhSIsdIdL3O2O', 'user-solid.svg', 1),
+(7, 'Lorilyn', 'Badrick', 'email7@example.com', '$2b$10$6U6ZeFLhiEB5/maFnor4HuHuRK0n7WMBd67XeI.3yhSIsdIdL3O2O', 'user-solid.svg', 1),
+(8, 'Sherlocke', 'Druitt', 'email8@example.com', '$2b$10$6U6ZeFLhiEB5/maFnor4HuHuRK0n7WMBd67XeI.3yhSIsdIdL3O2O', 'user-solid.svg', 1),
+(9, 'Gaby', 'Inett', 'email9@example.com', '$2b$10$6U6ZeFLhiEB5/maFnor4HuHuRK0n7WMBd67XeI.3yhSIsdIdL3O2O', 'user-solid.svg', 2),
+(10, 'Lidia', 'Forbear', 'email10@example.com', '$2b$10$6U6ZeFLhiEB5/maFnor4HuHuRK0n7WMBd67XeI.3yhSIsdIdL3O2O', 'user-solid.svg', 2),
+(11, 'Romonda', 'Keyworth', 'email11@example.com', '$2b$10$6U6ZeFLhiEB5/maFnor4HuHuRK0n7WMBd67XeI.3yhSIsdIdL3O2O', 'user-solid.svg', 1),
+(12, 'Paddy', 'Biernat', 'email12@example.com', '$2b$10$6U6ZeFLhiEB5/maFnor4HuHuRK0n7WMBd67XeI.3yhSIsdIdL3O2O', 'user-solid.svg', 1),
+(13, 'Vere', 'Ducarne', 'email13@example.com', '$2b$10$6U6ZeFLhiEB5/maFnor4HuHuRK0n7WMBd67XeI.3yhSIsdIdL3O2O', 'user-solid.svg', 1),
+(14, 'Daria', 'MacLure', 'email14@example.com', '$2b$10$6U6ZeFLhiEB5/maFnor4HuHuRK0n7WMBd67XeI.3yhSIsdIdL3O2O', 'user-solid.svg', 2),
+(15, 'Marcello', 'Ruoff', 'email15@example.com', '$2b$10$6U6ZeFLhiEB5/maFnor4HuHuRK0n7WMBd67XeI.3yhSIsdIdL3O2O', 'user-solid.svg', 2),
+(16, 'Gustaf', 'Card', 'email16@example.com', '$2b$10$6U6ZeFLhiEB5/maFnor4HuHuRK0n7WMBd67XeI.3yhSIsdIdL3O2O', 'user-solid.svg', 2),
+(17, 'Luz', 'Carp', 'email17@example.com', '$2b$10$6U6ZeFLhiEB5/maFnor4HuHuRK0n7WMBd67XeI.3yhSIsdIdL3O2O', 'user-solid.svg', 2),
+(18, 'Reube', 'Rubie', 'email18@example.com', '$2b$10$6U6ZeFLhiEB5/maFnor4HuHuRK0n7WMBd67XeI.3yhSIsdIdL3O2O', 'user-solid.svg', 2),
+(19, 'Nathaniel', 'Pimlett', 'email19@example.com', '$2b$10$6U6ZeFLhiEB5/maFnor4HuHuRK0n7WMBd67XeI.3yhSIsdIdL3O2O', 'user-solid.svg', 2),
+(20, 'Ara', 'Matyukon', 'email20@example.com', '$2b$10$6U6ZeFLhiEB5/maFnor4HuHuRK0n7WMBd67XeI.3yhSIsdIdL3O2O', 'user-solid.svg', 2);
 
 -- --------------------------------------------------------
 
