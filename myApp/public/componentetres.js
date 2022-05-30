@@ -13,7 +13,7 @@ class ComponenteTres extends React.Component {
 componentDidMount(){
   fetch('http://localhost:3000/api/users')
   .then((res) => res.json())
-  .then((data) => {this.state({ items : data, estado : "soy un compi cargando..." })});
+  .then((data) => {this.setState({ items : data, estado : "soy un compi cargando..." })});
 }
 
 render(){
@@ -35,6 +35,6 @@ render(){
 
 
 //Contenedor del componente dos
-const domContainer3 = document.querySelector('#componentetres')
+const domContainer3 = document.querySelector('.componentetres')
 const root3 = ReactDOM.createRoot(domContainer3)
 root3.render(<ComponenteTres />) 
