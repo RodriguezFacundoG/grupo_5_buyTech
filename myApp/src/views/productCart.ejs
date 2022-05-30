@@ -61,157 +61,59 @@
             <div class="cart-order-items">
 
                 <!-- ITEM 1 -->
-                <div class="cart-item">
-
-                    <div class="cart-image">
-                        <div class="cart-item-image">
-                            <img class="img-article" src="/images/productos/img-samsung-galaxy-s10.jpg" alt="aricleX.jpg">
-                        </div>
-                    </div>
-
-                    <div class="cart-attributes">
-                        <h2 class="cart-item-title">Samsumg Galaxy S10</h2>
-                        <ul class="cart-item-attributes">
-                            <li class="cart-item-attributes_attribute">
-                                <span class="item-attribute_label">Memory</span>
-                            </li>
-                            <li class="cart-item-attributes_attribute">
-                                <span class="item-attribute_label">Color</span>
-                            </li>
-                            <li class="cart-item-attributes_attribute">
-                                <span class="item-attribute_label">Size</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="cart-cost">
-                        <div class="cart-item-price">
-                            <p class="cart-item-price_line">
-                                <span class="item-price">$40000</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="cart-actions">
-                        <div class="cart-item-actions_edit">
-                            <button class="button-link">Edit</button>
-                        </div>
-                        <div class="cart-item-actions_remove">
-                            <button class="button-link">Remove</button>
-                        </div>
-                    </div>
-
-                    <div class="cart-message">
-                        <div class="cart-item-message">
-                            <p class="cart-item-message_line">
-                                <span class="item-message">Possible error</span>
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
+                <% for( product in elements ) { %>
                 
-                <!-- ITEM 2 -->
-                <div class="cart-item">
-
-                    <div class="cart-image">
-                        <div class="cart-item-image">
-                            <img class="img-article" src="/images/productos/img-samsung-galaxy-s10.jpg" alt="aricleX.jpg">
+                    <div class="cart-item">
+    
+                        <div class="cart-image">
+                            <div class="cart-item-image">
+                                <img class="img-article" src="/images/productos/<%=product.picture%> " alt="aricleX.jpg">
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="cart-attributes">
-                        <h2 class="cart-item-title">Samsumg Galaxy S10</h2>
-                        <ul class="cart-item-attributes">
-                            <li class="cart-item-attributes_attribute">
-                                <span class="item-attribute_label">Memory</span>
-                            </li>
-                            <li class="cart-item-attributes_attribute">
-                                <span class="item-attribute_label">Color</span>
-                            </li>
-                            <li class="cart-item-attributes_attribute">
-                                <span class="item-attribute_label">Size</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="cart-cost">
-                        <div class="cart-item-price">
-                            <p class="cart-item-price_line">
-                                <span class="item-price">$40000</span>
-                            </p>
+    
+                        <div class="cart-attributes">
+                            <h2 class="cart-item-title"> <%= product.name %> </h2>
+                            <ul class="cart-item-attributes">
+                                <li class="cart-item-attributes_attribute">
+                                    <span class="item-attribute_label">Memory</span>
+                                </li>
+                                <li class="cart-item-attributes_attribute">
+                                    <span class="item-attribute_label">Color</span>
+                                </li>
+                                <li class="cart-item-attributes_attribute">
+                                    <span class="item-attribute_label">Size</span>
+                                </li>
+                            </ul>
                         </div>
-                    </div>
-
-                    <div class="cart-actions">
-                        <div class="cart-item-actions_edit">
-                            <button class="button-link">Edit</button>
+    
+                        <div class="cart-cost">
+                            <div class="cart-item-price">
+                                <p class="cart-item-price_line">
+                                    <span class="item-price"><%= product.price %> </span>
+                                </p>
+                            </div>
                         </div>
-                        <div class="cart-item-actions_remove">
-                            <button class="button-link">Remove</button>
+    
+                        <div class="cart-actions">
+                            <div class="cart-item-actions_edit">
+                                <button class="button-link">Edit</button>
+                            </div>
+                            <div class="cart-item-actions_remove">
+                                <button class="button-link">Remove</button>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="cart-message">
-                        <div class="cart-item-message">
-                            <p class="cart-item-message_line">
-                                <span class="item-message">Possible error</span>
-                            </p>
+    
+                        <div class="cart-message">
+                            <div class="cart-item-message">
+                                <p class="cart-item-message_line">
+                                    <span class="item-message">Possible error</span>
+                                </p>
+                            </div>
                         </div>
+                            
                     </div>
-
-                </div>
-
-                <!-- ITEM 3 -->
-                <div class="cart-item">
-
-                    <div class="cart-image">
-                        <div class="cart-item-image">
-                            <img class="img-article" src="/images/productos/img-samsung-galaxy-s10.jpg" alt="aricleX.jpg">
-                        </div>
-                    </div>
-
-                    <div class="cart-attributes">
-                        <h2 class="cart-item-title">Samsumg Galaxy S10</h2>
-                        <ul class="cart-item-attributes">
-                            <li class="cart-item-attributes_attribute">
-                                <span class="item-attribute_label">Memory</span>
-                            </li>
-                            <li class="cart-item-attributes_attribute">
-                                <span class="item-attribute_label">Color</span>
-                            </li>
-                            <li class="cart-item-attributes_attribute">
-                                <span class="item-attribute_label">Size</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="cart-cost">
-                        <div class="cart-item-price">
-                            <p class="cart-item-price_line">
-                                <span class="item-price">$40000</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="cart-actions">
-                        <div class="cart-item-actions_edit">
-                            <button class="button-link">Edit</button>
-                        </div>
-                        <div class="cart-item-actions_remove">
-                            <button class="button-link">Remove</button>
-                        </div>
-                    </div>
-
-                    <div class="cart-message">
-                        <div class="cart-item-message">
-                            <p class="cart-item-message_line">
-                                <span class="item-message">Possible error</span>
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
+                <% } %>                
+                
             </div>
 
         </div>
