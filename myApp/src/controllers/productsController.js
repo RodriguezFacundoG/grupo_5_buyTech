@@ -1,19 +1,33 @@
 const path = require("path");
 const db = require("../database/models/index")
+const Sequelize = require("sequelize");
+const Op = Sequelize.Op;
 
 const productsController = {
   
   //Muestra todos los productos segun categoria
   types: (req, res) => {
     
-    let categoryId = req.params.type;
-    db.Product_category.findOne({where: {type: categoryId}})
-      .then( category => {
-        db.Product.findAll({where: {product_category_id: category.id}}, {include:{association: "product_category"}})
-          .then ( products => {
-            res.render('productTypeList', {products:products})
-          })
-      })      
+    let categoryName = req.params.type;
+    db.Product.findAll({
+      include: [{association: 'product_category',
+      where: {
+        type: categoryName
+      }}],
+      
+    })
+      .then( (productsByCategory) => {
+        return res.json(productsByCategory)
+        return res.render('productTypeList', {products: productsByCategory});
+      })
+
+    // db.Product_category.findOne({where: {type: categoryId}})
+    //   .then( category => {
+    //     db.Product.findAll({where: {product_category_id: category.id}}, {include:{association: "product_category"}})
+    //       .then ( products => {
+    //         res.render('productTypeList', {products:products})
+    //       })
+    //   })      
   },
 
   //Muestra el detalle de un producto
@@ -131,10 +145,18 @@ const productsController = {
 
   //Barra de búsqueda
   productSearch: (req, res) => {
+    let searchString = req.query.keywords
+    // return res.send(searchString)
     db.Product.findAll({
-      where: {name: req.query.keywords}})
-      .then ((products) => {
-        res.render('productTypeList', {products:products})
+      where: {
+        name: {
+          [Op.Like]: `%${searchString}%`,
+        }
+      }
+    })
+      .then ( (products) => {
+        return res.send(products)
+        return res.render('productTypeList', {products: products})
       })
   }
 };
