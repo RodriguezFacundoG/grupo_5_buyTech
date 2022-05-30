@@ -79,17 +79,17 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `description`, `stock`, `weight`, `color`, `size`, `price`, `discount`, `picture`, `product_category_id`) VALUES
-(1, 'Tablet samsung 13\"', 'no vas a poder creer lo que hace ', 123, 111, 'red', '111', 1234, 5, 'productImg-1652224831982.JPG', 2),
-(2, 'Computadora Xvel', 'La mejor de las mejores en su rango de altura', 12, 111, 'grey', '111', 1005515, 11, 'productImg-1652236282314.JPG', 3),
-(3, 'Samsung Galaxy S22 Ultra', 'Con un diseño de vanguardia, el celular Samsung Galaxy S22 Ultra ', 9, 228, 'Verde', '77.9 x 163.3 x 8.9mm', 254999, 0, 'productImg-1652535213243.jpg', 2),
-(4, 'Tablet samsung 13\"', 'no vas a poder creer lo que hace ', 123, 111, 'red', '111', 1234, 5, 'productImg-1652224831982.JPG', 2),
-(5, 'Celular caro', 'aaaaaaaa', 1111, 111, '1111', '111111', 111, 11, 'productImg-1652236282314.JPG', 1),
-(6, 'Samsung Galaxy A11 Mega', 'Con un diseño de vanguardia, el celular Samsung Galaxy A11 Mega ', 9, 228, 'Verde', '77.9 x 163.3 x 8.9mm', 254999, 0, 'productImg-1652535213243.jpg', 2),
-(7, 'Tablet samsung 13\"', 'no vas a poder creer lo que hace ', 123, 111, 'red', '111', 1234, 5, 'productImg-1652224831982.JPG', 2),
+(1, 'Tablet samsung 13\"', 'no vas a poder creer lo que hace ', 123, 111, 'red', '111', 1234, 5, 'img-samsung-galaxy-s10.jpg', 2),
+(2, 'Computadora Xvel', 'La mejor de las mejores en su rango de altura', 12, 111, 'grey', '111', 1005515, 11, 'img-samsung-galaxy-s10.jpg', 3),
+(3, 'Samsung Galaxy S22 Ultra', 'Con un diseño de vanguardia, el celular Samsung Galaxy S22 Ultra ', 9, 228, 'Verde', '77.9 x 163.3 x 8.9mm', 254999, 0, 'img-samsung-galaxy-s10.jpg', 2),
+(4, 'Tablet samsung 13\"', 'no vas a poder creer lo que hace ', 123, 111, 'red', '111', 1234, 5, 'img-samsung-galaxy-s10.jpg', 2),
+(5, 'Celular caro', 'aaaaaaaa', 1111, 111, '1111', '111111', 111, 11, 'img-samsung-galaxy-s10.jpg', 1),
+(6, 'Samsung Galaxy A11 Mega', 'Con un diseño de vanguardia, el celular Samsung Galaxy A11 Mega ', 9, 228, 'Verde', '77.9 x 163.3 x 8.9mm', 254999, 0, 'img-samsung-galaxy-s10.jpg', 2),
+(7, 'Tablet samsung 13\"', 'no vas a poder creer lo que hace ', 123, 111, 'red', '111', 1234, 5, 'img-samsung-galaxy-s10.jpg', 2),
 (8, 'Celular EuTeam', 'el mejor celular, hecho por y para uno', 1111, 111, '1111', '111111', 111, 11, 'productImg-1652236282314.JPG', 1),
-(9, 'VR Gear-VR-1024x682', 'Con un diseño de vanguardia, la VRglass del futuro ', 9, 228, 'Verde', '77.9 x 163.3 x 8.9mm', 254999, 0, 'Gear-VR-1024x682.jpg', 4),
-(10, 'VR Gear-VR-1024x682', 'Con un diseño de vanguardia, la VRglass del futuro ', 9, 228, 'Verde', '77.9 x 163.3 x 8.9mm', 254999, 0, 'Gear-VR-1024x682.jpg', 4),
-(11, 'VR Gear-VR-1024x682', 'Con un diseño de vanguardia, la VRglass del futuro ', 9, 228, 'Verde', '77.9 x 163.3 x 8.9mm', 254999, 0, 'Gear-VR-1024x682.jpg', 4);
+(9, 'VR Gear-VR-1024x682', 'Con un diseño de vanguardia, la VRglass del futuro ', 9, 228, 'Verde', '77.9 x 163.3 x 8.9mm', 254999, 0, 'img-samsung-galaxy-s10.jpg', 4),
+(10, 'VR Gear-VR-1024x682', 'Con un diseño de vanguardia, la VRglass del futuro ', 9, 228, 'Verde', '77.9 x 163.3 x 8.9mm', 254999, 0, 'img-samsung-galaxy-s10.jpg', 4),
+(11, 'VR Gear-VR-1024x682', 'Con un diseño de vanguardia, la VRglass del futuro ', 9, 228, 'Verde', '77.9 x 163.3 x 8.9mm', 254999, 0, 'img-samsung-galaxy-s10.jpg', 4);
 
 -- --------------------------------------------------------
 
