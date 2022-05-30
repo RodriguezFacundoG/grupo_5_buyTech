@@ -1,8 +1,19 @@
 
-const ComponenteInicial = () => {
-    let a = [1,2,3,4,5,6,7,8,9,10];
-    console.log(a)
-    
+
+
+
+//Contenedor del componente dos
+// const domContainer3 = document.querySelector('#componentetres')
+// const root3 = ReactDOM.createRoot(domContainer3)
+// root3.render(<ComponenteTres />) 
+
+
+
+
+
+
+function App() {
+
     return (
         <div>
             <h1>Fetch data from an api in react</h1>
@@ -16,7 +27,9 @@ const ComponenteInicial = () => {
 
 
 
+
+
 //Contenedor de la miniApp de React
 const domContainer = document.querySelector('#appReact');
 const root = ReactDOM.createRoot(domContainer);
-root.render(<ComponenteInicial />);
+root.render(<App />);

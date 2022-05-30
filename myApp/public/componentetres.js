@@ -1,40 +1,56 @@
 class ComponenteTres extends React.Component {
-    // Constructor 
-    constructor(props) {
-        super(props);
-    
-        this.state = {
-            items : [],
-            estado : "",
-        };
-    }
+  // Constructor 
+  constructor(props) {
+      super(props);
 
+      this.state = {
+          users: [],
+          estado: "",
+      };
+  }
 
-componentDidMount(){
-  fetch('http://localhost:3000/api/users')
-  .then((res) => res.json())
-  .then((data) => {this.state({ items : data, estado : "soy un compi cargando..." })});
-}
+  componentDidMount() {
+      console.log("Antes de consultar")
+      fetch('http://localhost:3000/api/users')
+          .then((res) => res.json())
+          .then((data) => {
+              console.log("Tengo la data " + data)
+              return this.setState({ users: data.users, estado: "soy un compi cargando..." })
+          })
+          .catch((e) => {
+              console.log("Yo rompi" + e);
+          });
+  }
 
-render(){
+  render() {
+      let contenido;
+      console.log("Estoy renderizando")
+      if (!this.state.users) {
+          return (
+              <h1>{"Cargando"}</h1>
+          )
+      }
 
-  let contenido 
-    if (this.state.items == ""){
-      contenido = <h3>Cargando...</h3>
-    } else {
-      contenido = <h3> {this.state.items} </h3>
-    }
-    return (
-      <div>
-        {contenido}
-      </div>
-    )
+      contenido = this.state.users
+      console.log("Encontre informacion")
+
+      // contenido = this.state.users[0].email
+
+      // console.log(usuario1[0].name)
+      console.log("Termine de evaluar")
+      let prueba = contenido.map( (usuario) => {
+          return <li>{usuario.name}</li>
+      })
+      
+      return (
+          <div>
+              <ul>
+                  {
+                      prueba
+                  }
+              </ul>
+          </div>
+      )
 
   }
 }
-
-
-//Contenedor del componente dos
-const domContainer3 = document.querySelector('#componentetres')
-const root3 = ReactDOM.createRoot(domContainer3)
-root3.render(<ComponenteTres />) 
