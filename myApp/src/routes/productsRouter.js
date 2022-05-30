@@ -7,12 +7,12 @@ const productCreateAndEditValidation = require('../middlewares/productCreateAndE
 const authMiddleware = require('../middlewares/authMiddleware');
 
 
-router.get('/categories/:type', productsController.types)
+router.get('/:type/categories', productsController.types)
 
 router.get('/create', authMiddleware, productsController.create);
 router.post('/', authMiddleware, multerUploadProduct.single("product_image"), productCreateAndEditValidation, productsController.store);
 
-router.get('/:id', authMiddleware, productsController.detail);
+router.get('/:id', productsController.detail);
 
 router.get('/:id/edit', authMiddleware, productsController.edit)
 router.put('/:id', authMiddleware, productCreateAndEditValidation, productsController.update)

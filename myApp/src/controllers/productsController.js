@@ -19,9 +19,8 @@ const productsController = {
   //Muestra el detalle de un producto
   detail: (req, res) => {
     let idABuscar = req.params.id;
-   
     db.Product.findByPk(idABuscar, {include: ["product_category"] })
-      .then( (producto) => {        
+      .then( producto => {     
           return res.render("productDetails", { element: producto });
       })     
   },
