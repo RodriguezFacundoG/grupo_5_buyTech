@@ -80,7 +80,7 @@
             <div class="top_sale_section_item_first">
               <% products.forEach(product => {%>  <!-- este for solia ser un forEach, asi se podia pedir cada product desde products -->
               <div class="product">
-                <a href="/productDetails">
+                <a href="/products/<%= product.id %>">
                   <img
                     src="/images/productos/img-samsung-galaxy-s10_1.jpg"
                     alt=""
