@@ -61,18 +61,18 @@
             <div class="cart-order-items">
 
                 <!-- ITEM 1 -->
-                <% for( product in elements ) { %>
+                <% for( element of elements ) { %>
                 
                     <div class="cart-item">
     
                         <div class="cart-image">
                             <div class="cart-item-image">
-                                <img class="img-article" src="/images/productos/<%=product.picture%> " alt="aricleX.jpg">
+                                <img class="img-article" src="/images/productos/<%=element.product.picture%> " alt="aricleX.jpg">
                             </div>
                         </div>
     
                         <div class="cart-attributes">
-                            <h2 class="cart-item-title"> <%= product.name %> </h2>
+                            <h2 class="cart-item-title"> <%= element.product.name %> </h2>
                             <ul class="cart-item-attributes">
                                 <li class="cart-item-attributes_attribute">
                                     <span class="item-attribute_label">Memory</span>
@@ -89,7 +89,7 @@
                         <div class="cart-cost">
                             <div class="cart-item-price">
                                 <p class="cart-item-price_line">
-                                    <span class="item-price"><%= product.price %> </span>
+                                    <span class="item-price"><%= element.product.price %> </span>
                                 </p>
                             </div>
                         </div>
@@ -110,7 +110,7 @@
                                 </p>
                             </div>
                         </div>
-                            
+
                     </div>
                 <% } %>                
                 

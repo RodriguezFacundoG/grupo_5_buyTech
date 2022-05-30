@@ -150,7 +150,7 @@ const userController = {
             //En "items" tengo todos los items relacionados al usuario logueado; con respecto a products ya viene 
             // por la relación, ligado a un solo producto (Ver en ERD) 
             .then( (items) => {    
-                return res.send(items[2].picture)                                     
+                // return res.send(items[0].product.picture)                                     
                 return res.render('productCart',{elements: items})               
             })        
     },
