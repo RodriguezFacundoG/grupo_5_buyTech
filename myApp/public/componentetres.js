@@ -9,6 +9,7 @@ class ComponenteTres extends React.Component {
       };
   }
 
+<<<<<<< HEAD
   componentDidMount() {
       console.log("Antes de consultar")
       fetch('http://localhost:3000/api/users')
@@ -21,6 +22,13 @@ class ComponenteTres extends React.Component {
               console.log("Yo rompi" + e);
           });
   }
+=======
+componentDidMount(){
+  fetch('http://localhost:3000/api/users')
+  .then((res) => res.json())
+  .then((data) => {this.setState({ items : data, estado : "soy un compi cargando..." })});
+}
+>>>>>>> 983fbf81acfa1a2db33477c7d522f7c53b90979b
 
   render() {
       let contenido;
@@ -53,4 +61,14 @@ class ComponenteTres extends React.Component {
       )
 
   }
+<<<<<<< HEAD
 }
+=======
+}
+
+
+//Contenedor del componente dos
+const domContainer3 = document.querySelector('.componentetres')
+const root3 = ReactDOM.createRoot(domContainer3)
+root3.render(<ComponenteTres />) 
+>>>>>>> 983fbf81acfa1a2db33477c7d522f7c53b90979b

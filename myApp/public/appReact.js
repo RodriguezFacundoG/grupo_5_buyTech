@@ -17,7 +17,7 @@ function App() {
     return (
         <div>
             <h1>Fetch data from an api in react</h1>
-            <ComponenteTres />
+            <ComponenteTres className="componentetres" />
         </div>
     )
 

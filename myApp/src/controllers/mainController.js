@@ -3,8 +3,16 @@ const db = require("../database/models/index")
 
 const mainController = {
     home: (req, res) => {
-        res.render('index');
-    }    
+        db.Product.findAll({
+            order: [
+                ["discount","DESC"]
+            ],
+            limit:5
+        })
+        .then ( products => {
+            res.render('index', {products:products})
+          })
+    }
 };
 
 
