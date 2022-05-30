@@ -1,5 +1,5 @@
 window.addEventListener('load', function()  {
-    let form = document.querySelector('.create_formº');
+    let form = document.querySelector('.create_form');
     let productName = document.querySelector('#create_form_product_name');
     let productDescription = document.querySelector('#create_form_product_description');
     let productCategory = document.querySelector('#create_form_product_category');
