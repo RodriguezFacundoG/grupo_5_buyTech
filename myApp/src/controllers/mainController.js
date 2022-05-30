@@ -12,7 +12,7 @@ const mainController = {
         .then ( products => {
             res.render('index', {products:products})
           })
-    }    
+    }
 };
 
 
