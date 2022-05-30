@@ -35,7 +35,7 @@ window.addEventListener('load', function()  {
          let imageRegExp = /\.(jpg|jpeg|png|gif)$/i;
          let testeoImagen = imageRegExp.test(productImage.value);
          
-             if (image.value == "") {
+             if (productImage.value == "") {
                  testeoImagen = false;
                  return alert('Ingrese una imagen');
              }
