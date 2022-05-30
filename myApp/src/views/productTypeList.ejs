@@ -55,7 +55,7 @@
                             <span class="product__name"><%= product.name %></span>
                         </div>
                         <div class="product_section_discount">
-                            <span class="product_old_price">$<%= product.price %></span> 
+                            <span class="product_old_price">$<%= toThousand(product.price) %></span> 
                             <span class="product_discount">- <%= product.discount %> %</span> 
                         </div>
                         <div class="product_section_price">

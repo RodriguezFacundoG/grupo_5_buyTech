@@ -90,12 +90,8 @@
                     <span class="product__name"><%= products.name %></span>
                   </div>
                   <div class="product_section_discount">
-                    <span class="product_old_price"
-                      >$<%= products.price %></span
-                    >
-                    <span class="product_discount"
-                      >- <%= products.discount %> %</span
-                    >
+                    <span class="product_old_price">$<%= toThousand(products.price) %></span>
+                    <span class="product_discount">- <%= products.discount %> %</span>
                   </div>
                   <div class="product_section_price">
                     <span class="product_price">$28.000</span>
@@ -112,16 +108,13 @@
                   <img
                     src="/images/productos/img-samsung-galaxy-s10_1.jpg"
                     alt=""
-                    class="product__img"
-                  />
+                    class="product__img"/>
                   <div class="product_section_name">
                     <span class="product__name"><%= products.name %></span>
                   </div>
                   <div class="product_section_discount">
-                    <span class="product_old_price">$<%= products.price %></span>
-                    <span class="product_discount"
-                      >- <%= product.discount %> %</span
-                    >
+                    <span class="product_old_price">$<%= toThousand(products.price) %></span>
+                    <span class="product_discount">- <%= product.discount %> %</span>
                   </div>
                   <div class="product_section_price">
                     <span class="product_price">$28.000</span>
