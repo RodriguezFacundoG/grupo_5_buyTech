@@ -5,13 +5,17 @@ window.addEventListener('load', function()  {
     let productStock = document.querySelector('#create_form_product_stock');
     let productImage = document.querySelector('#create_form_product_image');
 
+    console.log("testeando validacion")
+    
     form.addEventListener('submit', function(e) {
+        
         e.preventDefault();
-
+        
         if(productName.value.length <5 ) {
-           return alert('Ingrese un nombre válido, de al menos 5 caracteres');
+            alert('Ingrese un nombre válido, de al menos 5 caracteres');
         };
-
+        
+        console.log("estoy en el medio del IF")
         if(productDescription.value.length <20 ) {
             return alert('Ingrese una descripción válida, de al menos 20 caracteres');
         };
@@ -38,7 +42,7 @@ window.addEventListener('load', function()  {
                 return alert('Ingrese una imagen valida');
              };
          
-         if ( productName.value.length >= 5 && productDescription.value.length >=20 && testeoImagen == true) {
+         if ( productName.value.length >= 5 && productDescription.value.length >=20 && testeoImagen == true && productCategory.value != 0 && productStock.value != 0) {
              return form.submit();
          }
         

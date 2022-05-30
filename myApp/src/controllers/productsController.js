@@ -48,7 +48,10 @@ const productsController = {
     }
 
     let body = req.body;
-    let fileName = req.file.filename
+    if(!req.file){
+      res.send("Ingresar foto")
+    }
+    else {let fileName = req.file.filename
     
     db.Product.create({
 
@@ -64,7 +67,7 @@ const productsController = {
       product_category_id: body.product_category,      
       
     })  .then( () => res.redirect("/") );         // Redirecciona a la pagina principal, porque antes redireccionaba a /products y eso no tiene pagina.
-
+}
   },
 
   //Muestra form de edición para el producto seleccionado por id

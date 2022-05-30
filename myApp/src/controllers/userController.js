@@ -178,7 +178,7 @@ const userController = {
     logout: (req, res) => {
         res.clearCookie("recordarEmail");
         req.session.destroy();
-        res.redirect('/');
+        res.redirect('/user/register');
     },
 
     /* Muestra el Perfil del Usuario */
