@@ -79,15 +79,15 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `description`, `stock`, `weight`, `color`, `size`, `price`, `discount`, `picture`, `product_category_id`) VALUES
-(1, 'Tablet samsung 13\"', 'asd', 123, 111, 'red', '111', 1234, 5, 'productImg-1652224831982.JPG', 0),
-(2, 'aaaaaaaaa', 'aaaaaaaa', 1111, 111, '1111', '111111', 111, 11, 'productImg-1652236282314.JPG', 0),
+(1, 'Tablet samsung 13\"', 'asd', 123, 111, 'red', '111', 1234, 5, 'productImg-1652224831982.JPG', 1),
+(2, 'aaaaaaaaa', 'aaaaaaaa', 1111, 111, '1111', '111111', 111, 11, 'productImg-1652236282314.JPG', 1),
 (3, 'Samsung Galaxy S22 Ultra', 'Con un diseño de vanguardia, el celular Samsung Galaxy S22 Ultra ', 9, 228, 'Verde', '77.9 x 163.3 x 8.9mm', 254999, 0, 'productImg-1652535213243.jpg', 2),
-(4, 'Mick', 'Broadstone', 20, NULL, NULL, NULL, 0, 0, '', NULL),
-(5, 'Mick', 'Broadstone', 20, NULL, NULL, NULL, 0, 0, '', NULL),
-(6, 'Mick', 'Broadstone', 20, NULL, NULL, NULL, 0, 0, '', NULL),
-(7, 'Mick', 'Broadstone', 20, NULL, NULL, NULL, 0, 0, '', NULL),
-(8, 'Mick', 'Broadstone', 20, NULL, NULL, NULL, 0, 0, '', NULL),
-(9, 'Mick', 'Broadstone', 20, NULL, NULL, NULL, 0, 0, '', NULL);
+(4, 'Mick', 'Broadstone', 20, 3, 'black', 51, 0, 0, '', 3),
+(5, 'Mick', 'Broadstone', 20, 3, 'black', 51, 0, 0, '', 1),
+(6, 'Mick', 'Broadstone', 20, 3, 'black', 51, 0, 0, '', 4),
+(7, 'Mick', 'Broadstone', 20, 3, 'black', 51, 0, 0, '', 1),
+(8, 'Mick', 'Broadstone', 20, 3, 'black', 51, 0, 0, '', 3),
+(9, 'Mick', 'Broadstone', 20, 3, 'black', 51, 0, 0, '', 1);
 
 -- --------------------------------------------------------
 
