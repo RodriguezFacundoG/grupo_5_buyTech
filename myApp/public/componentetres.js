@@ -2,13 +2,12 @@ const {useState, useEffect} = React
 
 
 function ComponenteTres () {
-    const [response, setResponse] = useState({})
+    const [response, setResponse] = useState()
     const [users, setUsers] = useState([])
 
     //Paralelismo con componentDidMount()
     useEffect( () => {        
         console.log("Se montó el componente")
-          console.log("Se montó y paso el timer")
         fetch('http://localhost:3000/api/users')
           .then((res) => res.json())
           .then((data) => {
@@ -24,8 +23,7 @@ function ComponenteTres () {
     }, []);
 
     
-        let contenido;
-        console.log(response)
+        let contenido;        
         if(!response) {
             contenido = <h3>Cargando...</h3>
             console.log("estoy cargandome todavia")
