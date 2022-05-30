@@ -22,14 +22,15 @@
     <!-- Nav de user y cart -->
     <div class="icons">
         <div class="icon-user">
-            <i class="fas fa-user"></i>
-                <% if(locals.isLogged == false){ %>
-                    <a href="/user/login">
+            <% if(locals.isLogged == false){ %>
+                <a href="/user/login">
+                        <i class="fas fa-user"></i>
                         <span class="nav-personal__text">User</span>
                     </a>
                 <% } else { %>
                     <a href="/user/profile/<%= locals.userLogged.id %>">
-                        <span class="nav-personal__text"><%= locals.userLogged.firstName %></span>
+                        <i class="fas fa-user"></i>
+                        <span class="nav-personal__text"><%= locals.userLogged.first_name %></span>
                     </a>
                 <% } %>
         </div>

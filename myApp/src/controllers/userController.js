@@ -43,7 +43,8 @@ const userController = {
                     //Cookie
                     if (req.body.remember_me) {
                         res.cookie('recordarEmail', req.session.userLogged.email, { maxAge: 60000 });
-                    }                    
+                    }
+                                   
                     return res.redirect('/');
                 }
 
