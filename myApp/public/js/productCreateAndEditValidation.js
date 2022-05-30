@@ -1,4 +1,5 @@
 window.addEventListener('load', function()  {
+    let form = document.querySelector('.create_formº');
     let productName = document.querySelector('#create_form_product_name');
     let productDescription = document.querySelector('#create_form_product_description');
     let productCategory = document.querySelector('#create_form_product_category');
@@ -12,7 +13,7 @@ window.addEventListener('load', function()  {
         e.preventDefault();
         
         if(productName.value.length <5 ) {
-            alert('Ingrese un nombre válido, de al menos 5 caracteres');
+            return alert('Ingrese un nombre válido, de al menos 5 caracteres');
         };
         
         console.log("estoy en el medio del IF")
