@@ -107,6 +107,8 @@ const productsController = {
     }
 
     let idABuscar = req.params.id;
+    let body = req.body;
+    // let filename = req.file.filename; 
     db.Product.update({
 
       name: body.product_name,
@@ -117,8 +119,8 @@ const productsController = {
       size: body.product_size,
       price: body.product_price,
       discount: body.product_discount,
-      picture: filename,
-      product_category_id: body.product_category,
+      // picture: filename, //Resolver que cuando no se sube una imagen, no va a tener la prop filename, esto no viene del body al 
+      // product_category_id: body.product_category, //No esta leyendo esta propiedad tampoco
       
     }, {
 
