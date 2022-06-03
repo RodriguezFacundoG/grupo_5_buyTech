@@ -185,10 +185,9 @@ const userController = {
 
     /* Muestra el Perfil del Usuario */
     profile: (req, res) => {
-        let idABuscar = req.params.userId;
+        let idABuscar = req.params.id;
         db.User.findByPk(idABuscar)
-          .then( (user) => {   
-              return res.send(user)     
+          .then( (user) => {        
               return res.render("userProfile", { user: user });
           })     
     },
