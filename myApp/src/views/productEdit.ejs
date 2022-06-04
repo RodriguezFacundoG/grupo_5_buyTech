@@ -78,7 +78,10 @@
                         <input class="form_number" type="number" name="product_discount" value="<%= element.discount %>" id="create_form_product_discount" maxlength="7">
                     </div>
                     <div class="form-button">
-                        <button type="submit">Submit</button>
+                        <!-- <button type="submit" action="/products/<%#= element.id %>">Submit</button> -->
+                        <form action="/products/<%=element.id%>?_method=PUT" method="POST">
+                            <button type="submit">Submit</button>
+                        </form>  
                     </div>
                 </form>
             </div>
