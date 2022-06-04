@@ -73,7 +73,7 @@ const productsController = {
   edit: (req, res) => {
     if(req.session.userLogged.user_category.type != 1){ //Si NO es admin, lo saco
       console.log("No tenes los privilegios necesarios para editar un producto")
-      return res.redirect('/')    
+      return res.redirect('/products')    
     }
 
     let idABuscar = req.params.id;

@@ -29,7 +29,7 @@
     <main>
         <div class="product-container">
             <div class="product-image">
-                <img class="image" src="/images/productos/JBL_FLIP6.png" alt="No image">
+                <img class="image" src="/images/productos/<%= element.picture %>" alt="<%= element.picture %>">
             </div>
 
             <div class="product-info-name">
@@ -76,11 +76,7 @@
                 <div class="buttons-administrator">
                     <div class="edit">
                         <div class="button-container">    
-<<<<<<< HEAD
-                            <form action="/products/<%= element.id %>/edit?_method=PUT" method="POST">
-=======
                             <form action="/products/<%= element.id %>/edit" method="GET">
->>>>>>> 2d4a8a164c3cde16f4fa11b4806026c728336ff3
                                 <button type="submit">Edit</button>
                             </form>    
                         </div>
