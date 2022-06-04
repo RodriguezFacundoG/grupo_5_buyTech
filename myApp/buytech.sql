@@ -82,11 +82,11 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `description`, `stock`, `weight`, `color`, `size`, `price`, `discount`, `picture`, `product_category_id`) VALUES
-(1, 'Mouse Inalambrico Logitech M350 Pebble Blue Grey Bluetooth', 'no vas a poder creer lo que hace ', 50, 72, 'black', '12', 1200, 5, 'accesorios_01', 4),
-(2, 'Mouse Inalambrico Logitech M185 Black', 'El mejor de los mejores en su rango y nivel.', 60, 70, 'black', '11', 1150, 5, 'accesorios_02', 4),
-(3, 'Mouse Inalambrico Logitech M185 Black+A36:A41', 'Con un diseño de vanguardia, Il Topo!', 60, 70, 'grey', '11', 1150, 5, 'accesorios_03', 4),
-(4, 'Auriculares Inalámbricos Haylou Gt1 Pro', 'no vas a poder creer lo que escuchas ', 10, 270, 'black', '11', 7500, 5, 'auriculares_01', 4),
-(5, 'Auriculares In Ear JBL T110 Negro', 'Escucha el mundo en HD459plus', 102, 270, 'black', '11', 1500, 5, 'auriculares_02', 4),
+(1, 'Mouse Inalambrico Logitech M350 Pebble Blue Grey Bluetooth', 'no vas a poder creer lo que hace ', 50, 72, 'black', '12', 1200, 5, 'accesorios_01.jpg', 4),
+(2, 'Mouse Inalambrico Logitech M185 Black', 'El mejor de los mejores en su rango y nivel.', 60, 70, 'black', '11', 1150, 5, 'accesorios_02.jpg', 4),
+(3, 'Mouse Inalambrico Logitech M185 Black+A36:A41', 'Con un diseño de vanguardia, Il Topo!', 60, 70, 'grey', '11', 1150, 5, 'accesorios_03.jpg', 4),
+(4, 'Auriculares Inalámbricos Haylou Gt1 Pro', 'no vas a poder creer lo que escuchas ', 10, 270, 'black', '11', 7500, 5, 'auriculares_01.jpg', 4),
+(5, 'Auriculares In Ear JBL T110 Negro', 'Escucha el mundo en HD459plus', 102, 270, 'black', '11', 1500, 5, 'auriculares_02.jpg', 4),
 (6, 'Notebook HP Pavilion 15,6” AMD Ryzen 3 8GB 256GB SSD 15-EH0004LA', 'Con un diseño de vanguardia, renocado', 9, 228, 'Verde', 'XL', 254999, 0, 'notebook_hp_02.jpg', 1),
 (7, 'Notebook HP Gamer Pavilion AMD Ryzen 5 8GB 256 GB SSD 15-ec1035la', 'no vas a poder creer lo que hace ', 9, 228, 'black', 'XSL', 254999, 0, 'notebook_hp_03.jpg', 1),
 (8, 'Notebook HP 14-dk1016la AMD Athlon Silver 3050U 4GB 256GB SSD 14"', 'la mejor lapto, hecha por y para uno', 19, 228, 'black', 'XSL', 354999, 0, 'notebook_hp_04.jpg', 1),
