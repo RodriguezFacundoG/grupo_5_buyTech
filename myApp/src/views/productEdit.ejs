@@ -7,7 +7,7 @@
     <title>Product_Edit</title>
 
         <!-- javaSCRIPTS -->    
-        <script src="/js/productCreateAndEditValidation.js" type="text/javascript"></script>
+        <!-- <script src="/js/productCreateAndEditValidation.js" type="text/javascript"></script> -->
 
         <!-- Linkear el CSS -->
         <link href="/css/styleProductCreate.css" rel="stylesheet" type="text/css">
@@ -32,7 +32,7 @@
                 <h1 class="form_title">Editing product: <%= element.id %></h1>
             </div>
             <div class="create_requests">
-                <form class="create_form" action="/products/<%= element.id %>?__metod=PUT" method="POST"></form>
+                <form class="create_form" action="/products/<%=element.id%>?_method=PUT" method="POST">
                     <div class="create_title_required">
                         <p class="form_required">Required *</p>
                     </div>
@@ -78,10 +78,7 @@
                         <input class="form_number" type="number" name="product_discount" value="<%= element.discount %>" id="create_form_product_discount" maxlength="7">
                     </div>
                     <div class="form-button">
-                        <!-- <button type="submit" action="/products/<%#= element.id %>">Submit</button> -->
-                        <form action="/products/<%=element.id%>?_method=PUT" method="POST">
-                            <button type="submit">Submit</button>
-                        </form>  
+                        <button type="submit">Submit</button>
                     </div>
                 </form>
             </div>

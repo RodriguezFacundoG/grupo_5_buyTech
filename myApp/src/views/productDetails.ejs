@@ -71,7 +71,7 @@
                     </form>    
                 </div>
             </div>
-            <%# if (locals.userLogged.category == "admin") { %>
+            <% if (locals.userLogged.user_category.type == true) { %> <!--Si es admin, le deja ver las opciones de Edit & Delete-->
             
                 <div class="buttons-administrator">
                     <div class="edit">
@@ -90,7 +90,7 @@
                     </div>
                 </div>
 
-            <%# } %>           
+            <% } %>           
         </div>
     </main>
 

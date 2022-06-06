@@ -115,7 +115,7 @@ const productsController = {
       
     }, {
       where: { id: idABuscar }
-    }).then( () => res.redirect("/") );        // Redirecciona a la pagina principal, porque antes redireccionaba a /products y eso no tiene pagina.   
+    }).then( () => res.redirect("/products/" + idABuscar) );        // Redirecciona a la pagina principal, porque antes redireccionaba a /products y eso no tiene pagina.   
   },
   //Elimina el producto seleccionado por id
   delete: (req, res) => {
