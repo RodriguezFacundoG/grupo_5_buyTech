@@ -58,7 +58,7 @@ const productsController = {
     }
     let body = req.body;
     if(!req.file){
-      res.send("Ingresar foto")
+      return res.send("Ingresar foto")
     }
     else {
       let fileName = req.file.filename
@@ -94,13 +94,15 @@ const productsController = {
   },
   //Actualiza la informacion del producto a traves de PUT
   update: (req, res) => {
+    // return res.send(req.file)
     if(req.session.userLogged.user_category.type != 1){ //Si NO es admin, lo saco
       console.log("No tenes los privilegios necesarios para editar un producto")
       return res.redirect('/')    
-    }
+    }    
+    let fileName = req.file ? req.file.filename : undefined;
     let idABuscar = req.params.id;
-    let body = req.body;
-    // let filename = req.file.filename; 
+    let body = req.body;    
+
     db.Product.update({
       name: body.product_name,
       description: body.product_description,
@@ -110,7 +112,7 @@ const productsController = {
       size: body.product_size,
       price: body.product_price,
       discount: body.product_discount,
-      // picture: filename, //Resolver que cuando no se sube una imagen, no va a tener la prop filename, esto no viene del body al 
+      picture: fileName,           //Si la prop picture es undefined, directamente no pisa la imagen subida a la DB y queda la que estaba originalmente 
       // product_category_id: body.product_category, //No esta leyendo esta propiedad tampoco
       
     }, {
