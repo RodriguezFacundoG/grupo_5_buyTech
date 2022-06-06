@@ -17,7 +17,7 @@ router.get('/search', productsController.productSearch)
 router.get('/:id', productsController.detail);
 
 router.get('/:id/edit', authMiddleware, productsController.edit)
-router.put('/:id', authMiddleware, productCreateAndEditValidation, productsController.update)
+router.put('/:id', authMiddleware, multerUploadProduct.single("product_image"), productCreateAndEditValidation, productsController.update)
 
 router.delete('/:id', authMiddleware, productsController.delete)
 
