@@ -32,7 +32,7 @@
                 <h1 class="form_title">Editing product: <%= element.id %></h1>
             </div>
             <div class="create_requests">
-                <form class="create_form" action="/products/<%=element.id%>?_method=PUT" method="POST">
+                <form class="create_form" action="/products/<%=element.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div class="create_title_required">
                         <p class="form_required">Required *</p>
                     </div>
@@ -46,7 +46,7 @@
                     </div>
                     <div class="form_product_image">
                             <label for="create_form_product_image">Image *</label>
-                            <input class="form_attachement" type="file" name="product_image" value="" id="create_form_product_image" accept="" value="">
+                            <input class="form_attachement" type="file" name="product_image" id="create_form_product_image" accept="" value="">
                     </div>
                     <div class="form_product_category">
                             <label for="create_form_product_category">Category *</label>                    
