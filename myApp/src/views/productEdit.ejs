@@ -7,7 +7,7 @@
     <title>Product_Edit</title>
 
         <!-- javaSCRIPTS -->    
-        <!-- <script src="/js/productCreateAndEditValidation.js" type="text/javascript"></script> -->
+         <script src="/js/productCreateAndEditValidation.js" type="text/javascript"></script>
 
         <!-- Linkear el CSS -->
         <link href="/css/styleProductCreate.css" rel="stylesheet" type="text/css">
@@ -29,7 +29,7 @@
     <main>
         <div class="product_create_container">
             <div class="create_title_main">
-                <h1 class="form_title">Editing product: <%= element.id %></h1>
+                <h1 class="form_title">Editing product: <%= element.name %></h1>
             </div>
             <div class="create_requests">
                 <form class="create_form" action="/products/<%=element.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
@@ -56,6 +56,10 @@
                                     <option value="<%=category.id%>" <%= element.product_category.id == category.id ? "selected" : "" %> ><%=category.type.charAt(0).toUpperCase() + category.type.slice(1)%></option>
                                 <% }) %>                                
                             </select>
+                    </div>
+                    <div class="form_product_stock">
+                        <label for="create_form_product_stock">Stock</label>
+                        <input class="form_number" type="number" name="product_stock" id="create_form_product_stock">
                     </div>
                     <div class="form_product_color">
                         <label for="create_form_product_color">Color</label>
