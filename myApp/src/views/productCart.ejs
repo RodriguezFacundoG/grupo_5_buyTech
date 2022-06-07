@@ -1,139 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BuyTech - Shop Cart</title>
     <!-- CSS -->
-    <link href="/css/styleHeader.css" rel="stylesheet" type="text/CSS">
-    <link href="/css/styleProductCart.css" rel="stylesheet" type="text/CSS">
-    <link href="/css/styleFooter.css" rel="stylesheet" type="text/CSS">
+    <link href="/css/styleHeader.css" rel="stylesheet" type="text/CSS" />
+    <link href="/css/styleProductCart.css" rel="stylesheet" type="text/CSS" />
+    <link href="/css/styleFooter.css" rel="stylesheet" type="text/CSS" />
     <!-- ICONOS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <!-- Linkear Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300&display=swap" rel="stylesheet">
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
- <body>
+  <body>
     <!-- HEADER -->
     <%- include('./partials/header.ejs') %>
     <main>
-        <div class="cart-detail">
+      <div class="cart-detail">
+        <div class="cart-order-summary">
+          <ul class="cart-order-totals">
+            <li class="cart-order-totals-item">
+              Subtotal
+              <span class="cart-order-totals-value">$40000</span>
+            </li>
+            <li class="cart-order-totals-item">
+              Discount
+              <span class="cart-order-totals-value">$0</span>
+            </li>
+            <li class="cart-order-totals-item">
+              Shipping
+              <span class="cart-order-totals-value">$700</span>
+            </li>
+            <li class="cart-order-totals-item_strong">
+              Total Price
+              <span class="cart-order-totals-value">$40700</span>
+            </li>
+          </ul>
 
-            <div class="cart-order-summary">
-                <ul class="cart-order-totals">
-                    <li class="cart-order-totals-item">
-                        Subtotal
-                        <span class="cart-order-totals-value">$40000</span>
-                    </li>
-                    <li class="cart-order-totals-item">
-                        Discount
-                        <span class="cart-order-totals-value">$0</span>
-                    </li>
-                    <li class="cart-order-totals-item">
-                        Shipping
-                        <span class="cart-order-totals-value">$700</span>
-                    </li>
-                    <li class="cart-order-totals-item_strong">
-                        Total Price
-                        <span class="cart-order-totals-value">$40700</span>
-                    </li>
-                </ul>
-
-                <!-- BOTONES CHECK-OUT Y CONTINUE-SHOPPING-->
-                <div class="checkout-continue-buttons">
-                    <div class="cart-button">
-                        <a href="/user/logout">
-                            <button class="cart-button-checkout">Check-out</button>
-                        </a>
-                    </div>
-                    <div class="cart-button">
-                        <a href="/"><button class="cart-button-continue">Continue Shopping</button></a>
-                    </div>
-                </div> 
+          <!-- BOTONES CHECK-OUT Y CONTINUE-SHOPPING-->
+          <div class="checkout-continue-buttons">
+            <div class="cart-button">
+              <a href="/user/logout">
+                <button class="cart-button-checkout">Check-out</button>
+              </a>
             </div>
-
-            
-           
-    
-            <!-- LISTADO DE ARTICULOS-->
-            <div class="cart-order-items">
-
-                <!-- ITEM 1 -->
-                <% for( element of elements ) { %>
-                
-                    <div class="cart-item">
-    
-                        <div class="cart-image">
-                            <div class="cart-item-image">
-                                <img class="img-article" src="/images/productos/<%=element.product.picture%> " alt="aricleX.jpg">
-                            </div>
-                        </div>
-    
-                        <div class="cart-attributes">
-                            <h2 class="cart-item-title"> <%= element.product.name %> </h2>
-                            <ul class="cart-item-attributes">
-                                <li class="cart-item-attributes_attribute">
-                                    <span class="item-attribute_label">Memory</span>
-                                </li>
-                                <li class="cart-item-attributes_attribute">
-                                    <span class="item-attribute_label">Color</span>
-                                </li>
-                                <li class="cart-item-attributes_attribute">
-                                    <span class="item-attribute_label">Size</span>
-                                </li>
-                            </ul>
-                        </div>
-    
-                        <div class="cart-cost">
-                            <div class="cart-item-price">
-                                <p class="cart-item-price_line">
-                                    <span class="item-price">$<%= element.product.price %> </span>
-                                </p>
-                            </div>
-                        </div>
-    
-                        <div class="cart-actions">
-                            <div class="cart-item-actions_edit">
-                                <a href="/products/<%= element.product.id %>/edit"> 
-                                    <button class="button-link">Edit</button>
-                                </a>
-                            </div>
-
-                            <form action="<%= element.product.id %>?_method=DELETE" method="POST">
-                                <div class="cart-item-actions_remove">
-                                    <a href=>
-                                        <button class="submit">Remove</button>
-                                    </a>
-                                </div>
-                            </form>
-
-
-
-
-                        </div>
-    
-                        <div class="cart-message">
-                            <div class="cart-item-message">
-                                <p class="cart-item-message_line">
-                                    <span class="item-message">Possible error</span>
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
-                <% } %>                
-                
+            <div class="cart-button">
+              <a href="/"
+                ><button class="cart-button-continue">
+                  Continue Shopping
+                </button></a
+              >
             </div>
-
+          </div>
         </div>
+
+        <!-- LISTADO DE ARTICULOS-->
+        <div class="cart-order-items">
+          <!-- ITEM 1 -->
+          <% for( element of elements ) { %>
+
+          <div class="cart-item">
+            <div class="cart-image">
+              <div class="cart-item-image">
+                <img
+                  class="img-article"
+                  src="/images/productos/<%=element.product.picture%> "
+                  alt="aricleX.jpg"
+                />
+              </div>
+            </div>
+
+            <div class="cart-attributes">
+              <h2 class="cart-item-title"><%= element.product.name %></h2>
+              <ul class="cart-item-attributes">
+                <li class="cart-item-attributes_attribute">
+                  <span class="item-attribute_label">Memory</span>
+                </li>
+                <li class="cart-item-attributes_attribute">
+                  <span class="item-attribute_label">Color</span>
+                </li>
+                <li class="cart-item-attributes_attribute">
+                  <span class="item-attribute_label">Size</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="cart-cost">
+              <div class="cart-item-price">
+                <p class="cart-item-price_line">
+                  <span class="item-price">$<%= element.product.price %> </span>
+                </p>
+              </div>
+            </div>
+
+            <div class="cart-actions">
+              <div class="cart-item-actions_edit">
+                <a href="/products/<%= element.product.id %>/edit">
+                  <button class="button-link">Edit</button>
+                </a>
+              </div>
+
+              <form
+                action="/user/hola/<%= element.product.id %>?_method=DELETE" method="POST">
+                <div class="cart-item-actions_remove">
+                  <button class="submit">Remove</button>
+                </div>
+              </form>
+
+
+            </div>
+
+            <div class="cart-message">
+              <div class="cart-item-message">
+                <p class="cart-item-message_line">
+                  <span class="item-message">Possible error</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <% } %>
+        </div>
+      </div>
     </main>
 
-<!-- FOOTER -->
+    <!-- FOOTER -->
     <%- include('./partials/footer.ejs') %>
-
-</body>
+  </body>
 </html>

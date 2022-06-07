@@ -20,7 +20,7 @@ router.get('/cart',authMiddleware , userController.getCart);
 
 router.post('/:id', authMiddleware, userController.addToCart);
 
-router.delete('/:id/', authMiddleware, userController.deleteFromCart);
+router.delete('/hola/:id', authMiddleware, userController.deleteFromCart);
 
 router.get('/logout', authMiddleware, userController.logout);
 

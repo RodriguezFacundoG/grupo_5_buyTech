@@ -192,31 +192,16 @@ const userController = {
               return res.render("userProfile", { user: user });
           })     
     },
-
-    deleteFromCart: async (req, res) => {
-        let productIdToDelete = req.params.id;
-        const item = await db.Item.destroy({
-            product_id: productIdToDelete,    
-
-        },
-        {
-            include: [
-                {
-                    association: 'users',
-                    where: {
-                        id: req.session.userLogged.id
-                    }
-                }
-            ]
+    //Elimina el producto seleccionado por id
+    deleteFromCart: (req, res) => {
+        
+      let idABuscar = req.params.id;
+      db.Item.destroy({where: { product_id: idABuscar }})
+        .then( () => {
+           // res.send("sos lo mejor que te puede pasar!")
+            res.redirect('/user/cart');
         })
-        await item.save()
-        console.log(item);
-        item.setUsers([req.session.userLogged.id])
-        console.log("Se borrará ese producto del carrito")
-        return res.send(item)
-        return res.redirect('/');
     },
-
     /* Muestra el Formulario de Edición para el Usuario */
     edit: (req, res) => {
         let idABuscar = req.params.id;
