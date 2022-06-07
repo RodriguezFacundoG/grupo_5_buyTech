@@ -98,11 +98,22 @@
     
                         <div class="cart-actions">
                             <div class="cart-item-actions_edit">
-                                <button class="button-link">Edit</button>
+                                <a href="/products/<%= element.product.id %>/edit"> 
+                                    <button class="button-link">Edit</button>
+                                </a>
                             </div>
-                            <div class="cart-item-actions_remove">
-                                <button class="button-link">Remove</button>
-                            </div>
+
+                            <form action="<%= element.product.id %>?_method=DELETE" method="POST">
+                                <div class="cart-item-actions_remove">
+                                    <a href=>
+                                        <button class="submit">Remove</button>
+                                    </a>
+                                </div>
+                            </form>
+
+
+
+
                         </div>
     
                         <div class="cart-message">
