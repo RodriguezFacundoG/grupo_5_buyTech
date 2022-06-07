@@ -136,12 +136,14 @@ const productsController = {
 
   //Barra de búsqueda
   productSearch: (req, res) => {
+    console.log("Entre al metodo de busqueda");
+
     let searchString = req.query.keywords
     // return res.send(searchString)
     db.Product.findAll({
       where: {
         name: {
-          [Op.Like]: `%${searchString}%`,
+          [Op.like]: `%${searchString}%`,
         }
       }
     })
