@@ -17,17 +17,9 @@ const productsController = {
 
     })
       .then( (productsByCategory) => {
-        return res.json(productsByCategory)
+        // return res.json(productsByCategory)
         return res.render('productTypeList', {products: productsByCategory});
-      })
-
-    // db.Product_category.findOne({where: {type: categoryId}})
-    //   .then( category => {
-    //     db.Product.findAll({where: {product_category_id: category.id}}, {include:{association: "product_category"}})
-    //       .then ( products => {
-    //         res.render('productTypeList', {products:products})
-    //       })
-    //   })      
+      })         
   },
 
   //Muestra el detalle de un producto
@@ -148,8 +140,8 @@ const productsController = {
       }
     })
       .then ( (products) => {
-        return res.send(products)
-        return res.render('productTypeList', {products: products})
+        return res.send(products)        
+        // return res.render('productTypeList', {products: products})
       })
   }
 };

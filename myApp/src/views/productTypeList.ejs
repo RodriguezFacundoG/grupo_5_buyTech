@@ -45,7 +45,7 @@
         </div>
 
         <div class="product_section">
-            <% for (let i = 0; i < products.lenght; i ++) { %>
+            <% for (product of products) { %>
                 <div class="product">
                     <div class="product_img">
                         <img src="/images/productos/img-samsung-galaxy-s10_1.jpg" alt="" class="product__img">
@@ -55,7 +55,7 @@
                             <span class="product__name"><%= product.name %></span>
                         </div>
                         <div class="product_section_discount">
-                            <span class="product_old_price">$<%= toThousand(product.price) %></span> 
+                            <span class="product_old_price">$<%= product.price %></span> 
                             <span class="product_discount">- <%= product.discount %> %</span> 
                         </div>
                         <div class="product_section_price">
