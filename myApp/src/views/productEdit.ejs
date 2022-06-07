@@ -7,7 +7,7 @@
     <title>Product_Edit</title>
 
         <!-- javaSCRIPTS -->    
-         <script src="/js/productCreateAndEditValidation.js" type="text/javascript"></script>
+        <!-- <script src="/js/productCreateAndEditValidation.js" type="text/javascript"></script> -->
 
         <!-- Linkear el CSS -->
         <link href="/css/styleProductCreate.css" rel="stylesheet" type="text/css">
@@ -59,7 +59,7 @@
                     </div>
                     <div class="form_product_stock">
                         <label for="create_form_product_stock">Stock</label>
-                        <input class="form_number" type="number" name="product_stock" id="create_form_product_stock">
+                        <input class="form_number" type="number" name="product_stock" value="<%= element.stock %>" id="create_form_product_stock">
                     </div>
                     <div class="form_product_color">
                         <label for="create_form_product_color">Color</label>

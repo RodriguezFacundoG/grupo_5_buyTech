@@ -105,7 +105,7 @@ const productsController = {
       price: body.product_price,
       discount: body.product_discount,
       picture: fileName,           //Si la prop picture es undefined, directamente no pisa la imagen subida a la DB y queda la que estaba originalmente 
-      // product_category_id: body.product_category, //No esta leyendo esta propiedad tampoco
+      product_category_id: body.product_category, //No esta leyendo esta propiedad tampoco
       
     }, {
       where: { id: idABuscar }
