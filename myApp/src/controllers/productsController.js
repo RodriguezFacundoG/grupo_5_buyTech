@@ -1,7 +1,7 @@
 const path = require("path");
 const db = require("../database/models/index")
 const Sequelize = require("sequelize");
-const Op = Sequelize.Op;
+const Op = db.Sequelize.Op;
 
 const productsController = {
 
