@@ -42,9 +42,9 @@ const userController = {
                     }
                     //Cookie
                     if (req.body.remember_me) {
-                        res.cookie('recordarEmail', req.session.userLogged.email, { maxAge: 60000 });
-                    }
-                                   
+                        res.cookie('recordarEmail', req.session.userLogged.email, { maxAge: 120000 });
+                    }                    
+                    
                     return res.redirect('/');
                 }
 
@@ -177,10 +177,15 @@ const userController = {
         res.redirect('/');
     },
     //Destruyo la sesión y la cookie
-    logout: (req, res) => {
-        res.clearCookie("recordarEmail");
-        req.session.destroy();
-        res.redirect('/user/login');
+    logout: async (req, res) => {
+        //Para mi va por el lado de que la cookie no se borra         
+        await res.clearCookie("recordarEmail");     
+        //La cookie tarda en borrarse y es por eso que 
+        // return await res.json(req.cookies.recordarEmail)
+
+        req.session.destroy( () => {         
+            res.redirect('/');
+        });
     },
 
      /* Muestra el Perfil del Usuario */
