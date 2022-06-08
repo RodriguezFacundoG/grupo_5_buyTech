@@ -54,12 +54,14 @@
                         <div class="product_section_name">
                             <span class="product__name"><%= product.name %></span>
                         </div>
-                        <div class="product_section_discount">
-                            <span class="product_old_price">$<%= product.price %></span> 
-                            <span class="product_discount">- <%= product.discount %> %</span> 
-                        </div>
+                        <% if (product.discount > 0 ) { %>
+                            <div class="product_section_discount">
+                                <span class="product_old_price">$<%= product.price %></span> 
+                                <span class="product_discount">-<%= product.discount %>%</span>
+                            </div>
+                        <% } %>
                         <div class="product_section_price">
-                            <span class="product_price">$28.000</span>
+                            <span class="product_price">$<%= product.price %></span>
                         </div>
                         <div class="buttons">
                             <a href="/products/<%= product.id %>">
