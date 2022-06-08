@@ -48,7 +48,7 @@
             <% for (product of products) { %>
                 <div class="product">
                     <div class="product_img">
-                        <img src="/images/productos/img-samsung-galaxy-s10_1.jpg" alt="" class="product__img">
+                        <img src="/images/productos/<%= product.picture %>" alt="" class="product__img">
                     </div>
                     <div class="product_list_content_info">
                         <div class="product_section_name">
@@ -69,10 +69,10 @@
                                     </button>
                                 </div>
                             </a> 
-                            <div class="button-container">
-                                <button class="button-product" type="submit">
-                                    <p>Add to cart</p>
-                                </button>
+                            <div class="button-container">    
+                                <form action="/user/<%= product.id %>" method="POST">
+                                    <button class="button-product" type="submit">Add to cart</button>
+                                </form>    
                             </div>
                         </div>
                     </div>    
