@@ -25,7 +25,7 @@ function userLoggedMiddleware (req, res, next) {
                     email: userFromCookie.email,
                     avatar: userFromCookie.avatar,
                     user_category: {
-                        type: userToLogin.userFromCookie.type
+                        type: userFromCookie.user_category.type
                     }
                 }
             })        
