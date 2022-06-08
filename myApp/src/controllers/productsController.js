@@ -31,8 +31,7 @@ const productsController = {
       })     
   },
   // Muestra formulario de creacion de productos
-  create: (req, res) => {
-    // return res.json(req.session.userLogged)
+  create: (req, res) => {    
     if(req.session.userLogged.user_category.type != 1){ //Si NO es admin, lo saco
       console.log("No tenes los privilegios necesarios para editar un producto")
       return res.redirect('/')    
@@ -67,7 +66,7 @@ const productsController = {
         picture: fileName,
         product_category_id: body.product_category,      
       
-      })  .then( () => res.redirect("/") );         // Redirecciona a la pagina principal, porque antes redireccionaba a /products y eso no tiene pagina.
+      })  .then( () => res.redirect("/") );    
 }
   },
   //Muestra form de edición para el producto seleccionado por id
@@ -105,12 +104,13 @@ const productsController = {
       price: body.product_price,
       discount: body.product_discount,
       picture: fileName,           //Si la prop picture es undefined, directamente no pisa la imagen subida a la DB y queda la que estaba originalmente 
-      product_category_id: body.product_category, //No esta leyendo esta propiedad tampoco
+      product_category_id: body.product_category, 
       
     }, {
       where: { id: idABuscar }
-    }).then( () => res.redirect("/products/" + idABuscar) );        // Redirecciona a la pagina principal, porque antes redireccionaba a /products y eso no tiene pagina.   
+    }).then( () => res.redirect("/products/" + idABuscar) );           
   },
+
   //Elimina el producto seleccionado por id
   delete: (req, res) => {
     if(req.session.userLogged.user_category.type != 1){ //Si NO es admin, lo saco
@@ -122,7 +122,7 @@ const productsController = {
     db.Product.destroy({where: { id: idABuscar }})
       .then( () => {
         db.Item.destroy({where: {product_id: idABuscar}})
-          .then( () => res.redirect("/"))      // Redirecciona a la pagina principal, porque antes redireccionaba a /products y eso no tiene pagina.
+          .then( () => res.redirect("/"))      
       })
   },
 
