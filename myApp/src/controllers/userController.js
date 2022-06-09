@@ -177,15 +177,37 @@ const userController = {
         res.redirect('/');
     },
     //Destruyo la sesión y la cookie
-    logout: async (req, res) => {
-        //Para mi va por el lado de que la cookie no se borra         
-        await res.clearCookie("recordarEmail");     
-        //La cookie tarda en borrarse y es por eso que 
-        // return await res.json(req.cookies.recordarEmail)
-
-        req.session.destroy( () => {         
-            res.redirect('/');
-        });
+    logout: (req, res) => {
+        if(req.cookies.recordarEmail){
+            res.clearCookie("recordarEmail")
+            return res.redirect("/user/logout")
+        } else {
+            req.session.destroy( () => {
+                return res.redirect("/")
+            })
+        }
+        //Para mi va por el lado de que la cookie no se borra
+        // //La cookie tarda en borrarse y es por eso que 
+        // console.log("---------------------------------------------------------------------------")
+        // console.log("---------------------------------------------------------------------------")
+        // console.log("1° vez que consulto: " + req.cookies.recordarEmail)
+        // console.log("---------------------------------------------------------------------------")
+        // console.log("---------------------------------------------------------------------------")        
+       
+        // console.log(req.session)        
+        // req.session.destroy( () => {   
+        //     console.log("Una vez destruida la sesion:")         
+        //     console.log(req.session)
+        //     console.log("-----------------------------REQ.COOKIES---------------------------------------------")   
+        //     console.log(req.cookies)
+        //     console.log("-------------------------------REQ.COOKIES.RECORDAREMAIL--------------------------------------------")
+        //     console.log(req.cookies.recordarEmail)
+        //     console.log("-----------------------------RESULTADO COMPARACION: ----------------------------------------------")
+        //     const comparacion = req.cookies.recordarEmail
+        //     console.log(comparacion != undefined)
+        //     // return res.send(req.cookies)
+        //     // res.redirect('/PRODUCTS/1');
+        // });
     },
 
      /* Muestra el Perfil del Usuario */
