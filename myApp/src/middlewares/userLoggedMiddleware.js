@@ -1,35 +1,35 @@
-const session = require("express-session");
-const fs = require('fs');
-const path = require('path')
-
 const db = require("../database/models")
 
-function userLoggedMiddleware (req, res, next) {
+async function userLoggedMiddleware (req, res, next) {  
     //res.locals son variables que puedo compartir entre las vistas, indistintamente del controlador if(req.session && req.session.userLogged)
     res.locals.isLogged = false;
+
+    // let emailInCookie = req.cookies.recordarEmail ? req.cookies.recordarEmail : "";
     let emailInCookie = req.cookies.recordarEmail;
-    
-    if(req.cookies.recordarEmail) {
-        db.User.findOne({           //Busco el usuario, en base al email de la cookie            
+
+    if(emailInCookie != undefined) {                            //Si existe la cookie, que haga toda la logica de buscar y guardar en sesion
+        let userFromCookie = await db.User.findOne({           //Busco el usuario, en base al email de la cookie
             where: {
                 email: emailInCookie,
             },
             include: [{association: 'user_category'}]
         })
-            .then( userFromCookie => {
-                //si está en cookie, lo guardará en sesion al usuario.
-                req.session.userLogged = {      
-                    id: userFromCookie.id,         
-                    first_name: userFromCookie.first_name,
-                    last_name: userFromCookie.last_name,
-                    email: userFromCookie.email,
-                    avatar: userFromCookie.avatar,
-                    user_category: {
-                        type: userFromCookie.user_category.type
-                    }
+        
+        if(userFromCookie){                                     //Si está en cookie, lo buscará en la DB y lo guardará en sesión al usuario.
+            req.session.userLogged = {
+                id: userFromCookie.id,
+                first_name: userFromCookie.first_name,
+                last_name: userFromCookie.last_name,
+                email: userFromCookie.email,
+                avatar: userFromCookie.avatar,
+                user_category: {
+                    type: userFromCookie.user_category.type
                 }
-            })        
-    }       
+            }
+        } else { //Si no lo encuentra, renderiza la vista de error
+            return res.render('error')
+        }
+    }
     
     if(req.session.userLogged){     
         res.locals.isLogged = true;        
