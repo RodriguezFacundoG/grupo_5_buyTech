@@ -18,7 +18,7 @@ router.post('/register', multerUploadUser.single('avatar'), verificationRegister
 
 router.get('/cart', authMiddleware, userController.getCart);
 
-router.post('/:id', userController.addToCart);
+router.post('/:id',authMiddleware, userController.addToCart);
 
 router.delete('/hola/:id', userController.deleteFromCart);
 

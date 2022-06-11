@@ -32,7 +32,17 @@
             <div class="sign-in-container">
                 <div class="sign-in-title">
                     <p class="sign-in">Sign In</p>
+                    
+                    <% if(locals.isLogged == false){ %>
+                        <div>
+                            <p class="wish-to-buy">
+                                Deseas comprar? Logéate y comienza la experiencia BuyTech!
+                            </p>
+                        </div>
+                    <% }%>
                 </div>
+
+
                 <form action="/user/login" method="POST" class="form-complete">
 
                     <div class="form-box">

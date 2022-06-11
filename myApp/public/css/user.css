@@ -137,6 +137,15 @@ main .user-img i{
   text-align: center;
 }
 
+.wish-to-buy{
+  text-align: center;
+  font-family: 'Barlow', sans-serif;
+  color: #4b5666;
+  font-size: 1.5rem;
+  letter-spacing: 0.05rem;
+  margin-bottom: 50px;
+}
+
 
 @media (min-width: 375px) {
   .sign-in-container{
