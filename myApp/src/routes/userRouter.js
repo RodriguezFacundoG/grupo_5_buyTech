@@ -22,6 +22,8 @@ router.post('/:id', userController.addToCart);
 
 router.delete('/hola/:id', userController.deleteFromCart);
 
+router.get('/checkout', authMiddleware, userController.checkout);
+
 router.get('/logout', authMiddleware, userController.logout);
 
 router.get('/profile/:userId', userController.profile);

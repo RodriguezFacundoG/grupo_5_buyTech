@@ -18,7 +18,7 @@ const productsController = {
     })
       .then( (productsByCategory) => {
         // return res.json(productsByCategory)
-        return res.render('productTypeList', {products: productsByCategory});
+        return res.render('productTypeList', {products: productsByCategory, category: categoryName})
       })         
   },
 

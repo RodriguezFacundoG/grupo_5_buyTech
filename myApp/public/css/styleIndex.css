@@ -22,9 +22,11 @@ main {
 }
 
 
-a {
+a>span {
     text-decoration: none;
     height: auto;
+    color: black;
+    background-color: #0158AA;
 }
 
 /* TYPE OF PRODUCTS BAR*/
@@ -196,6 +198,9 @@ a {
 
 
 @media (min-width: 769px) {
+    main{
+        margin-bottom: -0.5;
+    }
     .top_sale_section_products{
         grid-template-columns: 50% 50%;
     }

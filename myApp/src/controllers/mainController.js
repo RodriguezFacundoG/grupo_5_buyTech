@@ -7,7 +7,7 @@ const mainController = {
             order: [
                 ["discount","DESC"]
             ],
-            limit:5
+            limit:4
         })
         .then ( products => {
             res.render('index', {products:products})

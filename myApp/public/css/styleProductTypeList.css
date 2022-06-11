@@ -21,9 +21,10 @@ main {
   background-color: rgb(241, 241, 241);
 }
 
-a {
+li>a>span{
   text-decoration: none;
   height: auto;
+  color: #0158AA;
 }
 
 

@@ -78,7 +78,8 @@
         <div class="section_products">
           <div class="top_sale_section_products">
             <div class="top_sale_section_item_first">
-              <% products.forEach(product => {%>  <!-- este for solia ser un forEach, asi se podia pedir cada product desde products -->
+              <% products.forEach(product => {%> 
+                <% if (product.type == 1) %>
               <div class="product">
                 <a href="/products/<%= product.id %>">
                   <img
