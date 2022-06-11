@@ -232,7 +232,7 @@ const userController = {
 
   /* Muestra el Formulario de Edición para el Usuario */
   edit: (req, res) => {
-    let idABuscar = req.params.id;
+    let idABuscar = req.params.userId;
     db.User.findByPk(idABuscar).then((user) => {
       return res.render("userEdit", { user: user });
     });
@@ -253,7 +253,7 @@ const userController = {
         },
       }
     );
-    res.redirect("/users/profile/" + req.params.userId);
+    res.redirect("/user/profile/" + req.params.userId);
   },
 };
 
