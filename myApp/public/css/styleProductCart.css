@@ -205,4 +205,8 @@ div {
     left: 5vw;
     top: 0vh;
   }
+  main {
+    padding-top: 1vh;
+   padding-bottom: 53vh;
+  }
 }

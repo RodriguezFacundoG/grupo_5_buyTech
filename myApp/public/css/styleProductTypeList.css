@@ -158,6 +158,10 @@ li>a>span{
 
 
 @media (min-width: 769px) {
+  main{
+    padding-top: 9vh;
+    padding-bottom: 16vh;
+  }
   .product_section{
     display: grid;
     grid-template-columns: repeat(3, 1fr);

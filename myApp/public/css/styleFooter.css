@@ -1,4 +1,4 @@
-* {
+* < footer {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -36,7 +36,7 @@ h3 {
 }
 a {
   text-decoration: none;
-  color: white  
+  color: white;
 }
 
 /* SOCIAL ICONS */
@@ -88,6 +88,9 @@ a {
     padding-left: 60px;
     padding-right: 60px;
     padding-top: 30px;
+    /*  position: absolute;
+  width: 100%;
+  bottom: 0; */
   }
 
   .footer_information {
@@ -97,5 +100,4 @@ a {
     grid-template-rows: 1fr;
     margin: 0 auto;
   }
- 
 }
