@@ -135,6 +135,15 @@ li>a>span{
   color: rgb(255, 255, 255);
   margin-left: 3px;
 }
+.no-products-founded{
+  
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: black;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
 .buttons {
   display: inline-flex;
