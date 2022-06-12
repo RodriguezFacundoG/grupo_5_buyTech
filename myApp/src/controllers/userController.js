@@ -154,9 +154,13 @@ const userController = {
       //En "items" tengo todos los items relacionados al usuario logueado; con respecto a products ya viene
       // por la relación, ligado a un solo producto (Ver en ERD)
       .then((items) => {
+        let total = 0;
+        items.forEach((item) => {
+          total += item.product.price;
+        });
+        let shipping = 700;
         // return res.send(items[0].product.picture)
-        //return res.send(items)
-        return res.render("productCart", { elements: items });
+        return res.render("productCart", { elements: items, total, shipping });
       });
   },
   //Añado un producto al carrito cuando toco el botón en la vista de productDetails
@@ -226,10 +230,7 @@ const userController = {
   },
   checkout: (req, res) => {
     res.render("checkout");
-    
   },
-
-
 
   /* Muestra el Formulario de Edición para el Usuario */
   edit: (req, res) => {
