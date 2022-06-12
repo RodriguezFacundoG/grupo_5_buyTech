@@ -20,6 +20,11 @@ main {
   padding-top: 60px;
   background-color: rgb(241, 241, 241);
 }
+.main-search{
+  width: auto;
+  height: 83vh;
+  background-color: rgb(241, 241, 241);
+}
 
 li>a>span{
   text-decoration: none;
