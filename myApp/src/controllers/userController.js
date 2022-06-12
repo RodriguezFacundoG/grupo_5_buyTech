@@ -155,6 +155,7 @@ const userController = {
       // por la relación, ligado a un solo producto (Ver en ERD)
       .then((items) => {
         // return res.send(items[0].product.picture)
+        //return res.send(items)
         return res.render("productCart", { elements: items });
       });
   },

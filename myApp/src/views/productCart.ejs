@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BuyTech - Shop Cart</title>
+    
     <!-- CSS -->
     <link href="/css/styleHeader.css" rel="stylesheet" type="text/CSS" />
     <link href="/css/styleProductCart.css" rel="stylesheet" type="text/CSS" />
@@ -58,7 +59,13 @@
             </div>
             <div class="cart-button">
               <a href="/">
-                <button class="cart-button-continue">Continue Shopping</button>
+                <% if (elements[0]==null){ %>
+                  <button class="cart-button-continue">Start Shopping</button>
+                  <% }; %>
+                  <% if (elements[0]!=null){ %>
+                    <button class="cart-button-continue">Continue Shopping</button>
+             <% } %>
+                
               </a>
             </div>
           </div>
