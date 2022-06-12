@@ -57,11 +57,9 @@
               </a>
             </div>
             <div class="cart-button">
-              <a href="/"
-                ><button class="cart-button-continue">
-                  Continue Shopping
-                </button></a
-              >
+              <a href="/">
+                <button class="cart-button-continue">Continue Shopping</button>
+              </a>
             </div>
           </div>
         </div>
@@ -69,7 +67,11 @@
         <!-- LISTADO DE ARTICULOS-->
         <div class="cart-order-items">
           <!-- ITEM 1 -->
-          <% for( element of elements ) { %>
+          <% if (!elements.product) {%>
+          <div>
+            <h1>No tienes elementos en el carrito</h1>
+          </div>
+          <% } %> <% for( element of elements ) { %>
 
           <div class="cart-item">
             <div class="cart-image">
@@ -113,13 +115,13 @@
               </div> -->
 
               <form
-                action="/user/logout/<%= element.product.id %>?_method=DELETE" method="POST">
+                action="/user/logout/<%= element.product.id %>?_method=DELETE"
+                method="POST"
+              >
                 <div class="cart-item-actions_remove">
                   <button class="submit">Remove</button>
                 </div>
               </form>
-
-
             </div>
 
             <div class="cart-message">
