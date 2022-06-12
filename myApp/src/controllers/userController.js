@@ -123,7 +123,7 @@ const userController = {
       ...req.body,
       password: passEncripted,
       avatar: req.file != undefined ? req.file.filename : "user-solid.svg", //Solo agrega esta propíedad en caso de que se cree agregue una imagen, sino
-      user_category_id: 0, // pone una por default
+      user_category_id: 1, // pone una por default
     };
     delete newUser.password_verification; //Necesito borrar el password que se verifica, porque no está hasheado (el otro se pisa directamente)
 
