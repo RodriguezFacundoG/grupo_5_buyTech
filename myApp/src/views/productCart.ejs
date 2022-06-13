@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BuyTech - Shop Cart</title>
-    
+
     <!-- CSS -->
     <link href="/css/styleHeader.css" rel="stylesheet" type="text/CSS" />
     <link href="/css/styleProductCart.css" rel="stylesheet" type="text/CSS" />
@@ -34,38 +34,44 @@
           <ul class="cart-order-totals">
             <li class="cart-order-totals-item">
               Subtotal
-              <span class="cart-order-totals-value">$40000</span>
+              <span class="cart-order-totals-value">$<%= total %></span>
             </li>
+            <!-- <li class="cart-order-totals-item">
+                  Discount
+                  <span class="cart-order-totals-value">$0</span>
+                </li> -->
             <li class="cart-order-totals-item">
-              Discount
+              Shipping <% if (total ==0 ){ %>
               <span class="cart-order-totals-value">$0</span>
-            </li>
-            <li class="cart-order-totals-item">
-              Shipping
+              <% } %> <% if (total !=0 ){ %>
               <span class="cart-order-totals-value">$700</span>
+              <% } %>
             </li>
             <li class="cart-order-totals-item_strong">
-              Total Price
-              <span class="cart-order-totals-value">$40700</span>
+              Total Price <% if (total ==0 ){ %>
+              <span class="cart-order-totals-value">$<%=total%></span>
+              <% } %> <% if (total !=0 ){ %>
+              <span class="cart-order-totals-value">$<%=total+shipping%></span>
+              <% } %>
             </li>
           </ul>
 
           <!-- BOTONES CHECK-OUT Y CONTINUE-SHOPPING-->
           <div class="checkout-continue-buttons">
+            <% if (total !=0) { %>
             <div class="cart-button">
               <a href="/user/checkout">
                 <button class="cart-button-checkout">Check-out</button>
               </a>
             </div>
+            <% } %>
             <div class="cart-button">
               <a href="/">
                 <% if (elements[0]==null){ %>
-                  <button class="cart-button-continue">Start Shopping</button>
-                  <% }; %>
-                  <% if (elements[0]!=null){ %>
-                    <button class="cart-button-continue">Continue Shopping</button>
-             <% } %>
-                
+                <button class="cart-button-continue">Start Shopping</button>
+                <% }; %> <% if (elements[0]!=null){ %>
+                <button class="cart-button-continue">Continue Shopping</button>
+                <% } %>
               </a>
             </div>
           </div>
@@ -74,11 +80,12 @@
         <!-- LISTADO DE ARTICULOS-->
         <div class="cart-order-items">
           <!-- ITEM 1 -->
-          <% if (!elements.product) {%>
-          <div>
-            <h1>No tienes elementos en el carrito</h1>
-          </div>
-          <% } %> <% for( element of elements ) { %>
+          <% if (elements[0]==null) {%>
+              <div>
+                <h1>No tienes elementos en el carrito</h1>
+              </div>
+          <% } %> 
+          <% for( element of elements ) { %>
 
           <div class="cart-item">
             <div class="cart-image">

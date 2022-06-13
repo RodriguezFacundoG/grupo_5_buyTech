@@ -140,8 +140,8 @@ const productsController = {
       }
     })
       .then ( (products) => {
-        return res.send(products)        
-        // return res.render('productTypeList', {products: products})
+        //return res.send(products)        
+        return res.render('search', {products})
       })
   }
 };
