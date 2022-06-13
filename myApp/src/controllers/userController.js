@@ -230,9 +230,9 @@ const userController = {
       let userPassVerification = req.body.password_verification ? req.body.password_verification : undefined;      
       let passEncripted = undefined;
 
-      // if (!errors.isEmpty()) {       
-      //   return res.render("userEdit", { user: req.session.userLogged, errors: errors.mapped() });
-      // }     
+      if (!errors.isEmpty()) {       
+        return res.render("userEdit", { user: req.session.userLogged, errors: errors.mapped() });
+      }     
       if (userPass != undefined && userPassVerification != undefined && userPass !== userPassVerification) {        
         return res.render("userEdit", {
           user: req.session.userLogged,         
@@ -263,7 +263,7 @@ const userController = {
         }
         await db.User.update(userToEdit, {where: {id: req.params.userId}});
         return res.redirect(`/user/${req.params.userId}/profile`);
-        
+
       } catch (error) {
         console.log(error);
       }    
