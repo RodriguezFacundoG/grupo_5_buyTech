@@ -187,27 +187,9 @@ const userController = {
     res.redirect("/");
   },
   //Destruyo la sesión y la cookie
-  logout: (req, res) => {
-    // if(req.cookies.recordarEmail){
-    //     res.clearCookie("recordarEmail")
-    //     return res.redirect("/user/logout")
-    // } else {
-    //     req.session.destroy( () => {
-    //         return res.redirect("/")
-    //     })
-    // }
-    console.log(
-      "------------------------------Entre al metodo logout------------------------------"
-    );
-    res.clearCookie("recordarEmail");
-    console.log(
-      "------------------------------Cookie borrada? Deberia------------------------------"
-    );
-    console.log(req.cookies.recordarEmail);
+  logout: (req, res) => {    
+    res.clearCookie("recordarEmail");    
     req.session.destroy(() => {
-      console.log(
-        "------------------------------ya destrui la sesion------------------------------"
-      );
       return res.redirect("/");
     });
   },
@@ -247,16 +229,13 @@ const userController = {
       let userPass = req.body.password ? req.body.password : undefined;
       let userPassVerification = req.body.password_verification ? req.body.password_verification : undefined;      
       let passEncripted = undefined;
-      if (!errors.isEmpty()) {
-        
-        console.log("------------------------------------- LLEGUE HASTA EL PRIMER IF ------------------------------------------");
-        return res.render("userEdit", { user: req.session.userLogged, errors: errors.mapped(), old: req.body });
-      }      
-     
+
+      // if (!errors.isEmpty()) {       
+      //   return res.render("userEdit", { user: req.session.userLogged, errors: errors.mapped() });
+      // }     
       if (userPass != undefined && userPassVerification != undefined && userPass !== userPassVerification) {        
         return res.render("userEdit", {
-          user: req.session.userLogged,
-          old: req.body,
+          user: req.session.userLogged,         
           errors: {
             password_verification: {
               msg: "Las contraseñas no coinciden",
@@ -273,9 +252,18 @@ const userController = {
         avatar: req.file != undefined ? req.file.filename : undefined, //Solo agrega esta propíedad en caso de que se cree agregue una imagen, sino no  
       };     
       delete userToEdit.password_verification; //Necesito borrar el password que se verifica, porque no está hasheado (el otro se pisa directamente)
+
       try {
+        if(!req.cookies.recordarEmail) { //Si no existe la cookie, tengo que pasar esa info cambiada a sesion:         
+          req.session.userLogged = {
+            first_name: userToEdit.first_name,
+            last_name: userToEdit.last_name,            
+            avatar: userToEdit.avatar,            
+          }        
+        }
         await db.User.update(userToEdit, {where: {id: req.params.userId}});
         return res.redirect(`/user/${req.params.userId}/profile`);
+        
       } catch (error) {
         console.log(error);
       }    
