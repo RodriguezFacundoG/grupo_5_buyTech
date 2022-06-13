@@ -256,6 +256,7 @@ const userController = {
       try {
         if(!req.cookies.recordarEmail) { //Si no existe la cookie, tengo que pasar esa info cambiada a sesion:         
           req.session.userLogged = {
+            ...req.session.userLogged,
             first_name: userToEdit.first_name,
             last_name: userToEdit.last_name,            
             avatar: userToEdit.avatar,            
