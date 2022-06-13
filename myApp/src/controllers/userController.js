@@ -199,6 +199,7 @@ const userController = {
     let idABuscar = req.params.userId;
     db.User.findByPk(idABuscar).then((user) => {
       //return res.send(user)
+      //res.send(user)
       return res.render("userProfile", { user: user });
     });
   },

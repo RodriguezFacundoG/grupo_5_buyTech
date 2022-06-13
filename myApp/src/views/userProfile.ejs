@@ -52,13 +52,13 @@
                         <button class="button-edit" type="submit">Edit Profile</button>                           
                     </a>
                 </div>
-                
+                <% if (user.user_category_id == 2) { %>
                 <div class="form-button">
                     <a href="/products/create">
                         <button class="button-edit" type="submit">Create Product</button>                           
                     </a>
                 </div>
-
+                <% } %>
                 <div class="form-button">
                     <a href="/user/logout">
                         <button class="button-logout" type="submit">LOGOUT</button>                           
