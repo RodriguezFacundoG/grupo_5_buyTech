@@ -95,7 +95,7 @@
                     <span class="product_discount">- <%= product.discount %> %</span>
                   </div>
                   <div class="product_section_price">
-                    <span class="product_price">$<%= product.price %></span>
+                    <span class="product_price">$<%= product.price * (1 - product.discount/100) %></span>
                   </div>
                 </a>
               </div>
@@ -118,7 +118,7 @@
                     <span class="product_discount">- <%= product.discount %> %</span>
                   </div>
                   <div class="product_section_price">
-                    <span class="product_price">$28.000</span>
+                    <span class="product_price">$<%= product.price * (1 - product.discount/100) %></span>
                   </div>
                 </a>
               </div>

@@ -70,7 +70,7 @@
             </div>
             <% } %>
             <div class="product_section_price">
-              <span class="product_price">$<%= product.price %></span>
+              <span class="product_price">$<%= product.price * (1 - product.discount/100) %></span>
             </div>
             <div class="buttons">
               <a href="/products/<%= product.id %>">

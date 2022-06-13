@@ -31,7 +31,7 @@
             <form action="/user/<%= user.id %>?_method=PUT" method="POST" class="form-complete" enctype="multipart/form-data">     
                     <div class="form-box">
                         <label for="first_name"></label>
-                        <input type="text" placeholder="First Name" id="first_name" name="first_name" value="<%= old.first_name %>">
+                        <input type="text" placeholder="First Name" id="first_name" name="first_name" value="<%= user.first_name %>">
                     </div>
                     <p>
                         <% if (locals.errors && errors.first_name){  %> 
@@ -41,7 +41,7 @@
 
                     <div class="form-box">
                         <label for="last_name"></label>
-                        <input type="text" placeholder="Last Name" id="last_name" name="last_name" value="<%= old.last_name %>">
+                        <input type="text" placeholder="Last Name" id="last_name" name="last_name" value="<%= user.last_name %>">
                     </div>
                     <p>
                         <% if (locals.errors && errors.last_name){  %> 
@@ -53,17 +53,22 @@
                         <label for="password"></label>
                         <input type="password" placeholder="Password" id="password" name="password">
                     </div>
+                    <% if (locals.errors && errors.password){  %> 
+                        <p> <%= locals.errors.password.msg %> </p>
+                        <br>
+                        <br>
+                    <%}%>
                     
                     <div class="form-box">
                         <label for="password_verification"></label>
                         <input type="password" placeholder="Repeat Password" id="password_verification" name="password_verification">
                     </div>
-                    <p>
-                        <% if (locals.errors && errors.password_verification){  %> 
-                            <%= locals.errors.password_verification.msg %>                         
-                        <%}%>
-                    </p>
-
+                    <% if (locals.errors && errors.password_verification){  %> 
+                        <p> <%= locals.errors.password_verification.msg %> </p>
+                        <br>
+                        <br>
+                    <%}%>
+                    
                     <div class="form-box">
                         <label for="avatar"></label>
                         <input type="file" accept=".jpg" placeholder="Foto Jpg" id="avatar" name="avatar">
