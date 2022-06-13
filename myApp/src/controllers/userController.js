@@ -205,10 +205,10 @@ const userController = {
   //Elimina el producto seleccionado por id
   deleteFromCart: (req, res) => {
     let idABuscar = req.params.id;
-    db.Item.destroy({ where: { product_id: idABuscar } }).then(() => {
-      // res.send("sos lo mejor que te puede pasar!")
-      res.redirect("/user/cart");
-    });
+    db.Item.destroy({ where: { product_id: idABuscar } })
+      .then(() => {      
+        res.redirect("/user/cart");
+      });
   },
   checkout: (req, res) => {
     res.render("checkout");
