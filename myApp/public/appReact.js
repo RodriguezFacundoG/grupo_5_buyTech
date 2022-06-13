@@ -3,7 +3,7 @@ function App() {
     
     return (
         <div>
-            <h1>Fetch data from an api in react</h1>
+            <h1>Dashboard with data fetch from API</h1>
             <Wrapper />
         </div>
     )

@@ -31,8 +31,8 @@ function Componente (props) {
 
     return (
         <div className="wrapper__component">
-            <h3>{props.titulo}</h3>
-            {contenido} 
+            <h1>{props.titulo}</h1>
+            <h2>{contenido}</h2> 
         </div>
     )
 }
