@@ -6,7 +6,8 @@ window.addEventListener("load", function () {
   let productCategory = document.querySelector("#create_form_product_category");
   let productStock = document.querySelector("#create_form_product_stock");
   let productWeight = document.querySelector("#create_form_product_weight");
-  let prodductPrice = document.querySelector("#create_form_product_price");
+  let productPrice = document.querySelector("#create_form_product_price");
+  let productDiscount = document.querySelector("#create_form_product_discount");
 
 
 
@@ -45,12 +46,11 @@ window.addEventListener("load", function () {
     if (productWeight.value == 0) {
       productWeight.value = 1;
     }
-    
-
-
-
-    if(prodductPrice.value == 0){
+    if(productPrice.value == 0){
       return alert("Ingrese precio del producto");
+    }
+    if(productDiscount.value == 0){
+      productDiscount.value = 0;
     }
 
     if (

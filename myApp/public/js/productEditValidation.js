@@ -5,7 +5,11 @@ window.addEventListener("load", function () {
     let productImage = document.querySelector("#create_form_product_image");
     let productCategory = document.querySelector("#create_form_product_category");
     let productStock = document.querySelector("#create_form_product_stock");
-  
+    let productWeight = document.querySelector("#create_form_product_weight");
+    let productPrice = document.querySelector("#create_form_product_price");
+    let productDiscount = document.querySelector("#create_form_product_discount");
+
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
   
@@ -37,6 +41,15 @@ window.addEventListener("load", function () {
       if (productStock.value == 0) {
         return alert("Ingrese un stock");
       };
+      if (productWeight.value == 0) {
+        productWeight.value = 1;
+      };
+      if(productPrice.value == 0){
+        return alert("Ingrese precio del producto");
+      }
+      if(productDiscount.value == 0){
+        productDiscount.value = 0;
+      }
   
       if (
         productName.value.length >= 5 &&
