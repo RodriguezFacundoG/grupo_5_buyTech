@@ -240,21 +240,44 @@ const userController = {
   },
 
   /* Actualiza los datos del Usuario */
-  update: (req, res) => {
-    db.User.update(
-      {
-        first_name: req.body.first_name,
-        last_name: req.body.last_name,
-        email: req.body.email,
-        password: req.body.password,
-      },
-      {
-        where: {
-          id: req.params.userId,
-        },
+  update: async (req, res) => {
+    
+      let errors = validationResult(req);
+      let userPass = req.body.password ? req.body.password : undefined;
+      let userPassVerification = req.body.password_verification ? req.body.password_verification : undefined;      
+      let passEncripted = undefined;
+      if (!errors.isEmpty()) {
+        
+        console.log("------------------------------------- LLEGUE HASTA EL PRIMER IF ------------------------------------------");
+        return res.render("userEdit", { user: req.session.userLogged, errors: errors.mapped(), old: req.body });
+      }      
+     
+      if (userPass != undefined && userPassVerification != undefined && userPass !== userPassVerification) {        
+        return res.render("userEdit", {
+          user: req.session.userLogged,
+          old: req.body,
+          errors: {
+            password_verification: {
+              msg: "Las contraseñas no coinciden",
+            },
+          },
+        });
+      } else if (userPass != undefined && userPassVerification && userPass == userPassVerification){
+        passEncripted = bcrypt.hashSync(userPass, 10);
       }
-    );
-    res.redirect("/user/profile/" + req.params.userId);
+      
+      let userToEdit = {
+        ...req.body,
+        password: passEncripted,
+        avatar: req.file != undefined ? req.file.filename : undefined, //Solo agrega esta propíedad en caso de que se cree agregue una imagen, sino no  
+      };     
+      delete userToEdit.password_verification; //Necesito borrar el password que se verifica, porque no está hasheado (el otro se pisa directamente)
+      try {
+        await db.User.update(userToEdit, {where: {id: req.params.userId}});
+        return res.redirect(`/user/${req.params.userId}/profile`);
+      } catch (error) {
+        console.log(error);
+      }    
   },
 };
 
