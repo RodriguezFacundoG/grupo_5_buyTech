@@ -29,7 +29,7 @@ router.get('/logout', authMiddleware, userController.logout);
 
 router.get('/:userId/profile', userController.profile);
 
-router.get('/:userId/edit', userController.edit);
+router.get('/:userId/edit', authMiddleware, userController.edit);
 router.put('/:userId', multerUploadUser.single('avatar'), validateUserEdit, userController.update);
 
 module.exports = router;
