@@ -5,6 +5,7 @@ const userController = require('../controllers/userController.js');
 const multerUploadUser = require('../middlewares/multerUser');
 const verificationRegister = require('../middlewares/verificationRegister');
 const validateLogin = require('../middlewares/validateLogin')
+const validateUserEdit = require('../middlewares/validateUserEdit')
 const authMiddleware = require('../middlewares/authMiddleware')
 const guestMiddleware = require('../middlewares/guestMiddleware')
 
@@ -26,10 +27,10 @@ router.get('/checkout', authMiddleware, userController.checkout);
 
 router.get('/logout', authMiddleware, userController.logout);
 
-router.get('/profile/:userId', userController.profile);
+router.get('/:userId/profile', userController.profile);
 
-router.get('/edit/:userId', userController.edit);
-router.post('/edit/:userId', userController.update);
+router.get('/:userId/edit', userController.edit);
+router.put('/:userId', multerUploadUser.single('avatar'), validateUserEdit, userController.update);
 
 module.exports = router;
 
