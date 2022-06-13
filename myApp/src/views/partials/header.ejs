@@ -28,7 +28,7 @@
                         <span class="nav-personal__text">User</span>
                     </a>
                 <% } else { %>
-                    <a href="/user/profile/<%= locals.userLogged.id %>">
+                    <a href="/user/<%= locals.userLogged.id %>/profile">
                         <i class="fas fa-user"></i>
                         <span class="nav-personal__text"><%= locals.userLogged.first_name %></span>
                     </a>
